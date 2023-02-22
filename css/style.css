@@ -119,3 +119,11 @@
 .hero-img {
   width: 90%;
 }
+
+.icon-header {
+  font-size: 3.2rem;
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
