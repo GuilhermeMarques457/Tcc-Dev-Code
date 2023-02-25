@@ -107,7 +107,7 @@
 }
 
 .btn-hero {
-  filter: drop-shadow(0px 1rem 2rem rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(0px 0.5rem 1rem rgba(0, 0, 0, 0.05));
   width: 18rem;
 }
 
@@ -159,6 +159,7 @@
   overflow: hidden;
   display: flex;
   gap: 2.4rem;
+  padding: 2.4rem 0;
 }
 
 .news-card {
@@ -169,13 +170,13 @@
   background-color: #fdfdfe;
   border-radius: 12px;
   padding: 1.5rem 1.5rem;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.03);
 }
 
 .news-img {
   border-radius: 12px 12px 0px 0px;
   width: 32rem;
   height: 17rem;
-  background-color: #d9d9d9;
 }
 
 .news-text {
@@ -224,34 +225,30 @@
 ********************/
 
 .question-section {
-  height: 60rem;
+  padding: 5.6rem 0;
 }
 .question-box {
   display: flex;
+  justify-content: space-between;
   gap: 3rem;
   flex-wrap: wrap;
+  padding: 2.4rem 0;
 }
 .question-card {
   cursor: pointer;
   display: flex;
-  width: 55rem;
+  width: 58.5rem;
   box-sizing: border-box;
   background-color: #fdfdfe;
   border-radius: 12px;
-  padding: 1.5rem 1.5rem;
+  padding: 2.5rem 2.5rem;
   gap: 2rem;
-}
-.question-img {
-  width: 22rem;
-  height: 22rem;
-  background-color: #d9d9d9;
-}
-.question-content {
-  width: 50%;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.03);
 }
 
 .question-text {
-  height: 10rem;
+  height: 9.5rem;
+  overflow-y: hidden;
 }
 
 .question-card-footer {
@@ -284,11 +281,181 @@
 
 .question-icon {
   font-size: 2rem;
-  color: #2540cd;
+  color: #8b93a6;
 }
 
 .question-time-released {
   font-size: 1rem;
   font-weight: 600;
   color: #2540cd;
+}
+
+.box-btn-footer {
+  display: flex;
+  justify-content: center;
+}
+
+/* Tags news */
+
+.tags-card-news-box {
+  display: flex;
+  gap: 1rem;
+}
+
+.tag-news {
+  display: inline-block;
+  border-radius: 2px;
+  color: #f0f0f0;
+  padding: 0.5rem 0.8rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.js {
+  background-color: #b19f1b;
+}
+
+.py {
+  background-image: linear-gradient(290deg, #f7c400 50%, #00264d 50%);
+}
+
+.php {
+  background-color: #7377ad;
+}
+
+.c {
+  background-color: #7e21d5;
+}
+
+/**********************  
+*** Login-section *** 
+***********************/
+
+.login-section {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(240, 240, 240, 0.7);
+  backdrop-filter: blur(6px);
+  z-index: 999;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s;
+}
+
+.form-login {
+  width: 35rem;
+  height: 50rem;
+  border-radius: 10px;
+  background-color: #f5f6fa;
+  padding: 3rem;
+}
+
+.form-heading {
+  font-weight: 600;
+  font-size: 2.6rem;
+  color: #1c1c1c;
+  text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.form-input-label-box {
+  position: relative;
+}
+
+.form-icon {
+  position: absolute;
+  top: 30px;
+  left: 10px;
+  font-size: 2.5rem;
+  color: #3d5af1;
+}
+
+.label-form {
+  font-weight: 400;
+  font-size: 14px;
+  color: #3d4465;
+}
+
+.input-form {
+  padding: 0rem 4.5rem;
+  position: relative;
+}
+
+.options-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.remeber-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#remember {
+  cursor: pointer;
+}
+
+.remember-label {
+  cursor: pointer;
+}
+
+.btn-form {
+  width: 100%;
+  border-radius: 5px;
+  margin: 2rem 0 0rem 0;
+}
+
+.divider-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+
+.divider {
+  background: rgba(61, 68, 101, 0.8);
+  border-radius: 2px;
+  width: 15.5rem;
+  height: 1px;
+}
+
+.enter-with-box {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.logo-box-form {
+  background-color: #fff;
+  height: 4rem;
+  width: 5rem;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.logo-box-form:hover .form-logo-img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.form-logo-img {
+  transition: all 0.5s;
+  width: 2rem;
+  height: 2rem;
+}
+
+.does-not-have-accont-box {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 }
