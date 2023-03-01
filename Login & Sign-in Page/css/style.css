@@ -1,0 +1,159 @@
+body {
+  background: url("/Login\ &\ Sign-in\ Page/imgs/form/background-img.jpg");
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.welcome-box {
+  position: absolute;
+  top: 30%;
+  left: 70%;
+  width: 40%;
+  background-color: #00000031;
+  backdrop-filter: blur(10px);
+  color: #e8e8e9;
+  padding: 5rem;
+  left: 10%;
+}
+
+.primary-heading {
+  color: #e8e8e9;
+  margin-top: 0;
+  margin-bottom: 6rem;
+}
+
+.primary-heading::before {
+  content: "";
+  top: 22rem;
+  position: absolute;
+  width: 80px;
+  height: 4px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}
+
+.welcome-text {
+  font-size: 1.4rem;
+}
+
+.form-login {
+  position: absolute;
+  top: 20%;
+  left: 65%;
+  width: 35rem;
+  height: 50rem;
+  border-radius: 10px;
+  background-color: #f5f6fa;
+  padding: 3rem;
+}
+
+.form-heading {
+  font-weight: 600;
+  font-size: 2.6rem;
+  color: #1c1c1c;
+  text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.form-input-label-box {
+  position: relative;
+}
+
+.form-icon {
+  position: absolute;
+  top: 30px;
+  left: 10px;
+  font-size: 2.5rem;
+  color: #3d5af1;
+}
+
+.label-form {
+  font-weight: 400;
+  font-size: 14px;
+  color: #3d4465;
+}
+
+.input-form {
+  padding: 0rem 4.5rem;
+  position: relative;
+}
+
+.options-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.remeber-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#remember {
+  cursor: pointer;
+}
+
+.remember-label {
+  cursor: pointer;
+}
+
+.btn-form {
+  width: 100%;
+  border-radius: 5px;
+  margin: 2rem 0 0rem 0;
+}
+
+.divider-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+
+.divider {
+  background: rgba(61, 68, 101, 0.8);
+  border-radius: 2px;
+  width: 15.5rem;
+  height: 1px;
+}
+
+.enter-with-box {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.logo-box-form {
+  background-color: #fff;
+  height: 4rem;
+  width: 5rem;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.logo-box-form:hover .form-logo-img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.form-logo-img {
+  transition: all 0.5s;
+  width: 2rem;
+  height: 2rem;
+}
+
+.does-not-have-accont-box {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
