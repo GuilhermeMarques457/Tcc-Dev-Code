@@ -11,6 +11,14 @@ namespace DevCode.webapp.Models
     {
         public int Id { get; set; }
 
+        [DisplayName("Nome")]
+        [Required(ErrorMessage = "Campo {0} é obrigatório")]
+        public string FirstName { get; set; }
+
+        [DisplayName("Sobrenome")]
+        [Required(ErrorMessage = "Campo {0} é obrigatório")]
+        public string LastName { get; set; }
+
         [DisplayName("Email")]
         [Required(ErrorMessage = "Campo {0} é obrigatório")]
         public string Email { get; set; }
@@ -19,6 +27,13 @@ namespace DevCode.webapp.Models
         [Required(ErrorMessage = "Campo {0} é obrigatório")]
         public string Senha { get; set; }
 
-       
+        [DisplayName("Celular")]
+        [Required(ErrorMessage = "Campo {0} é obrigatório")]
+        public string PhoneNumber { get; set; }
+
+
+
+
+
     }
 }

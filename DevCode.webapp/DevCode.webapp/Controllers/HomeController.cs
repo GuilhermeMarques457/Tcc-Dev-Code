@@ -14,7 +14,7 @@ namespace DevCode.webapp.Controllers
             return View();
         }
 
-        public ActionResult EntrarUsuario(Usuario usuario)
+        public ActionResult CriarConta(Usuario usuario)
         {
             if (ModelState.IsValid)
             {
