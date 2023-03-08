@@ -14,7 +14,8 @@ namespace DevCode.webapp.Controllers
             return View();
         }
 
-        public ActionResult CriarConta(Usuario usuario)
+     
+        public ActionResult EntrarUsuario(Usuario usuario)
         {
             if (ModelState.IsValid)
             {
@@ -24,6 +25,22 @@ namespace DevCode.webapp.Controllers
             return View();
 
 
+        }
+
+        public ActionResult CadastrarUsuario()
+        {
+            return View(new Usuario());
+        }
+
+
+        [HttpPost]
+        public ActionResult CadastrarUsuario(Usuario usuario)
+        {
+            if (ModelState.IsValid)
+            {
+
+            }
+            return View(usuario);
         }
 
 
