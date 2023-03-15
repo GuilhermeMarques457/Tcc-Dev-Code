@@ -15,7 +15,7 @@ namespace DevCode.webapp.Models
         [Required(ErrorMessage = "Campo {0} é obrigatório")]
         public string Nome { get; set; }
 
-        [DisplayName("Email")]
+        [DisplayName("Sobrenome")]
         [Required(ErrorMessage = "Campo {0} é obrigatório")]
         public string Sobrenome { get; set; }
 
@@ -35,7 +35,9 @@ namespace DevCode.webapp.Models
         [Required(ErrorMessage = "Campo {0} é obrigatório")]
         public string Telefone { get; set; }
 
-
+        //Pontos?
+        public int ?Pontos { get; set; }
+                
 
     }
 }

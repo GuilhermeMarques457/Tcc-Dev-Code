@@ -9,40 +9,10 @@ namespace DevCode.webapp.Controllers
 {
     public class HomeController : Controller
     {
+        //Página Inicial
         public ActionResult Index()
         {
             return View();
         }
-
-     
-        public ActionResult EntrarUsuario(Usuario usuario)
-        {
-            if (ModelState.IsValid)
-            {
-                //RedirectToAction(string actionName, string controllerName, object routeValues);
-                return RedirectToAction("MostrarUsuario", "Usuario", usuario);
-            }
-            return View();
-
-
-        }
-
-        public ActionResult CadastrarUsuario()
-        {
-            return View(new Usuario());
-        }
-
-
-        [HttpPost]
-        public ActionResult CadastrarUsuario(Usuario usuario)
-        {
-            if (ModelState.IsValid)
-            {
-
-            }
-            return View(usuario);
-        }
-
-
     }
 }
