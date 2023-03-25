@@ -1,0 +1,260 @@
+﻿@model IEnumerable<DevCode.webapp.Models.Perguntas>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<main class="main-container">
+    <div class="container">
+        <div class="layout-box">
+            <section class="section-user">
+                <div class="image-box">
+                    <img src="~/Content/imgs/form/background-img.jpg"
+                         alt="Imagem de background do usuario"
+                         class="user-backgound-img" />
+                </div>
+                <div class="user-info-box">
+                    <p class="username-text">Username</p>
+                    <p class="work-text">Designer</p>
+                    <p class="local-text">São Paulo | Brasil</p>
+                </div>
+                <hr />
+                <div class="friends-box">
+                    <p class="friends-title">Amigos Online</p>
+                    <div class="all-friends">
+                        <div class="friend-box">
+                            <img src="~/Content/imgs/form/background-img.jpg"
+                                 alt="Imagem de perfil do amigo"
+                                 class="profile-img" />
+                            <div>
+                                <p class="friend-name">Kristin Watson</p>
+                                <p class="friend-status">
+                                    <span class="status online"></span>Online
+                                </p>
+                            </div>
+                        </div>
+                        <div class="friend-box">
+                            <img src="~/Content/imgs/form/background-img.jpg"
+                                 alt="Imagem de perfil do amigo"
+                                 class="profile-img" />
+                            <div>
+                                <p class="friend-name">Kristin Watson</p>
+                                <p class="friend-status">
+                                    <span class="status busy"></span>Ocupado
+                                </p>
+                            </div>
+                        </div>
+                        <div class="friend-box">
+                            <img src="~/Content/imgs/form/background-img.jpg"
+                                 alt="Imagem de perfil do amigo"
+                                 class="profile-img" />
+                            <div>
+                                <p class="friend-name">Kristin Watson</p>
+                                <p class="friend-status">
+                                    <span class="status online"></span>Online
+                                </p>
+                            </div>
+                        </div>
+                        <div class="friend-box">
+                            <img src="~/Content/imgs/form/background-img.jpg"
+                                 alt="Imagem de perfil do amigo"
+                                 class="profile-img" />
+                            <div>
+                                <p class="friend-name">Kristin Watson</p>
+                                <p class="friend-status">
+                                    <span class="status ausente"></span>Ausente
+                                </p>
+                            </div>
+                        </div>
+                        <div class="friend-box">
+                            <img src="~/Content/imgs/form/background-img.jpg"
+                                 alt="Imagem de perfil do amigo"
+                                 class="profile-img" />
+                            <div>
+                                <p class="friend-name">Kristin Watson</p>
+                                <p class="friend-status">
+                                    <span class="status offline"></span>Offline
+                                </p>
+                            </div>
+                        </div>
+                        <div class="friend-box">
+                            <img src="~/Content/imgs/form/background-img.jpg"
+                                 alt="Imagem de perfil do amigo"
+                                 class="profile-img" />
+                            <div>
+                                <p class="friend-name">Kristin Watson</p>
+                                <p class="friend-status">
+                                    <span class="status busy"></span>Online
+                                </p>
+                            </div>
+                        </div>
+                        <div class="friend-box">
+                            <img src="./Login & Sign-in Page/imgs/form/background-img.jpg"
+                                 alt="Imagem de perfil do amigo"
+                                 class="profile-img" />
+                            <div>
+                                <p class="friend-name">Kristin Watson</p>
+                                <p class="friend-status">
+                                    <span class="status offline"></span>Online
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-picture">
+                        <img src="~/Content/imgs/form/background-img.jpg"
+                             alt="Foto de Perfil"
+                             class="profile-user-picture" />
+                    </div>
+                    <hr />
+                </div>
+            </section>
+            <section class="section-question">
+                <div class="useful-buttons">
+                    <a href="#" class="btn-full btn-question"><i class="ph ph-question button-icon"></i>Nova Pergunta</a>
+                    <a href="#" class="btn-full btn-question"><i class="ph ph-magnifying-glass button-icon"></i>Buscar</a>
+                </div>
+                <div class="question-card-container">
+                    <div class="question-user-box">
+                        <div class="user-box-info">
+                            <img src="~/Content/imgs/form/background-img.jpg"
+                                 class="question-user-photo" />
+                            <p class="username-text">Username</p>
+                        </div>
+                        <span class="question-time-released">Posatado a 2h</span>
+                    </div>
+                    <div class="question-content">
+                        <h3 class="tertiary-heading">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </h3>
+                        <p class="common-text question-text">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim
+                            eius necessitatibus debitis architecto! Reiciendis,
+                            dignissimos maiores nemo ipsum autem minima minus id,
+                            inventore laboriosam quo at quas nobis ab officia? Lorem ipsum
+
+                            <a href="#" class="keep-learning">Continuar lendo</a>
+                        </p>
+                    </div>
+                    <div class="question-card-footer">
+                        <div class="question-info-box">
+                            <div class="question-info-content">
+                                <i class="ph ph-thumbs-up question-icon"></i>
+                                <span class="question-info question-comments"> 2.3k</span>
+                            </div>
+                            <div class="question-info-content">
+                                <i class="ph ph-thumbs-down question-icon"></i>
+                                <span class="question-info question-views">2.3k</span>
+                            </div>
+                        </div>
+                        <div class="question-info-box">
+                            <div class="question-info-content">
+                                <i class="ph-chat-dots question-icon"></i>
+                                <span class="question-info question-comments"> 2.3k</span>
+                            </div>
+                            <div class="question-info-content">
+                                <i class="ph-eye question-icon"></i>
+                                <span class="question-info question-views">2.3k</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="question-card-container">
+                    <div class="question-user-box">
+                        <div class="user-box-info">
+                            <img src="~/Content/imgs/form/background-img.jpg"
+                                 class="question-user-photo" />
+                            <p class="username-text">Username</p>
+                        </div>
+                        <span class="question-time-released">Posatado a 2h</span>
+                    </div>
+                    <div class="question-content">
+                        <h3 class="tertiary-heading">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </h3>
+                        <p class="common-text question-text">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim
+                            eius necessitatibus debitis architecto! Reiciendis,
+                            dignissimos maiores nemo ipsum autem minima minus id,
+                            inventore laboriosam quo at quas nobis ab officia? Lorem ipsum
+
+                            <a href="#" class="keep-learning">Continuar lendo</a>
+                        </p>
+                    </div>
+                    <div class="question-card-footer">
+                        <div class="question-info-box">
+                            <div class="question-info-content">
+                                <i class="ph ph-thumbs-up question-icon"></i>
+                                <span class="question-info question-comments"> 2.3k</span>
+                            </div>
+                            <div class="question-info-content">
+                                <i class="ph ph-thumbs-down question-icon"></i>
+                                <span class="question-info question-views">2.3k</span>
+                            </div>
+                        </div>
+                        <div class="question-info-box">
+                            <div class="question-info-content">
+                                <i class="ph-chat-dots question-icon"></i>
+                                <span class="question-info question-comments"> 2.3k</span>
+                            </div>
+                            <div class="question-info-content">
+                                <i class="ph-eye question-icon"></i>
+                                <span class="question-info question-views">2.3k</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="question-card-container">
+                    <div class="question-user-box">
+                        <div class="user-box-info">
+                            <img src="~/Content/imgs/form/background-img.jpg"
+                                 class="question-user-photo" />
+                            <p class="username-text">Username</p>
+                        </div>
+                        <span class="question-time-released">Posatado a 2h</span>
+                    </div>
+                    <div class="question-content">
+                        <h3 class="tertiary-heading">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </h3>
+                        <p class="common-text question-text">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim
+                            eius necessitatibus debitis architecto! Reiciendis,
+                            dignissimos maiores nemo ipsum autem minima minus id,
+                            inventore laboriosam quo at quas nobis ab officia? Lorem ipsum
+
+                            <a href="#" class="keep-learning">Continuar lendo</a>
+                        </p>
+                    </div>
+                    <div class="question-card-footer">
+                        <div class="question-info-box">
+                            <div class="question-info-content">
+                                <i class="ph ph-thumbs-up question-icon"></i>
+                                <span class="question-info question-comments"> 2.3k</span>
+                            </div>
+                            <div class="question-info-content">
+                                <i class="ph ph-thumbs-down question-icon"></i>
+                                <span class="question-info question-views">2.3k</span>
+                            </div>
+                        </div>
+                        <div class="question-info-box">
+                            <div class="question-info-content">
+                                <i class="ph-chat-dots question-icon"></i>
+                                <span class="question-info question-comments"> 2.3k</span>
+                            </div>
+                            <div class="question-info-content">
+                                <i class="ph-eye question-icon"></i>
+                                <span class="question-info question-views">2.3k</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section-moderadores">
+                <div class="moders-section">
+                    <h3 class="tertiary-heading">Moderadores Online</h3>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>

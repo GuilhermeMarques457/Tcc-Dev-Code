@@ -9,6 +9,7 @@ namespace DevCode.webapp.Models
 {
     public class Usuario
     {
+        [Key]
         public int Id { get; set; }
 
         [DisplayName("Nome")]

@@ -31,7 +31,7 @@ namespace DevCode.webapp.Controllers
             if (ModelState.IsValid)
             {
                 //Retorna Perguntas
-                return View("MostrarUsuario", usuario);
+                return RedirectToAction("Index", "Perguntas", usuario);
             }
             return View(usuario);
         }
