@@ -464,3 +464,9 @@ C:\Users\etds2022-08\Desktop\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.web
 C:\Users\etds2022-08\Desktop\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.pdb
 C:\Users\etds2022-08\Desktop\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.CriarBanco.resources
 C:\Users\etds2022-08\Desktop\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.csproj.GenerateResource.cache
+C:\Users\Microsoft\Documents\Tcc DevCode\DevCode.webapp\DevCode.webapp\bin\EntityFramework.dll
+C:\Users\Microsoft\Documents\Tcc DevCode\DevCode.webapp\DevCode.webapp\bin\EntityFramework.SqlServer.dll
+C:\Users\Microsoft\Documents\Tcc DevCode\DevCode.webapp\DevCode.webapp\bin\EntityFramework.xml
+C:\Users\Microsoft\Documents\Tcc DevCode\DevCode.webapp\DevCode.webapp\bin\EntityFramework.SqlServer.xml
+C:\Users\Microsoft\Documents\Tcc DevCode\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.CriarBanco.resources
+C:\Users\Microsoft\Documents\Tcc DevCode\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.csproj.GenerateResource.cache
