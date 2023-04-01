@@ -1,8 +1,12 @@
 ﻿body {
-    background: url("imgs/form/background-img.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    
+}
+
+.main-container-form {
+    background: url("https://images.unsplash.com/photo-1590959651373-a3db0f38a961?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1039&q=80") !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
     width: 100vw;
     height: 100vh;
 }
@@ -38,7 +42,7 @@
     position: absolute;
     top: 20%;
     left: 65%;
-    max-width: 35rem;
+    width: 40rem;
     border-radius: 10px;
     background-color: #f5f6fa;
     padding: 3rem;

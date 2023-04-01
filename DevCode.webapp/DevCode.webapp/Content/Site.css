@@ -130,9 +130,7 @@
 *** News-section *** 
 ********************/
 
-.news-section {
-    height: 50rem;
-}
+
 
 .news-header {
     display: flex;
@@ -158,7 +156,7 @@
     overflow: hidden;
     display: flex;
     gap: 2.4rem;
-    padding: 2.4rem 0;
+    padding: 5.6rem 0;
 }
 
 .news-card {
@@ -467,165 +465,7 @@
     gap: 3rem;
 }
 
-/**********************    
-*** Section Usuario *** 
-***********************/
 
-.main-container {
-    background-image: linear-gradient(to right bottom, #ced5f8, #f3c8f5);
-    height: 100vh;
-}
-
-.section-user {
-    background-color: #f1f1f1;
-    padding: 3.2rem 1.8rem;
-    position: relative;
-    border-radius: 10px;
-    height: 50rem;
-}
-
-.image-box {
-    overflow: hidden;
-    height: 10rem;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.user-backgound-img {
-    height: 200%;
-    width: 100%;
-}
-
-.profile-picture {
-    position: absolute;
-    width: 50%;
-    top: 60px;
-}
-
-.profile-user-picture {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    box-shadow: 0 5px 30px rgb(0, 0, 0, 0.1);
-}
-
-.user-info-box {
-    margin-top: 12rem;
-}
-
-.username-text {
-    font-weight: 700;
-    font-size: 1.6rem;
-    margin: 0;
-}
-
-.work-text {
-    color: #3d5af1;
-    font-weight: 600;
-    font-size: 1.2rem;
-    margin: 0;
-    margin-top: 7px;
-}
-
-.local-text {
-    margin: 0;
-    margin-top: 7px;
-    font-size: 1.2rem;
-}
-
-hr {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-}
-
-.friends-title {
-    font-size: 1.4rem;
-    font-weight: 700;
-}
-
-.all-friends {
-    overflow-y: scroll;
-    height: 20rem;
-    border-radius: 5px;
-}
-
-.friend-box {
-    background-color: #d9d9d9;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 5px 10px;
-    position: relative;
-    cursor: pointer;
-    transition: 0.5s all;
-}
-
-    .friend-box:hover {
-        background-color: #fff;
-    }
-
-    .friend-box::after {
-        content: "";
-        position: absolute;
-        top: 40px;
-        left: 40px;
-        height: 1px;
-        width: 100px;
-        background-color: #c1c1c1;
-        z-index: 1;
-        display: inline-block;
-        margin: 0;
-    }
-
-    .friend-box:last-child::after {
-        height: 0;
-    }
-
-.profile-img {
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-}
-
-.friend-name {
-    letter-spacing: 0.8px;
-    font-size: 1.4rem;
-    margin: 0;
-    margin-top: 5px;
-    margin-bottom: 1px;
-}
-
-.friend-status {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    gap: 3px;
-}
-
-.status {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-}
-
-.online {
-    background-color: green;
-}
-
-.busy {
-    background-color: red;
-}
-
-.offline {
-    background-color: black;
-}
-
-.ausente {
-    background: yellow;
-}
 
 /**********************    
 *** Section Question *** 

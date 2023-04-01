@@ -1,77 +1,108 @@
 ﻿@model DevCode.webapp.Models.Usuario
 
 @{
-    ViewBag.Title = "Novo";
+    ViewBag.Title = "CadastrarUsuario";
 }
 
-<h2>Novo</h2>
+<main class="main-container-form">
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Usuario</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
-            </div>
+    <section class="section-login">
+        <div class="welcome-box">
+            <h1 class="primary-heading-form">
+                Crie e aproveite o melhor da comunidade
+            </h1>
+            <p class="welcome-text">
+                Aproveite os benefícios de pertencer a uma rede de desenvolvedores
+                apaixonados por tecnologia, onde você pode encontrar respostas,
+                colaboração e inspiração, criando uma conta agora.
+            </p>
         </div>
+        <div>
+            <form class="form-login-sign-in" method="post">
+                @Html.AntiForgeryToken()
+                <h3 class="form-heading">Criar uma conta</h3>
+                <div class="form-content">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-double-box">
+                        <div class="form-input-label-box">
+                            @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "label-form" })
+                            @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "input-form-sign" } })
+                            @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+                            <i class="ph-user form-icon"></i>
+                        </div>
+                        <div class="form-input-label-box">
+                            @Html.LabelFor(model => model.Sobrenome, htmlAttributes: new { @class = "label-form" })
+                            @Html.EditorFor(model => model.Sobrenome, new { htmlAttributes = new { @class = "input-form-sign" } })
+                            @Html.ValidationMessageFor(model => model.Sobrenome, "", new { @class = "text-danger" })
+                            <i class="ph-user form-icon"></i>
+                        </div>
+                    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Sobrenome, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Sobrenome, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Sobrenome, "", new { @class = "text-danger" })
-            </div>
+
+                    <div class="form-input-label-box">
+                        @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "label-form" })
+
+                        @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "input-form-sign" } })
+                        @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                        <i class="ph-at form-icon"></i>
+                    </div>
+
+                    <div class="form-input-label-box">
+                        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "label-form" })
+
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "input-form-sign" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        <i class="ph-envelope form-icon"></i>
+                    </div>
+
+                    <div class="form-input-label-box">
+                        @Html.LabelFor(model => model.Senha, htmlAttributes: new { @class = "label-form" })
+
+                        @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "input-form-sign" } })
+                        @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+                        <i class="ph-at form-icon"></i>
+                    </div>
+
+                    <div class="form-input-label-box">
+                        @Html.LabelFor(model => model.Telefone, htmlAttributes: new { @class = "label-form" })
+
+                        @Html.EditorFor(model => model.Telefone, new { htmlAttributes = new { @class = "input-form-sign" } })
+                        @Html.ValidationMessageFor(model => model.Telefone, "", new { @class = "text-danger" })
+                        <i class="ph-device-mobile form-icon"></i>
+                    </div>
+
+
+
+                    <input type="submit" value="Criar Conta" class="btn-full btn-form" />
+
+                    <div class="does-not-have-accont-box">
+                        <p>Ja tem conta?</p>
+                        <a href="#" class="form-link">Entrar</a>
+                    </div>
+
+                    <div class="enter-with-box">
+                        <div class="logo-box-form">
+                            <img src="~/Content/imgs/form/google-logo.png"
+                                 alt="logo da google"
+                                 class="form-logo-img" />
+                        </div>
+                        <div class="logo-box-form">
+                            <img src="~/Content/imgs/form/facebook-logo.png"
+                                 alt="logo da facebook"
+                                 class="form-logo-img" />
+                        </div>
+                        <div class="logo-box-form">
+                            <img src="~/Content/imgs/form/microsoft-logo.png"
+                                 alt="logo da microsoft"
+                                 class="form-logo-img" />
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            @section Scripts {
+                @Scripts.Render("~/bundles/jqueryval")
+            }
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Senha, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Telefone, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Telefone, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Telefone, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-      
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+    </section>
+</main>

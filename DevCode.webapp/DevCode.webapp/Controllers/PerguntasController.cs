@@ -15,7 +15,7 @@ namespace DevCode.webapp.Controllers
 
         public ActionResult Index()
         {
-            return View(repositorio.Listar());
+            return View();
         }
 
         public ActionResult Novo()

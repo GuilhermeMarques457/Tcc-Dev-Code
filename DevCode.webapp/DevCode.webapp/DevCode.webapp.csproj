@@ -188,6 +188,7 @@
     <Content Include="Content\imgs\noticia\noticia3.jpg" />
     <Content Include="Content\imgs\noticia\noticia4.jpg" />
     <Content Include="Content\imgs\noticia\noticia5.jpg" />
+    <Content Include="Content\Inicial.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -222,9 +223,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\MostrarUsuario.cshtml" />
     <Content Include="Views\Shared\_ViewUsuario.cshtml" />
-    <Content Include="Views\Usuario\CadastrarUsuario.cshtml" />
     <Content Include="Views\Perguntas\Index.cshtml" />
     <Content Include="Views\Usuario\Novo.cshtml" />
   </ItemGroup>

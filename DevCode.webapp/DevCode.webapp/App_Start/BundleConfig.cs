@@ -26,7 +26,8 @@ namespace DevCode.webapp
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
                       "~/Content/General.css",
-                      "~/Content/Form.css"
+                      "~/Content/Form.css",
+                      "~/Content/Inicial.css"
                       ));
 
 
