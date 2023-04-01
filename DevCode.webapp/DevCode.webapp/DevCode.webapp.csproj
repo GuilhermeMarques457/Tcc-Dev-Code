@@ -143,6 +143,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\NoticiaController.cs" />
     <Compile Include="Areas\Admin\Models\Noticia.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PerguntasController.cs" />
@@ -151,9 +152,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202303242334543_CriarBanco.cs" />
-    <Compile Include="Migrations\202303242334543_CriarBanco.designer.cs">
-      <DependentUpon>202303242334543_CriarBanco.cs</DependentUpon>
+    <Compile Include="Migrations\202303312229468_criaBanco.cs" />
+    <Compile Include="Migrations\202303312229468_criaBanco.designer.cs">
+      <DependentUpon>202303312229468_criaBanco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303312337013_AddNoticia.cs" />
+    <Compile Include="Migrations\202303312337013_AddNoticia.designer.cs">
+      <DependentUpon>202303312337013_AddNoticia.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Enum\Tags.cs" />
@@ -162,6 +167,8 @@
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorio\Interface\IRepositorio.cs" />
+    <Compile Include="Repositorio\RepositorioNoticia.cs" />
+    <Compile Include="Repositorio\RepositorioPergunta.cs" />
     <Compile Include="Repositorio\RepositorioUsuario.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -188,6 +195,9 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Noticia\Novo.cshtml" />
     <None Include="Scripts\jquery-3.3.1-vsdoc.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -216,12 +226,11 @@
     <Content Include="Views\Shared\_ViewUsuario.cshtml" />
     <Content Include="Views\Usuario\CadastrarUsuario.cshtml" />
     <Content Include="Views\Perguntas\Index.cshtml" />
+    <Content Include="Views\Usuario\Novo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Controllers\" />
     <Folder Include="Areas\Admin\Models\Enum\" />
-    <Folder Include="Areas\Admin\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -237,8 +246,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202303242334543_CriarBanco.resx">
-      <DependentUpon>202303242334543_CriarBanco.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202303312229468_criaBanco.resx">
+      <DependentUpon>202303312229468_criaBanco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303312337013_AddNoticia.resx">
+      <DependentUpon>202303312337013_AddNoticia.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

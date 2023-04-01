@@ -1,5 +1,4 @@
-﻿using DevCode.webapp.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,7 +8,7 @@ namespace DevCode.webapp.Controllers
 {
     public class HomeController : Controller
     {
-        //Página Inicial
+        // GET: Home
         public ActionResult Index()
         {
             return View();

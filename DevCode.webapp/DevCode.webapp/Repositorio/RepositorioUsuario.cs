@@ -16,29 +16,41 @@ namespace DevCode.webapp.Repositorio
             contexto = new AplicationDbContext();
         }
 
+
         public void Alterar(Usuario entidade)
         {
-            throw new NotImplementedException();
+            var usuario = contexto.Usuario.First(x => x.Id == entidade.Id);
+            usuario.Id = entidade.Id;
+            usuario.Nome = entidade.Nome;
+            usuario.Sobrenome = entidade.Sobrenome;
+            usuario.Username = entidade.Username;
+            usuario.Senha = entidade.Senha;
+            usuario.Telefone = entidade.Telefone;
+            usuario.Email = entidade.Email;
+            contexto.SaveChanges();
         }
 
         public void Excluir(Usuario entidade)
         {
-            throw new NotImplementedException();
-        }
-
-        public IList<Usuario> Listar()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Usuario ObterPorId(int id)
-        {
-            throw new NotImplementedException();
+            var usuario = contexto.Usuario.First(x => x.Id == entidade.Id);
+            contexto.Set<Usuario>().Remove(usuario);
+            contexto.SaveChanges();
         }
 
         public void Salvar(Usuario entidade)
         {
-            throw new NotImplementedException();
+            contexto.Usuario.Add(entidade);
+            contexto.SaveChanges();
+        }
+
+        public IList<Usuario> Listar()
+        {
+            return contexto.Usuario.ToList();
+        }
+
+        public Usuario ObterPorId(int id)
+        {
+            return contexto.Usuario.First(x => x.Id == id);
         }
     }
 }

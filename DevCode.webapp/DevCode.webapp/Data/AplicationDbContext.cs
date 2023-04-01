@@ -10,11 +10,11 @@ namespace DevCode.webapp.Data
 {
     public class AplicationDbContext : DbContext
     {
-        public AplicationDbContext(): base("AplicationDbContext")
+        public AplicationDbContext(): base("database")
         {
 
         }
-
+        public DbSet<DevCode.webapp.Areas.Admin.Models.Noticia> Noticia { get; set; }
         public DbSet<DevCode.webapp.Models.Usuario> Usuario { get; set; }
         public DbSet<DevCode.webapp.Models.Respostas> Respostas { get; set; }
         public DbSet<DevCode.webapp.Models.Perguntas> Pergunta { get; set; }

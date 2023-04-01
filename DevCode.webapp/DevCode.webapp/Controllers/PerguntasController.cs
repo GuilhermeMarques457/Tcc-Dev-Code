@@ -1,4 +1,5 @@
 ﻿using DevCode.webapp.Models;
+using DevCode.webapp.Repositorio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,30 +11,65 @@ namespace DevCode.webapp.Controllers
     public class PerguntasController : Controller
     {
         // GET: Perguntas
+        RepositorioPergunta repositorio = new RepositorioPergunta();
+
         public ActionResult Index()
         {
-            return View();
+            return View(repositorio.Listar());
         }
 
-        //Tela de Cadastro e Exibir
-
-        [HttpGet]
-        public ActionResult CadastroPerguntas()
+        public ActionResult Novo()
         {
             return View(new Perguntas());
         }
 
+        [HttpPost]
+        public ActionResult Novo(Perguntas perguntas)
+        {
+            if (ModelState.IsValid)
+            {
+                repositorio.Salvar(perguntas);
+            }
+            return View(perguntas);
+        }
+
+        public ActionResult Alterar(int id)
+        {
+            Perguntas perguntas = repositorio.ObterPorId(id);
+            return View(perguntas);
+        }
 
         [HttpPost]
-        public ActionResult CadastroPerguntas(Perguntas perguntas)
+        public ActionResult Alterar(Perguntas perguntas)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                //Retorna para algume view
-                return View();
+                repositorio.Alterar(perguntas);
 
             }
-            return View();
+            return View(perguntas);
+
+        }
+
+        [HttpGet]
+        public ActionResult Excluir(int id)
+        {
+            Perguntas perguntas = repositorio.ObterPorId(id);
+            return View(perguntas);
+        }
+
+        [HttpPost]
+        public ActionResult Excluir(Perguntas perguntas)
+        {
+            repositorio.Excluir(perguntas);
+            return View(perguntas);
+
+        }
+
+        public ActionResult Detalhes(int id)
+        {
+            Perguntas perguntas = repositorio.ObterPorId(id);
+            return View(perguntas);
         }
 
 

@@ -1,4 +1,5 @@
 ﻿using DevCode.webapp.Models;
+using DevCode.webapp.Repositorio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,53 +10,70 @@ namespace DevCode.webapp.Controllers
 {
     public class UsuarioController : Controller
     {
-        // GET: Usuario
+        RepositorioUsuario repositorio = new RepositorioUsuario();
+
         public ActionResult Index()
         {
-            return View();
+            return View(repositorio.Listar());
+        }
+            public ActionResult CadastrarUsuario()
+        {
+            return View(repositorio.Listar());
         }
 
-        //Página de Cadastro de Usuario
-        public ActionResult CadastrarUsuario()
+        public ActionResult Novo()
         {
             return View(new Usuario());
         }
 
-        //Página de Cadastro de Usuario
         [HttpPost]
-        public ActionResult CadastrarUsuario(Usuario usuario)
+        public ActionResult Novo(Usuario usuario)
         {
-
-            //Vai redirecionar para page das Perguntas
-            //Com a partial view de usuario ao lado
             if (ModelState.IsValid)
             {
-                //Retorna Perguntas
-                return RedirectToAction("Index", "Perguntas", usuario);
+                repositorio.Salvar(usuario);
             }
             return View(usuario);
         }
 
+        public ActionResult Alterar(int id)
+        {
+            Usuario usuario = repositorio.ObterPorId(id);
+            return View(usuario);
+        }
 
-        //Página de Entrar no Perfil do usuario
-       /* public ActionResult EntrarUsuario(Usuario usuario)
+        [HttpPost]
+        public ActionResult Alterar(Usuario usuario)
         {
             if (ModelState.IsValid)
             {
-                //RedirectToAction(string actionName, string controllerName, object routeValues);
-                return RedirectToAction("MostrarUsuario", "Usuario", usuario);
+                repositorio.Alterar(usuario);
+
             }
-            return View();
-        }*/
-
-
-
-        //Página de Mostrar Usuário
-        /*public ActionResult MostrarUsuario(Usuario usuario)
-        {
             return View(usuario);
 
-        }*/
+        }
+
+        [HttpGet]
+        public ActionResult Excluir(int id)
+        {
+            Usuario usuario = repositorio.ObterPorId(id);
+            return View(usuario);
+        }
+
+        [HttpPost]
+        public ActionResult Excluir(Usuario usuario)
+        {
+            repositorio.Excluir(usuario);
+            return View(usuario);
+
+        }
+
+        public ActionResult Detalhes(int id)
+        {
+            Usuario usuario= repositorio.ObterPorId(id);
+            return View(usuario);
+        }
 
     }
 }
