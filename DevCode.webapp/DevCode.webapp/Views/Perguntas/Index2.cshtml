@@ -1,0 +1,51 @@
+﻿@model IEnumerable<DevCode.webapp.Models.Perguntas>
+
+@{
+    ViewBag.Title = "Index2";
+}
+
+<h2>Index2</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Detalhes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Esperado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataEnvio)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Titulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Detalhes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Esperado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataEnvio)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDPergunta }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDPergunta }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDPergunta })
+        </td>
+    </tr>
+}
+
+</table>

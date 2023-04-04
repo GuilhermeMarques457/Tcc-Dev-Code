@@ -1,0 +1,104 @@
+﻿/**********************    
+*** section-askQuestion *** 
+***********************/
+
+.secondary-heading::before {
+    top: -15px;
+}
+
+.section-askQuestion {
+    height: 100vh;
+    background-color: #fff;
+    grid-column: 2/4;
+    border-radius: 10px;
+}
+
+.askQuestion-box {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.tittle-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-label {
+    font-size: 1.6rem;
+}
+
+.input-form {
+    border: 1px solid black;
+}
+
+.description-text {
+    padding: 1rem 1rem;
+    height: 15rem;
+}
+
+.expected-text {
+    padding: 1rem 1rem;
+    height: 8rem;
+}
+
+.btn-full {
+    border-radius: 5px;
+}
+
+.button-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+/**********************    
+*** Moders Question *** 
+***********************/
+
+.moders-section {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 2rem 0rem;
+}
+
+    .moders-section .tertiary-heading {
+        text-align: center;
+    }
+
+.member-item {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.4s;
+    padding: 0rem 2rem;
+}
+
+    .member-item:hover {
+        background-color: #e8e8e9;
+    }
+
+    .member-item > :nth-child(1) {
+        display: flex;
+        align-items: center;
+    }
+
+.member-img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+
+.member-user-name {
+    margin-left: 1.5rem;
+    font-size: 1.4rem;
+}
+
+.information-member {
+    color: #3d5af1;
+    font-size: 1.4rem;
+}

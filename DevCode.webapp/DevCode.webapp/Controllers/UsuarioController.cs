@@ -16,10 +16,6 @@ namespace DevCode.webapp.Controllers
         {
             return View(repositorio.Listar());
         }
-            public ActionResult CadastrarUsuario()
-        {
-            return View(repositorio.Listar());
-        }
 
         public ActionResult Novo()
         {
