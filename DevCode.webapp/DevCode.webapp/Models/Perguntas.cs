@@ -14,8 +14,8 @@ namespace DevCode.webapp.Models
         [Key]
         public int IDPergunta { get; set; }
 
-        [ForeignKey(nameof(IDPergunta))]
-        public Usuario Usuario { get; set; }
+        //[ForeignKey(nameof(IDPergunta))]
+        //public Usuario Usuario { get; set; }
         public string Titulo { get; set; }
 
         [DisplayName("Detalhes da sua pergunta")]

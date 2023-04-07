@@ -1,169 +1,112 @@
-﻿@model DevCode.webapp.Models.Usuario
+﻿@using DevCode.webapp.Util;
 
 @{
     ViewBag.Title = "MostrarUsuario";
 }
 
-<h2>MostrarPerfil</h2>
-
-<div>
-    <h4>Usuario</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Sobrenome)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Sobrenome)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Username)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Username)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Senha)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Senha)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Telefone)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Telefone)
-        </dd>
-
-    </dl>
-
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
-
 <section class="section-user">
-    <div class="image-box">
-        <img src="~/Content/imgs/form/background-img.jpg"
-             alt="Imagem de background do usuario"
-             class="user-backgound-img" />
-    </div>
-    <div class="user-info-box">
-        <p class="username-text">Username</p>
-        <p class="work-text">Designer</p>
-        <p class="local-text">São Paulo | Brasil</p>
-    </div>
-    <hr />
-    <div class="friends-box">
-        <p class="friends-title">Amigos Online</p>
-        <div class="all-friends">
-            <div class="friend-box">
-                <img src="~/Content/imgs/form/background-img.jpg"
-                     alt="Imagem de perfil do amigo"
-                     class="profile-img" />
-                <div>
-                    <p class="friend-name">Kristin Watson</p>
-                    <p class="friend-status">
-                        <span class="status online"></span>Online
-                    </p>
-                </div>
-            </div>
-            <div class="friend-box">
-                <img src="~/Content/imgs/form/background-img.jpg"
-                     alt="Imagem de perfil do amigo"
-                     class="profile-img" />
-                <div>
-                    <p class="friend-name">Kristin Watson</p>
-                    <p class="friend-status">
-                        <span class="status busy"></span>Ocupado
-                    </p>
-                </div>
-            </div>
-            <div class="friend-box">
-                <img src="~/Content/imgs/form/background-img.jpg"
-                     alt="Imagem de perfil do amigo"
-                     class="profile-img" />
-                <div>
-                    <p class="friend-name">Kristin Watson</p>
-                    <p class="friend-status">
-                        <span class="status online"></span>Online
-                    </p>
-                </div>
-            </div>
-            <div class="friend-box">
-                <img src="~/Content/imgs/form/background-img.jpg"
-                     alt="Imagem de perfil do amigo"
-                     class="profile-img" />
-                <div>
-                    <p class="friend-name">Kristin Watson</p>
-                    <p class="friend-status">
-                        <span class="status ausente"></span>Ausente
-                    </p>
-                </div>
-            </div>
-            <div class="friend-box">
-                <img src="~/Content/imgs/form/background-img.jpg"
-                     alt="Imagem de perfil do amigo"
-                     class="profile-img" />
-                <div>
-                    <p class="friend-name">Kristin Watson</p>
-                    <p class="friend-status">
-                        <span class="status offline"></span>Offline
-                    </p>
-                </div>
-            </div>
-            <div class="friend-box">
-                <img src="~/Content/imgs/form/background-img.jpg"
-                     alt="Imagem de perfil do amigo"
-                     class="profile-img" />
-                <div>
-                    <p class="friend-name">Kristin Watson</p>
-                    <p class="friend-status">
-                        <span class="status busy"></span>Online
-                    </p>
-                </div>
-            </div>
-            <div class="friend-box">
-                <img src="./Login & Sign-in Page/imgs/form/background-img.jpg"
-                     alt="Imagem de perfil do amigo"
-                     class="profile-img" />
-                <div>
-                    <p class="friend-name">Kristin Watson</p>
-                    <p class="friend-status">
-                        <span class="status offline"></span>Online
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="profile-picture">
+        <div class="image-box">
             <img src="~/Content/imgs/form/background-img.jpg"
-                 alt="Foto de Perfil"
-                 class="profile-user-picture" />
+                 alt="Imagem de background do usuario"
+                 class="user-backgound-img" />
         </div>
+        <div class="user-info-box">
+            @if (HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                <p class="username-text">@Configuracao.Usuario.Nome</p>
+                <p class="work-text">@Configuracao.Usuario.Username</p>
+                <p class="username-text">@Configuracao.Usuario.Telefone</p>
+                <p class="username-text">@Configuracao.Usuario.Email</p>
+            }
 
-    </div>
-</section>
+        </div>
+        <hr />
+        <div class="friends-box">
+            <p class="friends-title">Amigos Online</p>
+            <div class="all-friends">
+                <div class="friend-box">
+                    <img src="~/Content/imgs/form/background-img.jpg"
+                         alt="Imagem de perfil do amigo"
+                         class="profile-img" />
+                    <div>
+                        <p class="friend-name">Kristin Watson</p>
+                        <p class="friend-status">
+                            <span class="status online"></span>Online
+                        </p>
+                    </div>
+                </div>
+                <div class="friend-box">
+                    <img src="~/Content/imgs/form/background-img.jpg"
+                         alt="Imagem de perfil do amigo"
+                         class="profile-img" />
+                    <div>
+                        <p class="friend-name">Kristin Watson</p>
+                        <p class="friend-status">
+                            <span class="status busy"></span>Ocupado
+                        </p>
+                    </div>
+                </div>
+                <div class="friend-box">
+                    <img src="~/Content/imgs/form/background-img.jpg"
+                         alt="Imagem de perfil do amigo"
+                         class="profile-img" />
+                    <div>
+                        <p class="friend-name">Kristin Watson</p>
+                        <p class="friend-status">
+                            <span class="status online"></span>Online
+                        </p>
+                    </div>
+                </div>
+                <div class="friend-box">
+                    <img src="~/Content/imgs/form/background-img.jpg"
+                         alt="Imagem de perfil do amigo"
+                         class="profile-img" />
+                    <div>
+                        <p class="friend-name">Kristin Watson</p>
+                        <p class="friend-status">
+                            <span class="status ausente"></span>Ausente
+                        </p>
+                    </div>
+                </div>
+                <div class="friend-box">
+                    <img src="~/Content/imgs/form/background-img.jpg"
+                         alt="Imagem de perfil do amigo"
+                         class="profile-img" />
+                    <div>
+                        <p class="friend-name">Kristin Watson</p>
+                        <p class="friend-status">
+                            <span class="status offline"></span>Offline
+                        </p>
+                    </div>
+                </div>
+                <div class="friend-box">
+                    <img src="~/Content/imgs/form/background-img.jpg"
+                         alt="Imagem de perfil do amigo"
+                         class="profile-img" />
+                    <div>
+                        <p class="friend-name">Kristin Watson</p>
+                        <p class="friend-status">
+                            <span class="status busy"></span>Online
+                        </p>
+                    </div>
+                </div>
+                <div class="friend-box">
+                    <img src="./Login & Sign-in Page/imgs/form/background-img.jpg"
+                         alt="Imagem de perfil do amigo"
+                         class="profile-img" />
+                    <div>
+                        <p class="friend-name">Kristin Watson</p>
+                        <p class="friend-status">
+                            <span class="status offline"></span>Online
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-picture">
+                <img src="~/Content/imgs/form/background-img.jpg"
+                     alt="Foto de Perfil"
+                     class="profile-user-picture" />
+            </div>
+
+        </div>
+    </section>

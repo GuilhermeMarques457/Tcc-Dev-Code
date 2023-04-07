@@ -1,7 +1,8 @@
-﻿@{
+﻿@model DevCode.webapp.Models.UsuarioVM
+@using DevCode.webapp.Util
+@{
     ViewBag.Title = "Home Page";
 }
-
 <main class="main-container">
     <section class="hero-section">
         <div class="container">
@@ -306,36 +307,31 @@
         </div>
     </section>
     <section class="login-section element-hidden">
-        <form action="#" class="form-login">
-            <h3 class="form-heading">Bem-Vindo de volta</h3>
+        <form class="form-login-sign-in home-form" method="post">
+            @Html.AntiForgeryToken()
+            <h3 class="form-heading">Bem vindo de volta</h3>
             <div class="form-content">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
                 <div class="form-input-label-box">
-                    <label for="email" class="label-form">Email</label>
-                    <input type="email"
-                           name="email"
-                           id="email"
-                           class="input-form"
-                           placeholder="Entre com o seu email" />
-                    <i class="ph-envelope form-icon"></i>
+                    @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "label-form" })
+
+                    @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "input-form-sign input-enter" } })
+                    @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                    <i class="ph-user form-icon"></i>
                 </div>
+
                 <div class="form-input-label-box">
-                    <label for="senha" class="label-form">Senha</label>
-                    <input type="password"
-                           name="password"
-                           id="password"
-                           class="input-form"
-                           placeholder="****************" />
-                    <i class="ph-lock-key-open form-icon"></i>
+                    @Html.LabelFor(model => model.Senha, htmlAttributes: new { @class = "label-form" })
+
+
+                    @Html.PasswordFor(model => model.Senha, new { @class = "input-form-sign input-enter" })
+                    @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+                    <i class="ph ph-lock-key form-icon"></i>
                 </div>
-                <div class="options-form">
-                    <div class="remeber-box">
-                        <input type="checkbox" name="remember" id="remember" />
-                        <label for="remember" class="label-form remember-label">Lembrar conta</label>
-                    </div>
-                    <div>
-                        <a href="#" class="form-link">Esqueceu senha?</a>
-                    </div>
-                </div>
+
+
+
                 <button class="btn-full btn-form">Entrar</button>
 
                 <div class="divider-box">
@@ -343,6 +339,9 @@
                     <p>ou</p>
                     <span class="divider"></span>
                 </div>
+
+
+
                 <div class="enter-with-box">
                     <div class="logo-box-form">
                         <img src="~/Content/imgs/form/google-logo.png"
@@ -360,9 +359,10 @@
                              class="form-logo-img" />
                     </div>
                 </div>
+
                 <div class="does-not-have-accont-box">
                     <p>Não tem conta?</p>
-                    <a href="#" class="form-link">Crie a sua agora</a>
+                    <a href="/Usuario/Novo" class="form-link">Criar a sua agora</a>
                 </div>
             </div>
         </form>

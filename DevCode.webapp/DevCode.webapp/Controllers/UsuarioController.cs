@@ -1,5 +1,6 @@
 ﻿using DevCode.webapp.Models;
 using DevCode.webapp.Repositorio;
+using DevCode.webapp.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +28,9 @@ namespace DevCode.webapp.Controllers
         {
             if (ModelState.IsValid)
             {
+                usuario.Senha = MD5.GerarHashMd5(usuario.Senha);
                 repositorio.Salvar(usuario);
+                return RedirectToAction("Index", "Home");
             }
             return View(usuario);
         }

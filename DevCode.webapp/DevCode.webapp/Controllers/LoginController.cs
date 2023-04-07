@@ -10,17 +10,18 @@ using DevCode.webapp.Util;
 
 namespace DevCode.webapp.Controllers
 {
-    public class HomeController : Controller
+    public class LoginController : Controller
     {
+        // GET: Login
         RepositorioUsuario repositorio = new RepositorioUsuario();
 
-        public ActionResult Index()
+        public ActionResult Entrar()
         {
             return View(new UsuarioVM());
         }
 
         [HttpPost]
-        public ActionResult Index(UsuarioVM usuarioVM)
+        public ActionResult Entrar(UsuarioVM usuarioVM)
         {
             if (ModelState.IsValid)
             {

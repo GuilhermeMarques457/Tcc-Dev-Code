@@ -1,6 +1,7 @@
 ﻿using DevCode.webapp.Models;
 using DevCode.webapp.Models.Enum;
 using DevCode.webapp.Repositorio;
+using DevCode.webapp.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,33 +17,38 @@ namespace DevCode.webapp.Controllers
 
         public ActionResult Index()
         {
-            //return View(repositorio.Listar());
-            List<Perguntas> Perguntas = new List<Perguntas>
+            if (!Configuracao.VerificarUsuarioLogado())
             {
-                new Perguntas()
-                {
-                    Titulo = "Titulo1",
-                    Detalhes = "Detalhe1",
-                    DataEnvio = new DateTime().Date,
-                    Esperado = "Esperos ser feliz",
-                    IDPergunta = 1,
-               
-              
-                },
-                 new Perguntas()
-                {
-                    Titulo = "Titulo2",
-                    Detalhes = "Detalhe2",
-                    DataEnvio = new DateTime().Date,
-                    Esperado = "Esperos ser muito feliz",
-                    IDPergunta = 1,
+                return RedirectToAction("Entrar", "Login");
+            }
+
+            return View(repositorio.Listar());
+            //List<Perguntas> Perguntas = new List<Perguntas>
+            //{
+            //    new Perguntas()
+            //    {
+            //        Titulo = "Titulo1",
+            //        Detalhes = "Detalhe1",
+            //        DataEnvio = new DateTime().Date,
+            //        Esperado = "Esperos ser feliz",
+            //        IDPergunta = 1,
 
 
-                },
+            //    },
+            //     new Perguntas()
+            //    {
+            //        Titulo = "Titulo2",
+            //        Detalhes = "Detalhe2",
+            //        DataEnvio = new DateTime().Date,
+            //        Esperado = "Esperos ser muito feliz",
+            //        IDPergunta = 1,
 
-            };
 
-            return View(Perguntas);
+            //    },
+
+            //};
+
+            //return View(Perguntas);
         }
 
         public ActionResult Novo()
@@ -55,6 +61,7 @@ namespace DevCode.webapp.Controllers
         {
             if (ModelState.IsValid)
             {
+                perguntas.DataEnvio = DateTime.Now;
                 repositorio.Salvar(perguntas);
             }
             return View(perguntas);

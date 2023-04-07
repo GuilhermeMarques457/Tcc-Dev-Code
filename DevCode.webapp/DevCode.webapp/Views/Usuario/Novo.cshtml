@@ -58,7 +58,7 @@
                     <div class="form-input-label-box">
                         @Html.LabelFor(model => model.Senha, htmlAttributes: new { @class = "label-form" })
 
-                        @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "input-form-sign" } })
+                        @Html.PasswordFor(model => model.Senha, new { @class = "input-form-sign" })
                         @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
                         <i class="ph-at form-icon"></i>
                     </div>
@@ -73,11 +73,11 @@
 
 
 
-                    <input type="submit" value="Criar Conta" class="btn-full btn-form" />
+                    <button class="btn-full btn-form">Criar Conta</button>
 
                     <div class="does-not-have-accont-box">
                         <p>Ja tem conta?</p>
-                        <a href="#" class="form-link">Entrar</a>
+                        <a href="/Login/Entrar" class="form-link">Entrar</a>
                     </div>
 
                     <div class="enter-with-box">
