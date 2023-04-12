@@ -7,7 +7,7 @@ using DevCode.webapp.Data;
 
 namespace DevCode.webapp.Repositorio
 {
-    public class RepositorioNoticia
+    public class RepositorioNoticia : IRepositorio<Noticia>
     {
         private readonly AplicationDbContext contexto;
 
@@ -38,6 +38,11 @@ namespace DevCode.webapp.Repositorio
         public Noticia ObterPorId(int id)
         {
             return contexto.Noticia.First(x => x.IDNoticia == id);
+        }
+
+        public void Alterar(Noticia entidade)
+        {
+            throw new NotImplementedException();
         }
     }
 }

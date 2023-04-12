@@ -28,7 +28,8 @@ namespace DevCode.webapp
                       "~/Content/General.css",
                       "~/Content/Form.css",
                       "~/Content/Inicial.css",
-                      "~/Content/Question.css"
+                      "~/Content/Question.css",
+                      "~/Content/Answer.css"
                       ));
 
 

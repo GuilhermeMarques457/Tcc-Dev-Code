@@ -15,6 +15,8 @@ namespace DevCode.webapp.Models
         public string ExplicacaoResposta { get; set; }
         public int IDPergunta { get; set; }
         public int IDUsuario { get; set; }
+        public DateTime DataResposta { get; set; }
+
 
         /*public Pergunta pergunta { get; set; }
         Objeto vindo da classe pergunta*/

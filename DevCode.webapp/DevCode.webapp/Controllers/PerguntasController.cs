@@ -23,32 +23,7 @@ namespace DevCode.webapp.Controllers
             }
 
             return View(repositorio.Listar());
-            //List<Perguntas> Perguntas = new List<Perguntas>
-            //{
-            //    new Perguntas()
-            //    {
-            //        Titulo = "Titulo1",
-            //        Detalhes = "Detalhe1",
-            //        DataEnvio = new DateTime().Date,
-            //        Esperado = "Esperos ser feliz",
-            //        IDPergunta = 1,
-
-
-            //    },
-            //     new Perguntas()
-            //    {
-            //        Titulo = "Titulo2",
-            //        Detalhes = "Detalhe2",
-            //        DataEnvio = new DateTime().Date,
-            //        Esperado = "Esperos ser muito feliz",
-            //        IDPergunta = 1,
-
-
-            //    },
-
-            //};
-
-            //return View(Perguntas);
+       
         }
 
         public ActionResult Novo()

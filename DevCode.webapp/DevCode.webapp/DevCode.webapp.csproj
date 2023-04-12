@@ -145,6 +145,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\NoticiaController.cs" />
     <Compile Include="Areas\Admin\Models\Noticia.cs" />
+    <Compile Include="Controllers\RespostasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PerguntasController.cs" />
@@ -163,12 +164,14 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Enum\Tags.cs" />
+    <Compile Include="Models\PerguntaRespostasVM.cs" />
     <Compile Include="Models\Perguntas.cs" />
     <Compile Include="Models\Respostas.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\UsuarioVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorio\Interface\IRepositorio.cs" />
+    <Compile Include="Repositorio\RepositorioResposta.cs" />
     <Compile Include="Repositorio\RepositorioNoticia.cs" />
     <Compile Include="Repositorio\RepositorioPergunta.cs" />
     <Compile Include="Repositorio\RepositorioUsuario.cs" />
@@ -176,6 +179,7 @@
     <Compile Include="Util\MD5.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Answer.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -234,6 +238,8 @@
     <Content Include="Views\Perguntas\Novo.cshtml" />
     <Content Include="Views\Usuario\Alterar.cshtml" />
     <Content Include="Views\Login\Entrar.cshtml" />
+    <Content Include="Views\Respostas\Index.cshtml" />
+    <Content Include="Views\_ViewImports.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
