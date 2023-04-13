@@ -164,8 +164,9 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Enum\Tags.cs" />
-    <Compile Include="Models\PerguntaRespostasVM.cs" />
+    <Compile Include="Models\ListarPerguntaRespostasVM.cs" />
     <Compile Include="Models\Perguntas.cs" />
+    <Compile Include="Models\ResponderPeguntaVM.cs" />
     <Compile Include="Models\Respostas.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\UsuarioVM.cs" />
@@ -240,6 +241,7 @@
     <Content Include="Views\Login\Entrar.cshtml" />
     <Content Include="Views\Respostas\Index.cshtml" />
     <Content Include="Views\_ViewImports.cshtml" />
+    <Content Include="Views\Respostas\Novo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

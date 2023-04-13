@@ -5,9 +5,9 @@ using System.Web;
 
 namespace DevCode.webapp.Models
 {
-    public class PerguntaRespostasVM
+    public class ResponderPeguntaVM
     {
         public Perguntas Pergunta { get; set; }
-        public IList<Respostas> Respostas { get; set; }
+        public Respostas Respostas { get; set; }
     }
 }

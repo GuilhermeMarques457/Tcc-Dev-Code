@@ -15,9 +15,11 @@ namespace DevCode.webapp.Controllers
         RepositorioResposta repositorioResposta = new RepositorioResposta();
         RepositorioPergunta repositorioPergunta = new RepositorioPergunta();
 
+        [HttpGet]
         public ActionResult Index(int IdPergunta)
         {
-            PerguntaRespostasVM perguntaRespostasVM = new PerguntaRespostasVM();
+            ListarPerguntaRespostasVM perguntaRespostasVM = new ListarPerguntaRespostasVM();
+
             perguntaRespostasVM.Respostas = repositorioResposta.Listar();
             perguntaRespostasVM.Pergunta = repositorioPergunta.ObterPorId(IdPergunta);
 
@@ -27,17 +29,81 @@ namespace DevCode.webapp.Controllers
             }
 
             return View(perguntaRespostasVM);
+
+
+            //{
+            //    Pergunta = new Perguntas()
+            //    {
+            //        DataEnvio = new DateTime(),
+            //        Detalhes = "asasa",
+            //        Esperado = "dasdas",
+            //        IDPergunta = 2,
+            //        IDUsuario = 3,
+
+            //    },
+            //    Respostas = new List<Respostas>() 
+            //    {
+
+            //    }
+            //};
+
+            //Respostas respostas1 = new Respostas()
+            //{
+            //    DataResposta = new DateTime(),
+            //    ExplicacaoResposta = "adsadass",
+            //    IDPergunta = 1,
+            //    IDRespostas = 1,
+            //    IDUsuario = 1,
+            //};
+            //Respostas respostas2 = new Respostas()
+            //{
+            //    DataResposta = new DateTime(),
+            //    ExplicacaoResposta = "afasdf3242",
+            //    IDPergunta = 2,
+            //    IDRespostas = 2,
+            //    IDUsuario = 2,
+            //};
+
+            //perguntaRespostasVM.Respostas.Add(respostas1);
+            //perguntaRespostasVM.Respostas.Add(respostas2);
+
+
         }
 
-        public ActionResult Novo()
+        [HttpGet]
+        public ActionResult Novo(int IdPergunta)
         {
-            return View(new Respostas());
+            ResponderPeguntaVM responderPeguntaVM = new ResponderPeguntaVM();
+           
+            responderPeguntaVM.Pergunta = repositorioPergunta.ObterPorId(IdPergunta);
+
+            return View(responderPeguntaVM);
+
+
+
+            //{
+            //    Pergunta = new Perguntas()
+            //    {
+            //        DataEnvio = new DateTime(),
+            //        Detalhes = "asasa",
+            //        Esperado = "dasdas",
+            //        IDPergunta = 2,
+            //        IDUsuario = 3,
+
+            //    },
+            //};
         }
 
         [HttpPost]
-        public ActionResult Novo(Respostas resposta)
+        public ActionResult Novo(ResponderPeguntaVM responderPeguntaVM)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                repositorioResposta.Salvar(responderPeguntaVM.Respostas);
+                return RedirectToAction("Index", "Perguntas");
+            }
+            
+            return View(responderPeguntaVM);
         }
 
         //public ActionResult Alterar(int id)
