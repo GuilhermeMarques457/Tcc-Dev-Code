@@ -1,0 +1,428 @@
+﻿.layout-box {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    padding: 4rem 0;
+    height: 100%;
+    align-items: flex-start;
+}
+
+/**********************    
+  *** Section Usuario *** 
+  ***********************/
+
+.main-container {
+    background-image: linear-gradient(to right bottom, #ced5f8, #f3c8f5);
+}
+
+.section-user {
+    overflow: hidden;
+    background-color: #fff;
+    padding: 3.2rem 1.8rem;
+    position: relative;
+    border-radius: 10px;
+    height: 50rem;
+}
+
+.image-box {
+    overflow: hidden;
+    height: 10rem;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.user-backgound-img {
+    height: 200%;
+    width: 100%;
+}
+
+.profile-picture {
+    position: absolute;
+    width: 50%;
+    top: 60px;
+}
+
+.profile-user-picture {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 0 5px 30px rgb(0, 0, 0, 0.1);
+}
+
+.user-info-box {
+    margin-top: 12rem;
+}
+
+.username-text {
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+.work-text {
+    color: #3d5af1;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin: 0;
+    margin-top: 7px;
+}
+
+.local-text {
+    margin: 0;
+    margin-top: 7px;
+    font-size: 1.2rem;
+}
+
+hr {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.friends-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.all-friends {
+    overflow-y: scroll;
+    height: 20rem;
+    border-radius: 5px;
+}
+
+.friend-box {
+    background-color: #d9d9d9;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 10px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.5s all;
+}
+
+    .friend-box:hover {
+        background-color: #fff;
+    }
+
+    .friend-box::after {
+        content: "";
+        position: absolute;
+        top: 40px;
+        left: 40px;
+        height: 1px;
+        width: 100px;
+        background-color: #c1c1c1;
+        z-index: 1;
+        display: inline-block;
+        margin: 0;
+    }
+
+    .friend-box:last-child::after {
+        height: 0;
+    }
+
+.profile-img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+}
+
+.friend-name {
+    letter-spacing: 0.8px;
+    font-size: 1.4rem;
+    margin: 0;
+    margin-top: 5px;
+    margin-bottom: 1px;
+}
+
+.friend-status {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.status {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.online {
+    background-color: green;
+}
+
+.busy {
+    background-color: red;
+}
+
+.offline {
+    background-color: black;
+}
+
+.ausente {
+    background: yellow;
+}
+
+/**********************    
+*** section-Aswer*** 
+***********************/
+
+.section-answer {
+    grid-column: 2/4;
+}
+
+.answer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+.question-box {
+    padding: 2.4rem;
+    border-radius: 10px;
+    background-color: #fff;
+    min-height: 10rem;
+}
+
+.question-title h2 {
+    font-size: 2.6rem !important;
+}
+
+.question-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+.question-description {
+    font-size: 1.6rem;
+    line-height: 1.4;
+}
+
+.expected-text {
+    font-size: 1.4rem;
+    line-height: 1.4;
+}
+
+.anwser-box {
+    padding: 2.4rem;
+    border-radius: 10px;
+    background-color: #fff;
+    min-height: 10rem;
+}
+
+.answer-user-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.answer-box-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.answer-user-photo {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+
+.username-text {
+    color: #3d4465;
+    font-size: 1.3rem;
+}
+
+.input-label {
+    display: block;
+    margin-top: 2.6rem;
+    font-size: 1.6rem;
+}
+
+.input-form {
+    border: 1px solid black;
+}
+
+.description-text {
+    padding: 1rem 1rem;
+    height: 15rem;
+}
+
+.btn-form-box {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-form {
+    border-radius: 5px;
+    padding: 0.6rem 1.8rem;
+    font-size: 1.6rem;
+}
+
+.heading-answers {
+    margin-top: 7.6rem;
+    margin-bottom: 1rem;
+}
+
+.answers-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.6rem;
+}
+
+.anwser-box {
+    padding: 2.4rem;
+    border-radius: 10px;
+    background-color: #fff;
+    min-height: 10rem;
+}
+
+.answer-user-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.answer-box-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.answer-user-photo {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+
+.username-text {
+    color: #3d4465;
+    font-size: 1.3rem;
+}
+
+.answer-text {
+    font-size: 1.6rem;
+}
+
+.keep-learning {
+    text-decoration: none;
+    font-style: italic;
+}
+
+.answer-card-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.answer-info-box {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.answer-info-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.answer-icon {
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.answer-info {
+    font-size: 1.3rem;
+}
+
+/**********************    
+  *** Moders Question *** 
+  ***********************/
+
+.moders-section {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 2rem 0rem;
+    margin-bottom: 2rem;
+}
+
+    .moders-section .tertiary-heading {
+        text-align: center;
+    }
+
+.member-item {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.4s;
+    padding: 0rem 2rem;
+}
+
+    .member-item:hover {
+        background-color: #e8e8e9;
+    }
+
+    .member-item > :nth-child(1) {
+        display: flex;
+        align-items: center;
+    }
+
+.member-img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+
+.member-user-name {
+    margin-left: 1.5rem;
+    font-size: 1.4rem;
+}
+
+.information-member {
+    color: #3d5af1;
+    font-size: 1.4rem;
+}
+
+.btn-see-answer {
+    border-radius: 5px;
+}
+
+/*
+    TAGS
+*/
+
+.tags-card-news-box {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem 0rem;
+}
+
+.tag-news {
+    display: inline-block;
+    border-radius: 2px;
+    color: #f0f0f0;
+    padding: 0.5rem 0.8rem;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.js {
+    background-color: #b19f1b;
+}
+
+.py {
+    background-image: linear-gradient(290deg, #f7c400 50%, #00264d 50%);
+}
+
+.php {
+    background-color: #7377ad;
+}
+
+.c {
+    background-color: #7e21d5;
+}
