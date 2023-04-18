@@ -10,7 +10,7 @@ namespace DevCode.webapp.Models
     public class Usuario
     {
         [Key]
-        public int Id { get; set; }
+        public int IDUsuario { get; set; }
 
         [DisplayName("Nome")]
         [Required(ErrorMessage = "Campo {0} é obrigatório")]

@@ -958,10 +958,6 @@ C:\Users\etds2022-08\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevC
 C:\Users\etds2022-08\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\bin\pt-br\System.Net.Http.Formatting.resources.dll
 C:\Users\etds2022-08\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\bin\pt-br\System.Web.Http.resources.dll
 C:\Users\etds2022-08\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\bin\pt-br\System.Web.Http.WebHost.resources.dll
-C:\Users\etds2022-08\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.csprojAssemblyReference.cache
-C:\Users\etds2022-08\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.criaBanco.resources
-C:\Users\etds2022-08\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.AddNoticia.resources
-C:\Users\etds2022-08\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.csproj.GenerateResource.cache
 C:\Users\etds2022-08\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.csproj.CoreCompileInputs.cache
 C:\Users\etds2022-08\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.csproj.CopyComplete
 C:\Users\etds2022-08\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.dll
@@ -1065,3 +1061,7 @@ C:\Users\Microsoft\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCod
 C:\Users\Microsoft\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\bin\pt-br\System.Web.Http.resources.dll
 C:\Users\Microsoft\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\bin\pt-br\System.Web.Http.WebHost.resources.dll
 C:\Users\Microsoft\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.csproj.CopyComplete
+C:\Users\etds2022-08\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.csprojAssemblyReference.cache
+C:\Users\etds2022-08\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.CriarBanco.resources
+C:\Users\etds2022-08\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.csproj.GenerateResource.cache
+C:\Users\etds2022-08\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.somechanges.resources

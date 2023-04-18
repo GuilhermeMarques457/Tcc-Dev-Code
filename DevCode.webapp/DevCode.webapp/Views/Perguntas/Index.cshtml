@@ -11,12 +11,12 @@
             @Html.Partial("_ViewUsuario")
             <section class="section-question">
                 <div class="useful-buttons">
-                    <a href="#" class="btn-full btn-question"><i class="ph ph-question button-icon"></i>Nova Pergunta</a>
+                    <a href="/Perguntas/Novo" class="btn-full btn-question"><i class="ph ph-question button-icon"></i>Nova Pergunta</a>
                     <a href="#" class="btn-full btn-question"><i class="ph ph-magnifying-glass button-icon"></i>Buscar</a>
                 </div>
                 @foreach (var item in Model)
                 {
-
+               
                     <div class="question-card-container">
                         <div class="question-user-box">
                             <div class="user-box-info">
@@ -27,14 +27,16 @@
                             <span class="question-time-released">@item.DataEnvio</span>
                         </div>
                         <div class="question-content">
-                            <h3 class="tertiary-heading">
-                                @item.Titulo
-                            </h3>
-                            <p class="common-text question-text">
-                                @item.Detalhes
+                            <a href="Respostas/Index/@item.IDPergunta">
+                                <h3 class="tertiary-heading">
+                                    @item.Titulo
+                                </h3>
+                            </a>
+                                <p class="common-text question-text">
+                                    @item.Detalhes
 
-                                <a href="#" class="keep-learning">Continuar lendo</a>
-                            </p>
+                                    <a href="#" class="keep-learning">Continuar lendo</a>
+                                </p>
                         </div>
                         <div class="question-card-footer">
                             <div class="question-info-box">
@@ -59,6 +61,7 @@
                             </div>
                         </div>
                     </div>
+                         
                 }
 
             </section>

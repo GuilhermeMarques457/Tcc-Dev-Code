@@ -15,88 +15,47 @@ namespace DevCode.webapp.Controllers
         RepositorioResposta repositorioResposta = new RepositorioResposta();
         RepositorioPergunta repositorioPergunta = new RepositorioPergunta();
 
-        [HttpGet]
+        [Route("Respostas/Index/{IdPergunta}")]
         public ActionResult Index(int IdPergunta)
         {
-            ListarPerguntaRespostasVM perguntaRespostasVM = new ListarPerguntaRespostasVM();
-
-            perguntaRespostasVM.Respostas = repositorioResposta.Listar();
-            perguntaRespostasVM.Pergunta = repositorioPergunta.ObterPorId(IdPergunta);
 
             if (!Configuracao.VerificarUsuarioLogado())
             {
                 return RedirectToAction("Entrar", "Login");
             }
 
+            ListarPerguntaRespostasVM perguntaRespostasVM = new ListarPerguntaRespostasVM();
+
+            perguntaRespostasVM.Respostas = repositorioResposta.Listar();
+            perguntaRespostasVM.Pergunta = repositorioPergunta.ObterPorId(IdPergunta);
+
+
             return View(perguntaRespostasVM);
-
-
-            //{
-            //    Pergunta = new Perguntas()
-            //    {
-            //        DataEnvio = new DateTime(),
-            //        Detalhes = "asasa",
-            //        Esperado = "dasdas",
-            //        IDPergunta = 2,
-            //        IDUsuario = 3,
-
-            //    },
-            //    Respostas = new List<Respostas>() 
-            //    {
-
-            //    }
-            //};
-
-            //Respostas respostas1 = new Respostas()
-            //{
-            //    DataResposta = new DateTime(),
-            //    ExplicacaoResposta = "adsadass",
-            //    IDPergunta = 1,
-            //    IDRespostas = 1,
-            //    IDUsuario = 1,
-            //};
-            //Respostas respostas2 = new Respostas()
-            //{
-            //    DataResposta = new DateTime(),
-            //    ExplicacaoResposta = "afasdf3242",
-            //    IDPergunta = 2,
-            //    IDRespostas = 2,
-            //    IDUsuario = 2,
-            //};
-
-            //perguntaRespostasVM.Respostas.Add(respostas1);
-            //perguntaRespostasVM.Respostas.Add(respostas2);
-
 
         }
 
+        [Route("Respostas/Novo/{IdPergunta}")]
         [HttpGet]
         public ActionResult Novo(int IdPergunta)
         {
+            if (!Configuracao.VerificarUsuarioLogado())
+            {
+                return RedirectToAction("Entrar", "Login");
+            }
+
             ResponderPeguntaVM responderPeguntaVM = new ResponderPeguntaVM();
            
             responderPeguntaVM.Pergunta = repositorioPergunta.ObterPorId(IdPergunta);
 
             return View(responderPeguntaVM);
 
-
-
-            //{
-            //    Pergunta = new Perguntas()
-            //    {
-            //        DataEnvio = new DateTime(),
-            //        Detalhes = "asasa",
-            //        Esperado = "dasdas",
-            //        IDPergunta = 2,
-            //        IDUsuario = 3,
-
-            //    },
-            //};
         }
 
         [HttpPost]
         public ActionResult Novo(ResponderPeguntaVM responderPeguntaVM)
         {
+           
+
             if (ModelState.IsValid)
             {
                 repositorioResposta.Salvar(responderPeguntaVM.Respostas);

@@ -14,16 +14,21 @@ namespace DevCode.webapp.Models
         [Key]
         public int IDPergunta { get; set; }
 
-        public int IDUsuario { get; set; }
+        [ForeignKey("IDUsuarioPergunta")]
+        public Usuario Usuario { get; set; }
+        public int IDUsuarioPergunta { get; set; }
 
-        //[ForeignKey(nameof(IDPergunta))]
-        //public Usuario Usuario { get; set; }
+        [DisplayName("Titulo")]
+        [Required(ErrorMessage = "Campo {0} é obrigatório")]
         public string Titulo { get; set; }
 
+
         [DisplayName("Detalhes da sua pergunta")]
+        [Required(ErrorMessage = "Campo {0} é obrigatório")]
         public string Detalhes { get; set; }
 
         [DisplayName("O que eu espero com essa pergunta")]
+        [Required(ErrorMessage = "Campo {0} é obrigatório")]
         public string Esperado { get; set; }
         public IList<Tags>? TagPrincipal { get; set; }
         public DateTime DataEnvio { get; set; }

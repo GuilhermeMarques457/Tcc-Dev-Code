@@ -19,8 +19,8 @@ namespace DevCode.webapp.Repositorio
 
         public void Alterar(Usuario entidade)
         {
-            var usuario = contexto.Usuario.First(x => x.Id == entidade.Id);
-            usuario.Id = entidade.Id;
+            var usuario = contexto.Usuario.First(x => x.IDUsuario == entidade.IDUsuario);
+            usuario.IDUsuario = entidade.IDUsuario;
             usuario.Nome = entidade.Nome;
             usuario.Sobrenome = entidade.Sobrenome;
             usuario.Username = entidade.Username;
@@ -32,7 +32,7 @@ namespace DevCode.webapp.Repositorio
 
         public void Excluir(Usuario entidade)
         {
-            var usuario = contexto.Usuario.First(x => x.Id == entidade.Id);
+            var usuario = contexto.Usuario.First(x => x.IDUsuario == entidade.IDUsuario);
             contexto.Set<Usuario>().Remove(usuario);
             contexto.SaveChanges();
         }
@@ -50,7 +50,7 @@ namespace DevCode.webapp.Repositorio
 
         public Usuario ObterPorId(int id)
         {
-            return contexto.Usuario.First(x => x.Id == id);
+            return contexto.Usuario.First(x => x.IDUsuario== id);
         }
     }
 }

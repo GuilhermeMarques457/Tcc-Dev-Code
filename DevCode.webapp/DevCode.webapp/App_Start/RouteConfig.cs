@@ -20,6 +20,12 @@ namespace DevCode.webapp
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            //routes.MapRoute(
+            //    name: "RotaDePergunta",
+            //    url: "Respostas/Index/{IdPergunta}",
+            //    defaults: new { controller = "Respostas", action = "Index", IdPergunta = UrlParameter.Optional }
+            //);
         }
     }
 }

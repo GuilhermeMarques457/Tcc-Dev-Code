@@ -21,7 +21,7 @@ namespace DevCode.webapp.Repositorio
         {
             var respostas = contexto.Respostas.First(x => x.IDRespostas == entidade.IDRespostas);
             respostas.IDRespostas = entidade.IDRespostas;
-            respostas.IDUsuario = entidade.IDUsuario;
+            respostas.IDUsuarioResposta = entidade.IDUsuarioResposta;
             respostas.ExplicacaoResposta = entidade.ExplicacaoResposta;
             contexto.SaveChanges();
         }

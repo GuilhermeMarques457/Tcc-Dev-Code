@@ -1,4 +1,5 @@
-﻿@model DevCode.webapp.Models.Perguntas
+﻿@using DevCode.webapp.Util;
+@model DevCode.webapp.Models.Perguntas
 
 @{
     ViewBag.Title = "Novo";
@@ -7,112 +8,8 @@
 <main class="main-container">
     <div class="container">
         <div class="layout-box">
-            <section class="section-user">
-                <div class="image-box">
-                    <img src="~/Content/imgs/form/background-img.jpg"
-                         alt="Imagem de background do usuario"
-                         class="user-backgound-img" />
-                </div>
-                <div class="user-info-box">
-                    <p class="username-text">Username</p>
-                    <p class="work-text">Designer</p>
-                    <p class="local-text">São Paulo | Brasil</p>
-                </div>
-                <hr />
-                <div class="friends-box">
-                    <p class="friends-title">Amigos Online</p>
-                    <div class="all-friends">
-                        <div class="friend-box">
-                           <img src="~/Content/imgs/form/background-img.jpg"
-                                 alt="Imagem de perfil do amigo"
-                                 class="profile-img" />
-                            <div>
-                                <p class="friend-name">Kristin Watson</p>
-                                <p class="friend-status">
-                                    <span class="status online"></span>Online
-                                </p>
-                            </div>
-                        </div>
-                        <div class="friend-box">
-                            <img src="~/Content/imgs/form/background-img.jpg"
-                                 alt="Imagem de perfil do amigo"
-                                 class="profile-img" />
-                            <div>
-                                <p class="friend-name">Kristin Watson</p>
-                                <p class="friend-status">
-                                    <span class="status busy"></span>Ocupado
-                                </p>
-                            </div>
-                        </div>
-                        <div class="friend-box">
-                           <img src="~/Content/imgs/form/background-img.jpg"
-                                 alt="Imagem de perfil do amigo"
-                                 class="profile-img" />
-                            <div>
-                                <p class="friend-name">Kristin Watson</p>
-                                <p class="friend-status">
-                                    <span class="status online"></span>Online
-                                </p>
-                            </div>
-                        </div>
-                        <div class="friend-box">
-                            <img src="~/Content/imgs/form/background-img.jpg"
-                                 alt="Imagem de perfil do amigo"
-                                 class="profile-img" />
-                            <div>
-                                <p class="friend-name">Kristin Watson</p>
-                                <p class="friend-status">
-                                    <span class="status ausente"></span>Ausente
-                                </p>
-                            </div>
-                        </div>
-                        <div class="friend-box">
-                            <img src="~/Content/imgs/form/background-img.jpg"
-                                 alt="Imagem de perfil do amigo"
-                                 class="profile-img" />
-                            <div>
-                                <p class="friend-name">Kristin Watson</p>
-                                <p class="friend-status">
-                                    <span class="status offline"></span>Offline
-                                </p>
-                            </div>
-                        </div>
-                        <div class="friend-box">
-                           <img src="~/Content/imgs/form/background-img.jpg"
-                                 alt="Imagem de perfil do amigo"
-                                 class="profile-img" />
-                            <div>
-                                <p class="friend-name">Kristin Watson</p>
-                                <p class="friend-status">
-                                    <span class="status busy"></span>Online
-                                </p>
-                            </div>
-                        </div>
-                        <div class="friend-box">
-                           <img src="~/Content/imgs/form/background-img.jpg"
-                                 alt="Imagem de perfil do amigo"
-                                 class="profile-img" />
-                            <div>
-                                <p class="friend-name">Kristin Watson</p>
-                                <p class="friend-status">
-                                    <span class="status offline"></span>Online
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="profile-picture">
-                        <img src="~/Content/imgs/form/background-img.jpg"
-                             alt="Foto de Perfil"
-                             class="profile-user-picture" />
-                    </div>
-                    <hr />
-                </div>
-            </section>
 
-
-         
-
-
+            @Html.Partial("_ViewUsuario")
             <section class="section-askQuestion">
                 @using (Html.BeginForm())
                 {
@@ -143,6 +40,9 @@
                             @Html.ValidationMessageFor(model => model.Esperado, "", new { @class = "text-danger" })
                         </div>
 
+                        <input type="hidden" id="IDUsuarioPergunta" name="IDUsuarioPergunta" value="@Configuracao.Usuario.IDUsuario" />
+
+
 
                         <div class="button-box">
                             <a href="#" class="btn-full">
@@ -155,97 +55,97 @@
                     </div>
 
                     @*<div class="form-group">
-                        @Html.LabelFor(model => model.DataEnvio, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.DataEnvio, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.DataEnvio, "", new { @class = "text-danger" })
+                    @Html.LabelFor(model => model.DataEnvio, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.DataEnvio, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.DataEnvio, "", new { @class = "text-danger" })
+                    </div>
+                </div>*@
+                }
+            </section>
+
+            <section class="section-moderadores">
+                <div class="moders-section">
+                    <h3 class="tertiary-heading">Membros Online</h3>
+
+                    <div class="member-item">
+                        <div>
+                            <img src="~/Content/imgs/form/background-img.jpg"
+                                 class="member-img" />
+                            <p class="member-user-name">UsuarioTeste</p>
                         </div>
-                    </div>*@
-                 }
-                        </section>
 
-                            <section class="section-moderadores">
-                                <div class="moders-section">
-                                    <h3 class="tertiary-heading">Membros Online</h3>
-
-                                    <div class="member-item">
-                                        <div>
-                                          <img src="~/Content/imgs/form/background-img.jpg"
-                                                 class="member-img" />
-                                            <p class="member-user-name">UsuarioTeste</p>
-                                        </div>
-
-                                        <p class="information-member">15k</p>
-                                    </div>
-                                    <div class="member-item">
-                                        <div>
-                                           <img src="~/Content/imgs/form/background-img.jpg"
-                                                 class="member-img" />
-                                            <p class="member-user-name">UsuarioTeste</p>
-                                        </div>
-
-                                        <p class="information-member">14k</p>
-                                    </div>
-                                    <div class="member-item">
-                                        <div>
-                                          <img src="~/Content/imgs/form/background-img.jpg"
-                                                 class="member-img" />
-                                            <p class="member-user-name">UsuarioTeste</p>
-                                        </div>
-
-                                        <p class="information-member">11k</p>
-                                    </div>
-                                    <div class="member-item">
-                                        <div>
-                                           <img src="~/Content/imgs/form/background-img.jpg"
-                                                 class="member-img" />
-                                            <p class="member-user-name">UsuarioTeste</p>
-                                        </div>
-
-                                        <p class="information-member">10k</p>
-                                    </div>
-                                    <div class="member-item">
-                                        <div>
-                                           <img src="~/Content/imgs/form/background-img.jpg"
-                                                 class="member-img" />
-                                            <p class="member-user-name">UsuarioTeste</p>
-                                        </div>
-
-                                        <p class="information-member">10k</p>
-                                    </div>
-                                    <div class="member-item">
-                                        <div>
-                                           <img src="~/Content/imgs/form/background-img.jpg"
-                                                 class="member-img" />
-                                            <p class="member-user-name">UsuarioTeste</p>
-                                        </div>
-
-                                        <p class="information-member">7k</p>
-                                    </div>
-                                    <div class="member-item">
-                                        <div>
-                                            <img src="~/Content/imgs/form/background-img.jpg"
-                                                 class="member-img" />
-                                            <p class="member-user-name">UsuarioTeste</p>
-                                        </div>
-
-                                        <p class="information-member">3k</p>
-                                    </div>
-                                    <div class="member-item">
-                                        <div>
-                                           <img src="~/Content/imgs/form/background-img.jpg"
-                                                 class="member-img" />
-                                            <p class="member-user-name">UsuarioTeste</p>
-                                        </div>
-
-                                        <p class="information-member">2k</p>
-                                    </div>
-                                </div>
-                            </section>
+                        <p class="information-member">15k</p>
+                    </div>
+                    <div class="member-item">
+                        <div>
+                            <img src="~/Content/imgs/form/background-img.jpg"
+                                 class="member-img" />
+                            <p class="member-user-name">UsuarioTeste</p>
                         </div>
+
+                        <p class="information-member">14k</p>
+                    </div>
+                    <div class="member-item">
+                        <div>
+                            <img src="~/Content/imgs/form/background-img.jpg"
+                                 class="member-img" />
+                            <p class="member-user-name">UsuarioTeste</p>
+                        </div>
+
+                        <p class="information-member">11k</p>
+                    </div>
+                    <div class="member-item">
+                        <div>
+                            <img src="~/Content/imgs/form/background-img.jpg"
+                                 class="member-img" />
+                            <p class="member-user-name">UsuarioTeste</p>
+                        </div>
+
+                        <p class="information-member">10k</p>
+                    </div>
+                    <div class="member-item">
+                        <div>
+                            <img src="~/Content/imgs/form/background-img.jpg"
+                                 class="member-img" />
+                            <p class="member-user-name">UsuarioTeste</p>
+                        </div>
+
+                        <p class="information-member">10k</p>
+                    </div>
+                    <div class="member-item">
+                        <div>
+                            <img src="~/Content/imgs/form/background-img.jpg"
+                                 class="member-img" />
+                            <p class="member-user-name">UsuarioTeste</p>
+                        </div>
+
+                        <p class="information-member">7k</p>
+                    </div>
+                    <div class="member-item">
+                        <div>
+                            <img src="~/Content/imgs/form/background-img.jpg"
+                                 class="member-img" />
+                            <p class="member-user-name">UsuarioTeste</p>
+                        </div>
+
+                        <p class="information-member">3k</p>
+                    </div>
+                    <div class="member-item">
+                        <div>
+                            <img src="~/Content/imgs/form/background-img.jpg"
+                                 class="member-img" />
+                            <p class="member-user-name">UsuarioTeste</p>
+                        </div>
+
+                        <p class="information-member">2k</p>
+                    </div>
                 </div>
-            </main>
+            </section>
+        </div>
+    </div>
+</main>
 
-            <div>
-                @Html.ActionLink("Back to List", "Index")
-            </div>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

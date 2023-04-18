@@ -47,7 +47,6 @@ p, input, ul, li, label {
 }
 
 .main-container {
-    padding: 3.2rem 0;
     background-color: #f0f0f0
 }
 
@@ -236,4 +235,8 @@ button:focus-visible {
     pointer-events: none;
     visibility: hidden;
     transform: translateX(100%) !important;
+}
+
+.display-none{
+    display: none;
 }

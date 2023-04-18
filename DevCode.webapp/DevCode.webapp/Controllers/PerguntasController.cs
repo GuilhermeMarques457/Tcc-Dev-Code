@@ -28,16 +28,24 @@ namespace DevCode.webapp.Controllers
 
         public ActionResult Novo()
         {
+            if (!Configuracao.VerificarUsuarioLogado())
+            {
+                return RedirectToAction("Entrar", "Login");
+            }
+
             return View(new Perguntas());
+
         }
 
         [HttpPost]
         public ActionResult Novo(Perguntas perguntas)
         {
+       
             if (ModelState.IsValid)
-            {
+            {  
                 perguntas.DataEnvio = DateTime.Now;
                 repositorio.Salvar(perguntas);
+                return RedirectToAction("Index", "Perguntas");
             }
             return View(perguntas);
         }

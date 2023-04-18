@@ -154,13 +154,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202303312229468_criaBanco.cs" />
-    <Compile Include="Migrations\202303312229468_criaBanco.designer.cs">
-      <DependentUpon>202303312229468_criaBanco.cs</DependentUpon>
+    <Compile Include="Migrations\202304142209191_CriarBanco.cs" />
+    <Compile Include="Migrations\202304142209191_CriarBanco.designer.cs">
+      <DependentUpon>202304142209191_CriarBanco.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202303312337013_AddNoticia.cs" />
-    <Compile Include="Migrations\202303312337013_AddNoticia.designer.cs">
-      <DependentUpon>202303312337013_AddNoticia.cs</DependentUpon>
+    <Compile Include="Migrations\202304142225521_some-changes.cs" />
+    <Compile Include="Migrations\202304142225521_some-changes.designer.cs">
+      <DependentUpon>202304142225521_some-changes.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Enum\Tags.cs" />
@@ -261,11 +261,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202303312229468_criaBanco.resx">
-      <DependentUpon>202303312229468_criaBanco.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202304142209191_CriarBanco.resx">
+      <DependentUpon>202304142209191_CriarBanco.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202303312337013_AddNoticia.resx">
-      <DependentUpon>202303312337013_AddNoticia.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202304142225521_some-changes.resx">
+      <DependentUpon>202304142225521_some-changes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
