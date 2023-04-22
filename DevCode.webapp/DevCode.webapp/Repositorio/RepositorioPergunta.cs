@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Services.Description;
 using DevCode.webapp.Data;
 using DevCode.webapp.Models;
 using DevCode.webapp.Models.Enum;
+using DevCode.webapp.Util;
 
 namespace DevCode.webapp.Repositorio
 {
     public class RepositorioPergunta : IRepositorio<Perguntas>
     {
         private readonly AplicationDbContext contexto;
+        bool deuLike = false;
 
         public RepositorioPergunta()
         {
@@ -51,5 +54,38 @@ namespace DevCode.webapp.Repositorio
         {
             return contexto.Pergunta.First(x => x.IDPergunta == id);
         }
+
+        public Perguntas Find(int id)
+        {
+            return contexto.Pergunta.Find(id);
+        }
+
+        public void DarLike(Perguntas entidade)
+        {
+            
+            var perguntas = contexto.Pergunta.First(x => x.IDPergunta == entidade.IDPergunta);
+            if (!Util.UtilClass.deuLike)
+            {
+                if (perguntas.Likes == null)
+                {
+                    perguntas.Likes = 1;
+                }
+                else
+                {
+                    perguntas.Likes++;
+                }
+                Util.UtilClass.deuLike = true;
+            }
+            else
+            {
+                perguntas.Likes--;
+                Util.UtilClass.deuLike = false;
+            }
+            
+            
+            contexto.SaveChanges();
+        }
+
+   
     }
 }

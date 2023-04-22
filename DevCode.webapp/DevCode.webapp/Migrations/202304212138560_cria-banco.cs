@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class CriarBanco : DbMigration
+    public partial class criabanco : DbMigration
     {
         public override void Up()
         {
@@ -24,10 +24,11 @@
                     {
                         IDPergunta = c.Int(nullable: false, identity: true),
                         IDUsuarioPergunta = c.Int(nullable: false),
-                        Titulo = c.String(),
-                        Detalhes = c.String(),
-                        Esperado = c.String(),
+                        Titulo = c.String(nullable: false),
+                        Detalhes = c.String(nullable: false),
+                        Esperado = c.String(nullable: false),
                         DataEnvio = c.DateTime(nullable: false),
+                        Likes = c.Int(),
                     })
                 .PrimaryKey(t => t.IDPergunta)
                 .ForeignKey("dbo.Usuarios", t => t.IDUsuarioPergunta)
@@ -44,6 +45,7 @@
                         Email = c.String(nullable: false),
                         Senha = c.String(nullable: false),
                         Telefone = c.String(nullable: false),
+                        Profissao = c.String(),
                         Pontos = c.Int(),
                     })
                 .PrimaryKey(t => t.IDUsuario);

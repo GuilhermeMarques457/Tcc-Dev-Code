@@ -154,13 +154,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202304142209191_CriarBanco.cs" />
-    <Compile Include="Migrations\202304142209191_CriarBanco.designer.cs">
-      <DependentUpon>202304142209191_CriarBanco.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202304142225521_some-changes.cs" />
-    <Compile Include="Migrations\202304142225521_some-changes.designer.cs">
-      <DependentUpon>202304142225521_some-changes.cs</DependentUpon>
+    <Compile Include="Migrations\202304212138560_cria-banco.cs" />
+    <Compile Include="Migrations\202304212138560_cria-banco.designer.cs">
+      <DependentUpon>202304212138560_cria-banco.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Enum\Tags.cs" />
@@ -178,6 +174,7 @@
     <Compile Include="Repositorio\RepositorioUsuario.cs" />
     <Compile Include="Util\Configuracao.cs" />
     <Compile Include="Util\MD5.cs" />
+    <Compile Include="Util\UtilClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Answer.css" />
@@ -199,6 +196,7 @@
     <Content Include="Content\imgs\noticia\noticia5.jpg" />
     <Content Include="Content\Inicial.css" />
     <Content Include="Content\Question.css" />
+    <Content Include="Content\User.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -261,11 +259,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202304142209191_CriarBanco.resx">
-      <DependentUpon>202304142209191_CriarBanco.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202304142225521_some-changes.resx">
-      <DependentUpon>202304142225521_some-changes.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202304212138560_cria-banco.resx">
+      <DependentUpon>202304212138560_cria-banco.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

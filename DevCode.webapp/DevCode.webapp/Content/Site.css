@@ -251,6 +251,7 @@
 }
 
 .question-card-footer {
+    position: relative;
     opacity: 80%;
     display: flex;
     justify-content: space-between;
@@ -270,7 +271,7 @@
     display: flex;
     align-items: center;
     color: #2540cd;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     font-weight: 600;
     align-items: center;
     display: inline-block;
@@ -279,8 +280,71 @@
 }
 
 .question-icon {
-    font-size: 2rem;
+    font-size: 2.4rem;
     color: #8b93a6;
+}
+
+.show-details{
+    transition: all 0.4s;
+    display: block;
+    margin-top: 2rem;
+}
+
+.show-details:hover {
+    text-decoration: none
+}
+
+.like-icon {
+    position: absolute;
+    left: 2.5rem;
+    transition: 0.5s all;
+}
+
+.question-like{
+    margin-left: 5rem;
+    transition: 0.4s all;
+}
+
+.likeButton{
+    opacity: 0;
+    position: absolute;
+    
+    left: 2.5rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    z-index: 999;
+}
+
+.liked-icon {
+   color: #3d5af1;
+   animation: 0.7s likeAnimation forwards;
+}
+
+@keyframes likeAnimation{
+    0%{
+        transform: rotateX(-45deg);
+        font-size: 1.2rem;
+        left: 2.4rem;
+    }
+    33% {
+        transform: rotateX(0);
+        font-size: 1.5rem;
+        left: 2.3rem;
+    }
+    66% {
+        transform: rotate(45deg);
+        font-size: 1.8rem;
+        left: 2.2rem;
+    }
+    100% {
+        transform: rotate(0deg);
+        font-size: 2.1rem;
+        left: 2.1rem;
+    }
+}
+
+.question-like:hover {
+    color: #3d5af1;
 }
 
 .question-time-released {
@@ -385,7 +449,7 @@
 }
 
 .input-form {
-    padding: 0rem 4.5rem;
+    padding: 0rem 1.5rem;
     position: relative;
 }
 
@@ -569,7 +633,7 @@
 }
 
 .question-info {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 }
 
 /**********************    

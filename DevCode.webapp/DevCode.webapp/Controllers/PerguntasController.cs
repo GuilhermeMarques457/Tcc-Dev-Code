@@ -89,6 +89,22 @@ namespace DevCode.webapp.Controllers
             return View(perguntas);
         }
 
+        [HttpPost]
+        public JsonResult Like(int id)
+        {
+            Perguntas pergunta = repositorio.Find(id);
+
+            
+            if (pergunta != null)
+            {
+                repositorio.DarLike(pergunta);
+                return Json(new { likes = pergunta.Likes });
+            }
+            else
+            {
+                return Json(new { error = "Não foi possivel encontrar pergunta" });
+            }
+        }
 
 
     }

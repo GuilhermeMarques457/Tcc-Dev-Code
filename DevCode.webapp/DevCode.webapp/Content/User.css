@@ -1,0 +1,276 @@
+﻿.layout-box {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    padding: 4rem 0;
+    height: 100%;
+    align-items: flex-start;
+}
+
+
+/**********************    
+  *** Section User information *** 
+  ***********************/
+
+.section-user-information {
+    grid-column: 2/4;
+    min-height: 50rem;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.user-header {
+    height: 15rem;
+    position: relative;
+}
+
+.banner-box {
+    overflow: hidden;
+    height: 10rem;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.banner-img {
+    border-radius: 10px;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.profile-img-user {
+    left: 3rem;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    top: 4.5rem;
+    position: absolute;
+    z-index: 999;
+}
+
+.user-header-info {
+    position: absolute;
+    top: 12.5rem;
+    left: 14.5rem;
+}
+
+.user-name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 0;
+}
+
+.user-job {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 0.5;
+    color: #3d5af1;
+}
+
+.user-information-content {
+    padding: 1.2rem 3.2rem;
+}
+
+.info-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.buttons-box {
+    gap: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+.btn-user-page {
+    font-size: 1.4rem !important;
+    padding: 0.8rem 2.2rem !important;
+    border-radius: 5px !important;
+}
+
+.info-box {
+    padding: 2.2rem 0;
+    border-top: 1px solid #d9d9d9;
+}
+
+.info-user-box {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.label-info {
+    font-size: 1.6rem;
+    background-color: #fff !important;
+}
+
+.input-info {
+    box-sizing: border-box;
+    border: 1px solid #8b93a6;
+    height: 3.6rem;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    width: 100%;
+}
+
+.input-box {
+    width: 35rem;
+    gap: 1.2rem;
+    display: flex;
+}
+
+.info-user-box-change-picture {
+    display: flex;
+    justify-content: space-between;
+}
+
+.picture-text {
+    max-width: 15rem;
+}
+
+.text-title-picture {
+    font-size: 1.6rem;
+    line-height: 0;
+}
+
+.text-descriptive-picture {
+    font-weight: 300;
+    font-size: 1rem;
+    color: #8b93a6;
+    margin-top: 2rem;
+}
+
+.change-picture-box {
+    display: flex;
+    gap: 2.4rem;
+}
+
+.profile-change-img {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+}
+
+.change-box {
+    border: 1px solid #8b93a6;
+    padding: 0 2.2rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 12rem;
+    gap: 0.4rem;
+    width: 22rem;
+}
+
+.icon-change {
+    font-size: 3.2rem;
+    cursor: pointer;
+    transition: 0.3s all;
+}
+
+    .icon-change:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+        transform: 0.3s all;
+    }
+
+.send-text {
+    font-size: 1.1rem;
+    color: #8b93a6;
+    text-align: center;
+}
+
+.highlight-text {
+    color: #3d4465;
+    font-weight: 700;
+}
+
+.change-banner-box {
+    display: flex;
+    flex-direction: column;
+    width: 26.5rem;
+    gap: 0.8rem;
+}
+
+.change-img-container {
+    height: 7rem;
+    position: relative;
+    overflow: hidden;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.banner-change-img {
+    top: -70%;
+    position: absolute;
+    width: 100%;
+}
+
+.change-banner-box-send {
+    border: 1px solid #8b93a6;
+    padding: 0 2.2rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 8rem;
+    width: 100%;
+}
+
+/**********************    
+  *** Moders Question *** 
+  ***********************/
+
+.moders-section {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 2rem 0rem;
+    margin-bottom: 2rem;
+}
+
+    .moders-section .tertiary-heading {
+        text-align: center;
+    }
+
+.member-item {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.4s;
+    padding: 0rem 2rem;
+}
+
+    .member-item:hover {
+        background-color: #e8e8e9;
+    }
+
+    .member-item > :nth-child(1) {
+        display: flex;
+        align-items: center;
+    }
+
+.member-img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+
+.member-user-name {
+    margin-left: 1.5rem;
+    font-size: 1.4rem;
+}
+
+.information-member {
+    color: #3d5af1;
+    font-size: 1.4rem;
+}

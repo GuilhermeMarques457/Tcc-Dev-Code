@@ -7,13 +7,13 @@ namespace DevCode.webapp.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class somechanges : IMigrationMetadata
+    public sealed partial class criabanco : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(somechanges));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(criabanco));
         
         string IMigrationMetadata.Id
         {
-            get { return "202304142225521_some-changes"; }
+            get { return "202304212138560_cria-banco"; }
         }
         
         string IMigrationMetadata.Source

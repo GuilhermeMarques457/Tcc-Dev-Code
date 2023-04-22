@@ -35,18 +35,23 @@ namespace DevCode.webapp.Controllers
             return View(usuario);
         }
 
-        public ActionResult Alterar(int id)
+        [Route("Usuario/Alterar/{IdUsuario}")]
+        public ActionResult Alterar(int IdUsuario)
         {
-            Usuario usuario = repositorio.ObterPorId(id);
+            Usuario usuario = repositorio.ObterPorId(IdUsuario);
             return View(usuario);
         }
 
+
+        [Route("Usuario/Alterar/{IdUsuario}")]
         [HttpPost]
         public ActionResult Alterar(Usuario usuario)
         {
+            
             if (ModelState.IsValid)
             {
                 repositorio.Alterar(usuario);
+               
 
             }
             return View(usuario);

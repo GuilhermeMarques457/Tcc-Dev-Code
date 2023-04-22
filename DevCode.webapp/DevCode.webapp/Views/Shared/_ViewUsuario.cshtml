@@ -13,10 +13,9 @@
         <div class="user-info-box">
             @if (HttpContext.Current.User.Identity.IsAuthenticated)
             {
-                <p class="username-text">@Configuracao.Usuario.Nome</p>
+                <p class="username-text">@Configuracao.Usuario.Nome @Configuracao.Usuario.Sobrenome</p>
                 <p class="work-text">@Configuracao.Usuario.Username</p>
-                <p class="username-text">@Configuracao.Usuario.Telefone</p>
-                <p class="username-text">@Configuracao.Usuario.Email</p>
+                <a class="show-details" href="/Usuario/Alterar/@Configuracao.Usuario.IDUsuario">Exibir mais detalhes</a>
             }
 
         </div>

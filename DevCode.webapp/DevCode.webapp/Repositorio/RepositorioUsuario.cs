@@ -27,6 +27,7 @@ namespace DevCode.webapp.Repositorio
             usuario.Senha = entidade.Senha;
             usuario.Telefone = entidade.Telefone;
             usuario.Email = entidade.Email;
+            usuario.Profissao = entidade.Profissao;
             contexto.SaveChanges();
         }
 

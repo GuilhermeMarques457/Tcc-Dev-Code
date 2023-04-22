@@ -16,7 +16,7 @@
                 </div>
                 @foreach (var item in Model)
                 {
-               
+
                     <div class="question-card-container">
                         <div class="question-user-box">
                             <div class="user-box-info">
@@ -32,22 +32,20 @@
                                     @item.Titulo
                                 </h3>
                             </a>
-                                <p class="common-text question-text">
-                                    @item.Detalhes
+                            <p class="common-text question-text">
+                                @item.Detalhes
 
-                                    <a href="#" class="keep-learning">Continuar lendo</a>
-                                </p>
+                                <a href="#" class="keep-learning">Continuar lendo</a>
+                            </p>
                         </div>
                         <div class="question-card-footer">
                             <div class="question-info-box">
                                 <div class="question-info-content">
-                                    <i class="ph ph-thumbs-up question-icon"></i>
-                                    <span class="question-info question-comments"> 2.3k</span>
+                                    <i class="ph ph-thumbs-up question-icon like-icon"></i>
+                                    <button class="likeButton" data-post-id="@item.IDPergunta"></button>
+                                    <span class="question-info question-comments question-like likeCount"> @item.Likes</span>
                                 </div>
-                                <div class="question-info-content">
-                                    <i class="ph ph-thumbs-down question-icon"></i>
-                                    <span class="question-info question-views">2.3k</span>
-                                </div>
+                               
                             </div>
                             <div class="question-info-box">
                                 <div class="question-info-content">
@@ -61,7 +59,7 @@
                             </div>
                         </div>
                     </div>
-                         
+
                 }
 
             </section>
@@ -73,3 +71,34 @@
         </div>
     </div>
 </main>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $(document).on("click", ".likeButton", function () {
+                var postId = $(this).data("post-id");
+                var likeCountElement = $(this).siblings(".likeCount"); // Elemento HTML que exibe a contagem de likes
+                var likeIconElement = $(this).siblings(".like-icon"); // Elemento HTML do ícone de like
+
+                if (!$(this).hasClass("liked")) {
+                    likeIconElement.addClass("liked-icon")
+                    $(this).addClass("liked");
+                } else {
+                    likeIconElement.removeClass("liked-icon")
+                    $(this).removeClass("liked");
+                }
+
+                $.ajax({
+                    type: "POST",
+                    url: "/Perguntas/Like",
+                    data: { id: postId },
+                    success: function (data) {
+                        likeCountElement.text(data.likes);
+                    }
+                });
+            });
+        });
+
+        
+    </script>
+}

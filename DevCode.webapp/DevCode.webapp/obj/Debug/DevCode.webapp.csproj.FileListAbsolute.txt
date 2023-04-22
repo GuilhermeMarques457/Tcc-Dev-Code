@@ -468,7 +468,6 @@ C:\Users\Microsoft\Documents\Tcc DevCode\DevCode.webapp\DevCode.webapp\bin\Entit
 C:\Users\Microsoft\Documents\Tcc DevCode\DevCode.webapp\DevCode.webapp\bin\EntityFramework.SqlServer.dll
 C:\Users\Microsoft\Documents\Tcc DevCode\DevCode.webapp\DevCode.webapp\bin\EntityFramework.xml
 C:\Users\Microsoft\Documents\Tcc DevCode\DevCode.webapp\DevCode.webapp\bin\EntityFramework.SqlServer.xml
-C:\Users\Microsoft\Documents\Tcc DevCode\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.csproj.GenerateResource.cache
 C:\Users\etds2022-08\Desktop\Tcc-Dev-Code-try-to-make-repo\DevCode.webapp\DevCode.webapp\bin\DevCode.webapp.dll.config
 C:\Users\etds2022-08\Desktop\Tcc-Dev-Code-try-to-make-repo\DevCode.webapp\DevCode.webapp\bin\DevCode.webapp.dll
 C:\Users\etds2022-08\Desktop\Tcc-Dev-Code-try-to-make-repo\DevCode.webapp\DevCode.webapp\bin\DevCode.webapp.pdb
@@ -667,8 +666,6 @@ C:\Users\Microsoft\OneDrive\Documentos\Tcc DevCode\DevCode.webapp\DevCode.webapp
 C:\Users\Microsoft\OneDrive\Documentos\Tcc DevCode\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.csproj.CopyComplete
 C:\Users\Microsoft\OneDrive\Documentos\Tcc DevCode\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.dll
 C:\Users\Microsoft\OneDrive\Documentos\Tcc DevCode\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.pdb
-C:\Users\Microsoft\Documents\Tcc DevCode\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.criaBanco.resources
-C:\Users\Microsoft\Documents\Tcc DevCode\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.AddNoticia.resources
 C:\Users\etds2022-08\Downloads\Tcc-Dev-Code-master\DevCode.webapp\DevCode.webapp\bin\DevCode.webapp.dll.config
 C:\Users\etds2022-08\Downloads\Tcc-Dev-Code-master\DevCode.webapp\DevCode.webapp\bin\DevCode.webapp.dll
 C:\Users\etds2022-08\Downloads\Tcc-Dev-Code-master\DevCode.webapp\DevCode.webapp\bin\DevCode.webapp.pdb
@@ -1065,3 +1062,5 @@ C:\Users\etds2022-08\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevC
 C:\Users\etds2022-08\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.CriarBanco.resources
 C:\Users\etds2022-08\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.csproj.GenerateResource.cache
 C:\Users\etds2022-08\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.somechanges.resources
+C:\Users\Microsoft\Documents\Tcc DevCode\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.criabanco.resources
+C:\Users\Microsoft\Documents\Tcc DevCode\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.csproj.GenerateResource.cache

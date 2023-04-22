@@ -3,83 +3,209 @@
 @{
     ViewBag.Title = "Alterar";
 }
+<main class="main-container">
+    <div class="container">
+        <div class="layout-box">
+            <section class="section-user">
+        
+            </section>
+            <section class="section-user-information">
+                <div class="user-header">
+                    <div class="banner-box">
+                        <img src="~/Content/imgs/form/background-img.jpg"
+                                class="banner-img"
+                                alt="banner-img" />
+                    </div>
+                    <img src="~/Content/imgs/form/background-img.jpg"
+                            class="profile-img-user"
+                            alt="profile-img-user" />
+                    <div class="user-header-info">
+                        <p class="user-name">@Model.Username</p>
+                        <p class="user-job">@Model.Profissao</p>
+                    </div>
+                </div>
+                <form method="post">
+                    @Html.AntiForgeryToken()
+                    <div class="user-information-content">
+                        <div class="info-header">
+                            <h3 class="tertiary-heading">Informações Básicas</h3>
+                            <div class="buttons-box">
 
-<h2>Alterar</h2>
+                                <a href="/Perguntas/Index" class="btn-outline btn-user-page">Restaurar</a>
+                                <button class="btn-full btn-user-page">Salvar</button>
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Usuario</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.Id)
+                            </div>
+                        </div>
+                        <div class="info-user-box info-box">
+                            <div>
+                                @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "label-info" })
+                            </div>
+                            <div class="input-box">
+                                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "input-info" } })
+                                @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.Sobrenome, new { htmlAttributes = new { @class = "input-info" } })
+                                @Html.ValidationMessageFor(model => model.Sobrenome, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.Telefone, new { htmlAttributes = new { @class = "display-none" } })
+                                @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "display-none" } })
+                            </div>
+                        </div>
+                        <div class="info-user-box info-box">
+                            <div>
+                                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "label-info" })
+                            </div>
+                            <div class="input-box">
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "input-info" } })
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                            </div>
+                        </div>
+                        <div class="info-user-box-change-picture info-box">
+                            <div class="picture-text">
+                                <p class="text-title-picture">Foto de perfil</p>
+                                <p class="text-descriptive-picture">
+                                    Essa é a foto de perfil que os outros vão vizualizar
+                                </p>
+                            </div>
+                            <div class="change-picture-box">
+                                <div class="img-box">
+                                    <img src="~/Content/imgs/form/background-img.jpg"
+                                         class="profile-change-img"
+                                         alt="profile-img-user" />
+                                </div>
+                                <div class="change-box">
+                                    <i class="ph ph-cloud-arrow-up icon-change"></i>
+                                    <p class="send-text">
+                                        <span class="highlight-text">Clique para mandar </span>
+                                        ou jogue a imagem aqui SVG, PNG, JPG (max. 800x400px)
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-user-box-change-picture info-box">
+                            <div class="picture-text">
+                                <p class="text-title-picture">Foto do banner</p>
+                                <p class="text-descriptive-picture">
+                                    Essa é a foto de perfil que os outros vão vizualizar
+                                </p>
+                            </div>
+                            <div class="change-banner-box">
+                                <div class="change-banner-box">
+                                    <div class="change-img-container">
+                                        <img src="~/Content/imgs/form/background-img.jpg"
+                                             class="banner-change-img"
+                                             alt="profile-img-user" />
+                                    </div>
+                                    <div class="change-banner-box-send">
+                                        <i class="ph ph-cloud-arrow-up icon-change"></i>
+                                        <p class="send-text">
+                                            <span class="highlight-text">Clique para mandar </span>
+                                            ou jogue a imagem aqui SVG, PNG, JPG (max. 800x400px)
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-user-box info-box">
+                            <div>
+                                @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "label-info" })
+                            </div>
+                            <div class="input-box">
+                                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "input-info" } })
+                                @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Sobrenome, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Sobrenome, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Sobrenome, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                            </div>
+                        </div>
+                        <div class="info-user-box info-box">
+                            <div>
+                                @Html.LabelFor(model => model.Profissao, htmlAttributes: new { @class = "label-info" })
+                            </div>
+                            <div class="input-box">
+                                @Html.EditorFor(model => model.Profissao, new { htmlAttributes = new { @class = "input-info" } })
+                                @Html.ValidationMessageFor(model => model.Profissao, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                    </div>
+                </form>
+</section>
+            <section class="section-moderadores">
+                <div class="moders-section">
+                    <h3 class="tertiary-heading">Membros Online</h3>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                    <div class="member-item">
+                        <div>
+                            <img src="/Login & Sign-in Page/imgs/form/background-img.jpg"
+                                    class="member-img" />
+                            <p class="member-user-name">UsuarioTeste</p>
+                        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Senha, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                        <p class="information-member">15k</p>
+                    </div>
+                    <div class="member-item">
+                        <div>
+                            <img src="/Login & Sign-in Page/imgs/form/background-img.jpg"
+                                    class="member-img" />
+                            <p class="member-user-name">UsuarioTeste</p>
+                        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Telefone, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Telefone, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Telefone, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                        <p class="information-member">14k</p>
+                    </div>
+                    <div class="member-item">
+                        <div>
+                            <img src="/Login & Sign-in Page/imgs/form/background-img.jpg"
+                                    class="member-img" />
+                            <p class="member-user-name">UsuarioTeste</p>
+                        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Pontos, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Pontos, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Pontos, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                        <p class="information-member">11k</p>
+                    </div>
+                    <div class="member-item">
+                        <div>
+                            <img src="/Login & Sign-in Page/imgs/form/background-img.jpg"
+                                    class="member-img" />
+                            <p class="member-user-name">UsuarioTeste</p>
+                        </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
+                        <p class="information-member">10k</p>
+                    </div>
+                    <div class="member-item">
+                        <div>
+                            <img src="/Login & Sign-in Page/imgs/form/background-img.jpg"
+                                    class="member-img" />
+                            <p class="member-user-name">UsuarioTeste</p>
+                        </div>
+
+                        <p class="information-member">10k</p>
+                    </div>
+                    <div class="member-item">
+                        <div>
+                            <img src="/Login & Sign-in Page/imgs/form/background-img.jpg"
+                                    class="member-img" />
+                            <p class="member-user-name">UsuarioTeste</p>
+                        </div>
+
+                        <p class="information-member">7k</p>
+                    </div>
+                    <div class="member-item">
+                        <div>
+                            <img src="/Login & Sign-in Page/imgs/form/background-img.jpg"
+                                    class="member-img" />
+                            <p class="member-user-name">UsuarioTeste</p>
+                        </div>
+
+                        <p class="information-member">3k</p>
+                    </div>
+                    <div class="member-item">
+                        <div>
+                            <img src="/Login & Sign-in Page/imgs/form/background-img.jpg"
+                                    class="member-img" />
+                            <p class="member-user-name">UsuarioTeste</p>
+                        </div>
+
+                        <p class="information-member">2k</p>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+</main>
