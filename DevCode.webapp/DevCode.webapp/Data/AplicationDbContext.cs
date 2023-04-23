@@ -19,6 +19,7 @@ namespace DevCode.webapp.Data
         public DbSet<DevCode.webapp.Models.Usuario> Usuario { get; set; }
         public DbSet<DevCode.webapp.Models.Respostas> Respostas { get; set; }
         public DbSet<DevCode.webapp.Models.Perguntas> Pergunta { get; set; }
+      
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

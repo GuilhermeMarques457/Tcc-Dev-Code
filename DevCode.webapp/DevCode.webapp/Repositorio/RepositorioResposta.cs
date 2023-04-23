@@ -48,5 +48,35 @@ namespace DevCode.webapp.Repositorio
         {
             return contexto.Respostas.First(x => x.IDRespostas == id);
         }
+
+        public Respostas Find(int id)
+        {
+            return contexto.Respostas.Find(id);
+        }
+
+        public void DarLike(Respostas entidade)
+        {
+
+            var resposta = contexto.Respostas.First(x => x.IDRespostas == entidade.IDRespostas);
+            if (!Util.UtilClass.deuLike)
+            {
+                if (resposta.Likes == null)
+                {
+                    resposta.Likes = 1;
+                }
+                else
+                {
+                    resposta.Likes++;
+                }
+                Util.UtilClass.deuLike = true;
+            }
+            else
+            {
+                resposta.Likes--;
+                Util.UtilClass.deuLike = false;
+            }
+
+            contexto.SaveChanges();
+        }
     }
 }

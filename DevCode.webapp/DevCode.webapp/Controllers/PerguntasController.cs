@@ -2,6 +2,7 @@
 using DevCode.webapp.Models.Enum;
 using DevCode.webapp.Repositorio;
 using DevCode.webapp.Util;
+using Microsoft.Ajax.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace DevCode.webapp.Controllers
     {
         // GET: Perguntas
         RepositorioPergunta repositorio = new RepositorioPergunta();
+        RepositorioUsuario repositorioUsuario = new RepositorioUsuario();
 
         public ActionResult Index()
         {
@@ -22,8 +24,22 @@ namespace DevCode.webapp.Controllers
                 return RedirectToAction("Entrar", "Login");
             }
 
+            IList<Perguntas> perguntas = repositorio.Listar();
+         
+            foreach (Perguntas pergunta in perguntas)
+            {
+                pergunta.Usuario = repositorioUsuario.ObterPorId(pergunta.IDUsuarioPergunta);
+
+            }
+            
+
+
+            
+
             return View(repositorio.Listar());
-       
+
+            
+
         }
 
         public ActionResult Novo()

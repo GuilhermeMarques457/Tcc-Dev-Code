@@ -22,5 +22,6 @@ namespace DevCode.webapp.Models
         public int IDPergunta { get; set; }
         
         public DateTime DataResposta { get; set; }
+        public int? Likes { get; set; }
     }
 }

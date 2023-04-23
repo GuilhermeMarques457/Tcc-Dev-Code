@@ -13,7 +13,7 @@ namespace DevCode.webapp.Repositorio
     public class RepositorioPergunta : IRepositorio<Perguntas>
     {
         private readonly AplicationDbContext contexto;
-        bool deuLike = false;
+    
 
         public RepositorioPergunta()
         {
@@ -81,8 +81,8 @@ namespace DevCode.webapp.Repositorio
                 perguntas.Likes--;
                 Util.UtilClass.deuLike = false;
             }
-            
-            
+
+
             contexto.SaveChanges();
         }
 

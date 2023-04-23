@@ -46,7 +46,7 @@ namespace DevCode.webapp.Controllers
         {
             Session.Clear();
             FormsAuthentication.SignOut();
-            return RedirectToAction("Entrar", "Login");
+            return RedirectToAction("Index", "Home");
         }
     }
 }

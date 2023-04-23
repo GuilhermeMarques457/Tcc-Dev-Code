@@ -1,0 +1,27 @@
+﻿@model DevCode.webapp.Models.Perguntas
+
+@{
+    Layout = null;
+}
+
+<div class="question-box-answer">
+    <div class="answer-user-box">
+        <div class="answer-box-info">
+            <img src="~/Content/imgs/form/background-img.jpg"
+                 class="answer-user-photo" />
+            <p class="username-text">@Model.IDUsuarioPergunta</p>
+        </div>
+    </div>
+    <div class="question-title">
+        <h2 class="tertiary-heading">
+            @Model.Titulo
+        </h2>
+    </div>
+    <div class="question-text">
+        <p class="question-description">
+            @Model.Detalhes
+        </p>
+
+        <p class="expected-text">@Model.Esperado</p>
+    </div>
+</div>

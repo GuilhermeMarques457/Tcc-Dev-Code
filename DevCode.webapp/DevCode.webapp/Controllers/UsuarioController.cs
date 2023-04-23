@@ -30,7 +30,7 @@ namespace DevCode.webapp.Controllers
             {
                 usuario.Senha = MD5.GerarHashMd5(usuario.Senha);
                 repositorio.Salvar(usuario);
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Perguntas");
             }
             return View(usuario);
         }
@@ -51,7 +51,7 @@ namespace DevCode.webapp.Controllers
             if (ModelState.IsValid)
             {
                 repositorio.Alterar(usuario);
-               
+                return RedirectToAction("Index", "Perguntas");
 
             }
             return View(usuario);

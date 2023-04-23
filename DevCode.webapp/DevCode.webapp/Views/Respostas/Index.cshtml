@@ -21,7 +21,7 @@
                             <div class="answer-box-info">
                                 <img src="~/Content/imgs/form/background-img.jpg"
                                      class="answer-user-photo" />
-                                <p class="username-text">@Model.Pergunta.IDUsuarioPergunta</p>
+                                <p class="username-text">@ViewBag.Username</p>
                             </div>
                         </div>
                         <div class="question-title">
@@ -43,12 +43,13 @@
                     <div class="answers-container">
                         @foreach (var respostas in Model.Respostas)
                         {
+                            int userCount = 0;
                             <div class="anwser-box">
                                 <div class="answer-user-box">
                                     <div class="answer-box-info">
                                         <img src="~/Content/imgs/form/background-img.jpg"
                                              class="answer-user-photo" />
-                                        <p class="username-text">Username</p>
+                                        <p class="username-text">@respostas.Usuario.Username<p>
                                     </div>
                                     <span class="answer-time-released">@respostas.DataResposta</span>
                                 </div>
@@ -60,13 +61,10 @@
                                 </div>
                                 <div class="answer-card-footer">
                                     <div class="answer-info-box">
-                                        <div class="answer-info-content">
-                                            <i class="ph ph-thumbs-up answer-icon"></i>
-                                            <span class="answer-info answer-comments"> 2.3k</span>
-                                        </div>
-                                        <div class="answer-info-content">
-                                            <i class="ph ph-thumbs-down answer-icon"></i>
-                                            <span class="answer-info answerviews">2.3k</span>
+                                        <div class="question-info-content">
+                                            <i class="ph ph-thumbs-up question-icon like-icon"></i>
+                                            <button class="likeButton" data-post-id="@respostas.IDRespostas"></button>
+                                            <span class="question-info question-comments question-like likeCount"> @respostas.Likes</span>
                                         </div>
                                     </div>
                                     <div class="answer-info-box">
@@ -81,6 +79,7 @@
                                     </div>
                                 </div>
                             </div>
+                            userCount++;
                         }
                     </div>
                 </div>
@@ -168,3 +167,35 @@
         </div>
     </div>
 </main>
+
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $(document).on("click", ".likeButton", function () {
+                var postId = $(this).data("post-id");
+                var likeCountElement = $(this).siblings(".likeCount"); // Elemento HTML que exibe a contagem de likes
+                var likeIconElement = $(this).siblings(".like-icon"); // Elemento HTML do ícone de like
+
+                if (!$(this).hasClass("liked")) {
+                    likeIconElement.addClass("liked-icon")
+                    $(this).addClass("liked");
+                } else {
+                    likeIconElement.removeClass("liked-icon")
+                    $(this).removeClass("liked");
+                }
+
+                $.ajax({
+                    type: "POST",
+                    url: "/Respostas/Like",
+                    data: { id: postId },
+                    success: function (data) {
+                        likeCountElement.text(data.likes);
+                    }
+                });
+            });
+        });
+
+
+    </script>
+}

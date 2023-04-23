@@ -255,6 +255,11 @@ hr {
     border: 1px solid black;
 }
 
+.answer-content{
+    padding:2rem 0;
+    min-height: 15rem;
+}
+
 .description-text {
     padding: 1rem 1rem;
     height: 15rem;
@@ -323,6 +328,7 @@ hr {
 }
 
 .answer-card-footer {
+    position: relative;
     display: flex;
     justify-content: space-between;
 }

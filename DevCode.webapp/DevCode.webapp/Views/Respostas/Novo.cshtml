@@ -1,4 +1,6 @@
-﻿@model DevCode.webapp.Models.ResponderPeguntaVM
+﻿@using DevCode.webapp.Util;
+@using DevCode.webapp.Models;
+@model DevCode.webapp.Models.Respostas
 
 @{
     ViewBag.Title = "Novo";
@@ -16,27 +18,10 @@
                     <span class="tag-news py">Python</span>
                 </div>
                 <div class="answer-section">
-                    <div class="question-box-answer">
-                        <div class="answer-user-box">
-                            <div class="answer-box-info">
-                                <img src="~/Content/imgs/form/background-img.jpg"
-                                     class="answer-user-photo" />
-                                <p class="username-text">@Model.Pergunta.IDUsuarioPergunta</p>
-                            </div>
-                        </div>
-                        <div class="question-title">
-                            <h2 class="tertiary-heading">
-                                @Model.Pergunta.Titulo
-                            </h2>
-                        </div>
-                        <div class="question-text">
-                            <p class="question-description">
-                                @Model.Pergunta.Detalhes
-                            </p>
-
-                            <p class="expected-text">@Model.Pergunta.Esperado</p>
-                        </div>
-                    </div>
+                    @{
+                        Perguntas perguntaModel = ViewBag.PeguntaModel;
+                        @Html.Partial("_ViewPergunta", perguntaModel);
+                    }
 
                     @using (Html.BeginForm())
                     {
@@ -52,15 +37,18 @@
                             <div class="form-answer">
                                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                                 <div class="description-box">
-                                    @Html.LabelFor(model => model.Respostas.ExplicacaoResposta, htmlAttributes: new { @class = "input-label" })
-                                    @Html.TextAreaFor(model => model.Respostas.ExplicacaoResposta, 10, 65, htmlAttributes: new { @class = "description-text input-form" })
-                                    @Html.ValidationMessageFor(model => model.Respostas.ExplicacaoResposta, "", new { @class = "text-danger" })
+                                    @Html.LabelFor(model => model.ExplicacaoResposta, htmlAttributes: new { @class = "input-label" })
+                                    @Html.TextAreaFor(model => model.ExplicacaoResposta, 10, 65, htmlAttributes: new { @class = "description-text input-form" })
+                                    @Html.ValidationMessageFor(model => model.ExplicacaoResposta, "", new { @class = "text-danger" })
                                 </div>
                                 <div class="btn-form-box">
                                     <button class="btn-full btn-form">Publicar</button>
                                 </div>
                             </div>
                         </div>
+                        <input type="hidden" id="IDUsuarioResposta" name="IDUsuarioResposta" value="@Configuracao.Usuario.IDUsuario" />
+                        <input type="hidden" id="IDPergunta" name="IDPergunta" value="@ViewBag.IdPergunta" />
+
                     }
                 </div>
             </section>
@@ -142,7 +130,7 @@
                     </div>
                 </div>
 
-                <a href="#" class="btn-full btn-see-answer">Ver outras respostas</a>
+                <a href="/Respostas/Index/@ViewBag.IdPergunta" class="btn-full btn-see-answer">Ver outras respostas</a>
             </section>
         </div>
     </div>

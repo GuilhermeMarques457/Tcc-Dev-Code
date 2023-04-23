@@ -53,5 +53,10 @@ namespace DevCode.webapp.Repositorio
         {
             return contexto.Usuario.First(x => x.IDUsuario== id);
         }
+
+        public string ObterUsernamePorId(int id)
+        {
+            return contexto.Usuario.First(x => x.IDUsuario == id).Username;
+        }
     }
 }

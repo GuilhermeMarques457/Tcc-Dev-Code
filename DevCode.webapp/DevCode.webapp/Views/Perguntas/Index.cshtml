@@ -16,13 +16,12 @@
                 </div>
                 @foreach (var item in Model)
                 {
-
                     <div class="question-card-container">
                         <div class="question-user-box">
                             <div class="user-box-info">
                                 <img src="~/Content/imgs/form/background-img.jpg"
                                      class="question-user-photo" />
-                                <p class="username-text"> Username</p>
+                                <p class="username-text"> @item.Usuario.Username</p>
                             </div>
                             <span class="question-time-released">@item.DataEnvio</span>
                         </div>
@@ -45,7 +44,7 @@
                                     <button class="likeButton" data-post-id="@item.IDPergunta"></button>
                                     <span class="question-info question-comments question-like likeCount"> @item.Likes</span>
                                 </div>
-                               
+
                             </div>
                             <div class="question-info-box">
                                 <div class="question-info-content">
@@ -59,7 +58,7 @@
                             </div>
                         </div>
                     </div>
-
+                    
                 }
 
             </section>

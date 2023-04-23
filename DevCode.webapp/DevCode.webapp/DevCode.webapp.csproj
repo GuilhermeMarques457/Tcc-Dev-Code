@@ -158,6 +158,18 @@
     <Compile Include="Migrations\202304212138560_cria-banco.designer.cs">
       <DependentUpon>202304212138560_cria-banco.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202304221636037_add-like-to-answer.cs" />
+    <Compile Include="Migrations\202304221636037_add-like-to-answer.designer.cs">
+      <DependentUpon>202304221636037_add-like-to-answer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304231811207_add-likes-table.cs" />
+    <Compile Include="Migrations\202304231811207_add-likes-table.designer.cs">
+      <DependentUpon>202304231811207_add-likes-table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304231829112_delele-like-database.cs" />
+    <Compile Include="Migrations\202304231829112_delele-like-database.designer.cs">
+      <DependentUpon>202304231829112_delele-like-database.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Enum\Tags.cs" />
     <Compile Include="Models\ListarPerguntaRespostasVM.cs" />
@@ -240,6 +252,9 @@
     <Content Include="Views\Respostas\Index.cshtml" />
     <Content Include="Views\_ViewImports.cshtml" />
     <Content Include="Views\Respostas\Novo.cshtml" />
+    <Content Include="Views\Shared\_ViewPergunta.cshtml" />
+    <Content Include="Views\Shared\_LayoutHome.cshtml" />
+    <Content Include="Views\Home\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -261,6 +276,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202304212138560_cria-banco.resx">
       <DependentUpon>202304212138560_cria-banco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304221636037_add-like-to-answer.resx">
+      <DependentUpon>202304221636037_add-like-to-answer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304231811207_add-likes-table.resx">
+      <DependentUpon>202304231811207_add-likes-table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304231829112_delele-like-database.resx">
+      <DependentUpon>202304231829112_delele-like-database.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1064,3 +1064,6 @@ C:\Users\etds2022-08\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevC
 C:\Users\etds2022-08\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.somechanges.resources
 C:\Users\Microsoft\Documents\Tcc DevCode\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.criabanco.resources
 C:\Users\Microsoft\Documents\Tcc DevCode\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.csproj.GenerateResource.cache
+C:\Users\Microsoft\Documents\Tcc DevCode\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.addliketoanswer.resources
+C:\Users\Microsoft\Documents\Tcc DevCode\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.addlikestable.resources
+C:\Users\Microsoft\Documents\Tcc DevCode\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.delelelikedatabase.resources
