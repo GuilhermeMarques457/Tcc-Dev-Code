@@ -961,7 +961,6 @@ C:\Users\etds2022-08\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevC
 C:\Users\etds2022-08\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.pdb
 C:\Users\Microsoft\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.csproj.AssemblyReference.cache
 C:\Users\Microsoft\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.criaBanco.resources
-C:\Users\Microsoft\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.AddNoticia.resources
 C:\Users\Microsoft\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.csproj.GenerateResource.cache
 C:\Users\Microsoft\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.csproj.CoreCompileInputs.cache
 C:\Users\Microsoft\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.dll
@@ -1059,11 +1058,17 @@ C:\Users\Microsoft\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCod
 C:\Users\Microsoft\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\bin\pt-br\System.Web.Http.WebHost.resources.dll
 C:\Users\Microsoft\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.csproj.CopyComplete
 C:\Users\etds2022-08\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.csprojAssemblyReference.cache
-C:\Users\etds2022-08\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.CriarBanco.resources
 C:\Users\etds2022-08\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.csproj.GenerateResource.cache
-C:\Users\etds2022-08\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.somechanges.resources
 C:\Users\Microsoft\Documents\Tcc DevCode\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.criabanco.resources
 C:\Users\Microsoft\Documents\Tcc DevCode\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.csproj.GenerateResource.cache
 C:\Users\Microsoft\Documents\Tcc DevCode\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.addliketoanswer.resources
 C:\Users\Microsoft\Documents\Tcc DevCode\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.addlikestable.resources
 C:\Users\Microsoft\Documents\Tcc DevCode\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.delelelikedatabase.resources
+C:\Users\etds2022-08\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.criabanco.resources
+C:\Users\etds2022-08\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.addliketoanswer.resources
+C:\Users\etds2022-08\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.addlikestable.resources
+C:\Users\etds2022-08\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.delelelikedatabase.resources
+C:\Users\Microsoft\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.addliketoanswer.resources
+C:\Users\Microsoft\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.addlikestable.resources
+C:\Users\Microsoft\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.delelelikedatabase.resources
+C:\Users\Microsoft\Documents\Tcc DevCode\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.addimagefields.resources

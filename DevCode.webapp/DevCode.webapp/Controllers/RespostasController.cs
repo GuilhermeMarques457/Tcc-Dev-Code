@@ -27,12 +27,13 @@ namespace DevCode.webapp.Controllers
 
             ListarPerguntaRespostasVM perguntaRespostasVM = new ListarPerguntaRespostasVM();
 
-           
 
-            perguntaRespostasVM.Respostas = repositorioResposta.Listar();
+
+            perguntaRespostasVM.Respostas = repositorioResposta.ObterListaDePerguntasPorId(IdPergunta);
             perguntaRespostasVM.Pergunta = repositorioPergunta.ObterPorId(IdPergunta);
 
             ViewBag.Username = repositorioUsuario.ObterUsernamePorId(perguntaRespostasVM.Pergunta.IDUsuarioPergunta);
+            ViewBag.CaminhoImagemPerfil = repositorioUsuario.ObterFotoPerfilPorId(perguntaRespostasVM.Pergunta.IDUsuarioPergunta);
 
             IList<Respostas> respostas = repositorioResposta.Listar();
            
@@ -55,8 +56,12 @@ namespace DevCode.webapp.Controllers
             }
 
             ResponderPeguntaVM responderPeguntaVM = new ResponderPeguntaVM();
-           
+
             responderPeguntaVM.Pergunta = repositorioPergunta.ObterPorId(IdPergunta);
+
+            ViewBag.Username = repositorioUsuario.ObterUsernamePorId(responderPeguntaVM.Pergunta.IDUsuarioPergunta);
+            ViewBag.CaminhoImagemPerfil = repositorioUsuario.ObterFotoPerfilPorId(responderPeguntaVM.Pergunta.IDUsuarioPergunta);
+
             ViewBag.PeguntaModel = responderPeguntaVM.Pergunta;
             ViewBag.IdPergunta = responderPeguntaVM.Pergunta.IDPergunta;
 

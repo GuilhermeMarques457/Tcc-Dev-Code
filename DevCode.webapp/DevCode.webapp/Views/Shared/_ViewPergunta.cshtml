@@ -7,9 +7,9 @@
 <div class="question-box-answer">
     <div class="answer-user-box">
         <div class="answer-box-info">
-            <img src="~/Content/imgs/form/background-img.jpg"
+            <img src="@ViewBag.CaminhoImagemPerfil"
                  class="answer-user-photo" />
-            <p class="username-text">@Model.IDUsuarioPergunta</p>
+            <p class="username-text">@ViewBag.Username</p>
         </div>
     </div>
     <div class="question-title">
@@ -22,6 +22,10 @@
             @Model.Detalhes
         </p>
 
-        <p class="expected-text">@Model.Esperado</p>
+        <div class="expected-box">
+            <p>O que eu espero:</p>
+            <p class="expected-text">@Model.Esperado</p>
+        </div>
+ 
     </div>
 </div>

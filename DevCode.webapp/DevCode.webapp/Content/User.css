@@ -135,6 +135,7 @@
     max-width: 15rem;
 }
 
+
 .text-title-picture {
     font-size: 1.6rem;
     line-height: 0;
@@ -159,6 +160,7 @@
 }
 
 .change-box {
+    position: relative;
     border: 1px solid #8b93a6;
     padding: 0 2.2rem;
     border-radius: 5px;
@@ -173,20 +175,31 @@
 
 .icon-change {
     font-size: 3.2rem;
-    cursor: pointer;
     transition: 0.3s all;
 }
 
-    .icon-change:hover {
-        transform: scale(1.1);
-        cursor: pointer;
-        transform: 0.3s all;
-    }
+.input-profile:hover + .icon-change {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.input-banner:hover + .icon-change {
+    transform: scale(1.1);
+    cursor: pointer;
+}
 
 .send-text {
     font-size: 1.1rem;
     color: #8b93a6;
     text-align: center;
+}
+
+.send-text-banner {
+    margin-top: 2rem;
+}
+
+.send-text-profile {
+    margin-top: 3rem;
 }
 
 .highlight-text {
@@ -216,6 +229,7 @@
 }
 
 .change-banner-box-send {
+    position: relative;
     border: 1px solid #8b93a6;
     padding: 0 2.2rem;
     border-radius: 5px;
@@ -227,10 +241,33 @@
     width: 100%;
 }
 
+
+.send-box-profile {
+    position: absolute;
+    top: 1.5rem;
+    left: 8.5rem;
+}
+
+.send-box-banner {
+    position: absolute;
+    top: 0.5rem;
+    left: 11.5rem;
+}
+
+.input-select-img {
+    background-color: aqua;
+    z-index: 999;
+    display: block;
+    position: absolute;
+    width: 3.5rem;
+    height: 3.5rem;
+    opacity: 0;
+   
+}
+
 /**********************    
   *** Moders Question *** 
   ***********************/
-
 .moders-section {
     background-color: #fff;
     border-radius: 10px;

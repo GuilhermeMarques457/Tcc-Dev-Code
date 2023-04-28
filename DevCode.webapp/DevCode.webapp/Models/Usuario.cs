@@ -39,8 +39,12 @@ namespace DevCode.webapp.Models
         [DisplayName("Profissão")]
         public string Profissao { get; set; }
 
+        public string CaminhoImagemPerfil { get; set; }
+        public string CaminhoImagemBanner { get; set; }
+
         //Pontos?
         public int ?Pontos { get; set; }
+       
        
                 
 

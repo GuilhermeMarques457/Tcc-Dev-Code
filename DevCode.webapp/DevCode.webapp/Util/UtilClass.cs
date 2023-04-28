@@ -8,5 +8,6 @@ namespace DevCode.webapp.Util
     public class UtilClass
     {
         public static bool deuLike { get; set; } = false;
+
     }
 }

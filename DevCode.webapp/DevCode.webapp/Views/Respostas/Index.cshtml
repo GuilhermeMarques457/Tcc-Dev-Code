@@ -19,7 +19,7 @@
                     <div class="question-box-answer">
                         <div class="answer-user-box">
                             <div class="answer-box-info">
-                                <img src="~/Content/imgs/form/background-img.jpg"
+                                <img src="@ViewBag.CaminhoImagemPerfil"
                                      class="answer-user-photo" />
                                 <p class="username-text">@ViewBag.Username</p>
                             </div>
@@ -29,12 +29,16 @@
                                 @Model.Pergunta.Titulo
                             </h2>
                         </div>
-                        <div class="question-text">
+                        <div class=".question-text-answer">
                             <p class="question-description">
                                 @Model.Pergunta.Detalhes
                             </p>
 
-                            <p class="expected-text">@Model.Pergunta.Esperado</p>
+                            <div class="expected-box">
+                                <p>O que eu espero:</p>
+                                <p class="expected-text">@Model.Pergunta.Esperado</p>
+                            </div>
+                            
                         </div>
                     </div>
                     <h2 class="secondary-heading heading-answers">
@@ -47,7 +51,7 @@
                             <div class="anwser-box">
                                 <div class="answer-user-box">
                                     <div class="answer-box-info">
-                                        <img src="~/Content/imgs/form/background-img.jpg"
+                                        <img src="@respostas.Usuario.CaminhoImagemPerfil"
                                              class="answer-user-photo" />
                                         <p class="username-text">@respostas.Usuario.Username<p>
                                     </div>

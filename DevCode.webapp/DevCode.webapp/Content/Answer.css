@@ -192,14 +192,13 @@ hr {
     padding: 2.4rem;
     border-radius: 10px;
     background-color: #fff;
-    min-height: 10rem;
 }
 
 .question-title h2 {
     font-size: 2.6rem !important;
 }
 
-.question-text {
+.question-text-answer {
     display: flex;
     flex-direction: column;
     gap: 2.4rem;
@@ -313,6 +312,10 @@ hr {
     border-radius: 50%;
 }
 
+.expected-text{
+    margin-left: 3.4rem;
+}
+
 .username-text {
     color: #3d4465;
     font-size: 1.3rem;
@@ -347,6 +350,14 @@ hr {
 .answer-icon {
     font-size: 1.8rem;
     cursor: pointer;
+}
+
+.expected-box {
+    margin-top: 54px;
+}
+
+.expected-box>:nth-child(1) {
+    font-size: 20px;
 }
 
 .answer-info {

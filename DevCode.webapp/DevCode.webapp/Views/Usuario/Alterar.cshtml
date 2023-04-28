@@ -1,4 +1,5 @@
 ﻿@model DevCode.webapp.Models.Usuario
+@using DevCode.webapp.Util
 
 @{
     ViewBag.Title = "Alterar";
@@ -12,19 +13,20 @@
             <section class="section-user-information">
                 <div class="user-header">
                     <div class="banner-box">
-                        <img src="~/Content/imgs/form/background-img.jpg"
-                                class="banner-img"
-                                alt="banner-img" />
+                        <img src="@Model.CaminhoImagemBanner"
+                             class="banner-img"
+                             alt="banner-img" />
                     </div>
-                    <img src="~/Content/imgs/form/background-img.jpg"
-                            class="profile-img-user"
-                            alt="profile-img-user" />
+                    <img src="@Model.CaminhoImagemPerfil"
+                         class="profile-img-user"
+                         alt="profile-img-user" />
                     <div class="user-header-info">
                         <p class="user-name">@Model.Username</p>
                         <p class="user-job">@Model.Profissao</p>
                     </div>
                 </div>
-                <form method="post">
+                @using (Html.BeginForm("Alterar", "Usuario", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
                     @Html.AntiForgeryToken()
                     <div class="user-information-content">
                         <div class="info-header">
@@ -68,15 +70,18 @@
                             </div>
                             <div class="change-picture-box">
                                 <div class="img-box">
-                                    <img src="~/Content/imgs/form/background-img.jpg"
+                                    <img src="@Model.CaminhoImagemPerfil"
                                          class="profile-change-img"
                                          alt="profile-img-user" />
                                 </div>
                                 <div class="change-box">
-                                    <i class="ph ph-cloud-arrow-up icon-change"></i>
-                                    <p class="send-text">
+                                    <div class="send-box-profile">
+                                        <input type="file" name="profile" class="input-profile-select input-select-img input-profile" />
+                                        <i class="ph ph-cloud-arrow-up icon-change"></i>
+                                    </div>
+                                    <p class="send-text send-text-profile">
                                         <span class="highlight-text">Clique para mandar </span>
-                                        ou jogue a imagem aqui SVG, PNG, JPG (max. 800x400px)
+                                        SVG, PNG, JPG (max. 800x400px)
                                     </p>
                                 </div>
                             </div>
@@ -91,15 +96,20 @@
                             <div class="change-banner-box">
                                 <div class="change-banner-box">
                                     <div class="change-img-container">
-                                        <img src="~/Content/imgs/form/background-img.jpg"
+                                        
+                                        <img src="@Model.CaminhoImagemBanner"
                                              class="banner-change-img"
                                              alt="profile-img-user" />
                                     </div>
                                     <div class="change-banner-box-send">
-                                        <i class="ph ph-cloud-arrow-up icon-change"></i>
-                                        <p class="send-text">
+                                        <div class="send-box-banner">
+                                            <input type="file" name="banner" class="input-banner-select input-select-img input-banner" />
+                                            <i class="ph ph-cloud-arrow-up icon-change"></i>
+                                        </div>
+                                        
+                                        <p class="send-text-banner send-text">
                                             <span class="highlight-text">Clique para mandar </span>
-                                            ou jogue a imagem aqui SVG, PNG, JPG (max. 800x400px)
+                                            SVG, PNG, JPG (max. 800x400px)
                                         </p>
                                     </div>
                                 </div>
@@ -126,8 +136,8 @@
                         </div>
 
                     </div>
-                </form>
-</section>
+                 }
+            </section>
             <section class="section-moderadores">
                 <div class="moders-section">
                     <h3 class="tertiary-heading">Membros Online</h3>
@@ -209,3 +219,35 @@
         </div>
     </div>
 </main>
+
+<script>
+    $(document).ready(function () {
+        // Seleciona o campo de seleção de arquivo
+        var fileInputBanner = $(".input-banner-select");
+
+        // Adiciona um evento de change ao campo de seleção de arquivo
+        fileInputBanner.change(function () {
+            // Obtém a imagem selecionada pelo usuário
+            var file = fileInputBanner[0].files[0];
+
+            // Cria um objeto URL a partir do arquivo selecionado
+            var imageUrl = URL.createObjectURL(file);
+
+            // Atualiza o src da imagem de perfil com a URL da imagem selecionada
+            $('.banner-change-img').attr('src', imageUrl);
+        });
+
+        var fileInputProfile = $(".input-profile-select");
+
+        fileInputProfile.change(function () {
+            var file = fileInputProfile[0].files[0];
+
+            var imageUrl = URL.createObjectURL(file);
+
+            $('.profile-change-img').attr('src', imageUrl);
+        });
+
+        
+    });
+</script>
+

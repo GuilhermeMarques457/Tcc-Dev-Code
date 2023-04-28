@@ -28,6 +28,9 @@ namespace DevCode.webapp.Repositorio
             usuario.Telefone = entidade.Telefone;
             usuario.Email = entidade.Email;
             usuario.Profissao = entidade.Profissao;
+            usuario.CaminhoImagemPerfil = entidade.CaminhoImagemPerfil;
+            usuario.CaminhoImagemBanner = entidade.CaminhoImagemBanner;
+
             contexto.SaveChanges();
         }
 
@@ -58,5 +61,20 @@ namespace DevCode.webapp.Repositorio
         {
             return contexto.Usuario.First(x => x.IDUsuario == id).Username;
         }
+
+        public string ObterFotoPerfilPorId(int id)
+        {
+            return contexto.Usuario.First(x => x.IDUsuario == id).CaminhoImagemPerfil;
+        }
+
+        //public void AlterarFotoDePerfil(int userId, string profileImagePath)
+        //{
+        //    Usuario user = contexto.Usuario.Find(userId);
+        //    if (user != null)
+        //    {
+        //        user.CaminhoImagemPerfil = profileImagePath;
+        //        contexto.SaveChanges();
+        //    }
+        //}
     }
 }

@@ -170,6 +170,10 @@
     <Compile Include="Migrations\202304231829112_delele-like-database.designer.cs">
       <DependentUpon>202304231829112_delele-like-database.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202304262008145_add-image-fields.cs" />
+    <Compile Include="Migrations\202304262008145_add-image-fields.designer.cs">
+      <DependentUpon>202304262008145_add-image-fields.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Enum\Tags.cs" />
     <Compile Include="Models\ListarPerguntaRespostasVM.cs" />
@@ -259,6 +263,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\Enum\" />
+    <Folder Include="Content\imgs\ProfileImgs\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -285,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202304231829112_delele-like-database.resx">
       <DependentUpon>202304231829112_delele-like-database.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304262008145_add-image-fields.resx">
+      <DependentUpon>202304262008145_add-image-fields.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

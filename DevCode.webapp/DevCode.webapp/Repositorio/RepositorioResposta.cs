@@ -49,6 +49,11 @@ namespace DevCode.webapp.Repositorio
             return contexto.Respostas.First(x => x.IDRespostas == id);
         }
 
+        public IList<Respostas> ObterListaDePerguntasPorId(int id)
+        {
+            return contexto.Respostas.Where(x => x.IDPergunta == id).ToList();
+        }
+
         public Respostas Find(int id)
         {
             return contexto.Respostas.Find(id);
