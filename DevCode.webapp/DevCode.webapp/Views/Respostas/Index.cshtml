@@ -2,19 +2,18 @@
 
 @{
     ViewBag.Title = "Index";
+    ViewBag.Css = "Answer";
 }
 
 <main class="main-container">
     <div class="container">
         <div class="layout-box">
-            @Html.Partial("_ViewUsuario")
+            <section>
+                @Html.Partial("_ViewUsuario")
+                <a href="/Perguntas/Index" class="btn-outline btn-user-page mg-tp-md">Voltar</a>
+            </section>
             <section class="section-answer">
-                <div class="tags-card-news-box">
-                    <span class="tag-news js">JavaScript</span>
-                    <span class="tag-news c">C#</span>
-                    <span class="tag-news php">PHP</span>
-                    <span class="tag-news py">Python</span>
-                </div>
+               
                 <div class="answer-section">
                     <div class="question-box-answer">
                         <div class="answer-user-box">
@@ -22,6 +21,14 @@
                                 <img src="@ViewBag.CaminhoImagemPerfil"
                                      class="answer-user-photo" />
                                 <p class="username-text">@ViewBag.Username</p>
+                            </div>
+                            <div>
+                                <span class="tag-news @Model.Pergunta.TagPrincipal">@Model.Pergunta.TagPrincipal</span>
+                                @if (@Model.Pergunta.TagSecundaria != null)
+                                {
+                                    <span class="tag-news @Model.Pergunta.TagSecundaria">@Model.Pergunta.TagSecundaria</span>
+                                }
+                                <span class="question-time-released mg-lf-sm">@Model.Pergunta.DataEnvio.ToShortDateString()</span>
                             </div>
                         </div>
                         <div class="question-title">
@@ -36,9 +43,9 @@
 
                             <div class="expected-box">
                                 <p>O que eu espero:</p>
-                                <p class="expected-text">@Model.Pergunta.Esperado</p>
+                                <p class="expected-text mg-tp-sm">@Model.Pergunta.Esperado</p>
                             </div>
-                            
+
                         </div>
                     </div>
                     <h2 class="secondary-heading heading-answers">
@@ -47,7 +54,7 @@
                     <div class="answers-container">
                         @foreach (var respostas in Model.Respostas)
                         {
-                            int userCount = 0;
+
                             <div class="anwser-box">
                                 <div class="answer-user-box">
                                     <div class="answer-box-info">
@@ -83,7 +90,7 @@
                                     </div>
                                 </div>
                             </div>
-                            userCount++;
+
                         }
                     </div>
                 </div>

@@ -145,6 +145,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\NoticiaController.cs" />
     <Compile Include="Areas\Admin\Models\Noticia.cs" />
+    <Compile Include="Controllers\NoticiaController.cs" />
     <Compile Include="Controllers\RespostasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -173,6 +174,26 @@
     <Compile Include="Migrations\202304262008145_add-image-fields.cs" />
     <Compile Include="Migrations\202304262008145_add-image-fields.designer.cs">
       <DependentUpon>202304262008145_add-image-fields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304282238418_update-noticia-table.cs" />
+    <Compile Include="Migrations\202304282238418_update-noticia-table.designer.cs">
+      <DependentUpon>202304282238418_update-noticia-table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304291633262_add-tags-fields.cs" />
+    <Compile Include="Migrations\202304291633262_add-tags-fields.designer.cs">
+      <DependentUpon>202304291633262_add-tags-fields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304301451524_add-tags-fields-and-admin-field.cs" />
+    <Compile Include="Migrations\202304301451524_add-tags-fields-and-admin-field.designer.cs">
+      <DependentUpon>202304301451524_add-tags-fields-and-admin-field.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305011556194_add-views-and-comments-fields.cs" />
+    <Compile Include="Migrations\202305011556194_add-views-and-comments-fields.designer.cs">
+      <DependentUpon>202305011556194_add-views-and-comments-fields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305011656514_add-confirm-password-field.cs" />
+    <Compile Include="Migrations\202305011656514_add-confirm-password-field.designer.cs">
+      <DependentUpon>202305011656514_add-confirm-password-field.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Enum\Tags.cs" />
@@ -205,11 +226,14 @@
     <Content Include="Content\imgs\form\google-logo.png" />
     <Content Include="Content\imgs\form\microsoft-logo.png" />
     <Content Include="Content\imgs\hero\notebook.png" />
+    <Content Include="Content\News.css" />
     <Content Include="Content\imgs\noticia\noticia1.jpg" />
     <Content Include="Content\imgs\noticia\noticia2.jpg" />
     <Content Include="Content\imgs\noticia\noticia3.jpg" />
     <Content Include="Content\imgs\noticia\noticia4.jpg" />
     <Content Include="Content\imgs\noticia\noticia5.jpg" />
+    <Content Include="Content\imgs\ProfileImgs\foto-padrao-banner.png" />
+    <Content Include="Content\imgs\ProfileImgs\foto-padrao-perfil.png" />
     <Content Include="Content\Inicial.css" />
     <Content Include="Content\Question.css" />
     <Content Include="Content\User.css" />
@@ -258,12 +282,11 @@
     <Content Include="Views\Respostas\Novo.cshtml" />
     <Content Include="Views\Shared\_ViewPergunta.cshtml" />
     <Content Include="Views\Shared\_LayoutHome.cshtml" />
-    <Content Include="Views\Home\_ViewStart.cshtml" />
+    <Content Include="Views\Noticia\ListarNoticias.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\Enum\" />
-    <Folder Include="Content\imgs\ProfileImgs\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -293,6 +316,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202304262008145_add-image-fields.resx">
       <DependentUpon>202304262008145_add-image-fields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304282238418_update-noticia-table.resx">
+      <DependentUpon>202304282238418_update-noticia-table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304291633262_add-tags-fields.resx">
+      <DependentUpon>202304291633262_add-tags-fields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304301451524_add-tags-fields-and-admin-field.resx">
+      <DependentUpon>202304301451524_add-tags-fields-and-admin-field.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305011556194_add-views-and-comments-fields.resx">
+      <DependentUpon>202305011556194_add-views-and-comments-fields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305011656514_add-confirm-password-field.resx">
+      <DependentUpon>202305011656514_add-confirm-password-field.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

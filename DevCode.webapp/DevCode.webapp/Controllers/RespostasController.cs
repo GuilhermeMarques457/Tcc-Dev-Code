@@ -19,19 +19,18 @@ namespace DevCode.webapp.Controllers
         [Route("Respostas/Index/{IdPergunta}")]
         public ActionResult Index(int IdPergunta)
         {
-
             if (!Configuracao.VerificarUsuarioLogado())
             {
                 return RedirectToAction("Entrar", "Login");
             }
 
-            ListarPerguntaRespostasVM perguntaRespostasVM = new ListarPerguntaRespostasVM();
+            ListarPerguntaRespostasVM perguntaRespostasVM = new ListarPerguntaRespostasVM() 
+            {
+                Respostas = repositorioResposta.ObterListaDePerguntasPorId(IdPergunta),
+                Pergunta = repositorioPergunta.ObterPorId(IdPergunta)
+            };
 
-
-
-            perguntaRespostasVM.Respostas = repositorioResposta.ObterListaDePerguntasPorId(IdPergunta);
-            perguntaRespostasVM.Pergunta = repositorioPergunta.ObterPorId(IdPergunta);
-
+            
             ViewBag.Username = repositorioUsuario.ObterUsernamePorId(perguntaRespostasVM.Pergunta.IDUsuarioPergunta);
             ViewBag.CaminhoImagemPerfil = repositorioUsuario.ObterFotoPerfilPorId(perguntaRespostasVM.Pergunta.IDUsuarioPergunta);
 
@@ -41,6 +40,8 @@ namespace DevCode.webapp.Controllers
             {
                 resposta.Usuario = repositorioUsuario.ObterPorId(resposta.IDUsuarioResposta);
             }
+
+            repositorioPergunta.Vizualizar(perguntaRespostasVM.Pergunta);
 
             return View(perguntaRespostasVM);
 
@@ -76,9 +77,15 @@ namespace DevCode.webapp.Controllers
             
             if (ModelState.IsValid)
             {
+                Perguntas pergunta = repositorioPergunta.ObterPorId(resposta.IDPergunta);
+                repositorioPergunta.UpdateCometarios(pergunta);
+
                 resposta.DataResposta = DateTime.Now;
                 repositorioResposta.Salvar(resposta);
-                return RedirectToAction("Index", "Perguntas");
+
+                
+
+                return RedirectToAction("Index", "Respostas", resposta.IDPergunta);
             }
             
             return View(resposta);

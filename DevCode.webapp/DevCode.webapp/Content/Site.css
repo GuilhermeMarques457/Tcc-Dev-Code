@@ -373,21 +373,7 @@
     font-weight: 700;
 }
 
-.js {
-    background-color: #b19f1b;
-}
 
-.py {
-    background-image: linear-gradient(290deg, #f7c400 50%, #00264d 50%);
-}
-
-.php {
-    background-color: #7377ad;
-}
-
-.c {
-    background-color: #7e21d5;
-}
 
 /**********************  
 *** Login-section *** 
@@ -623,7 +609,7 @@
 .question-info-content {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.2rem;
 }
 
 .question-icon {
@@ -640,7 +626,6 @@
 ***********************/
 
 .moders-section {
-    height: 30rem;
     background-color: #fff;
     border-radius: 20px;
     padding: 2rem 2rem;

@@ -32,8 +32,12 @@ namespace DevCode.webapp.Models
         [Required(ErrorMessage = "Campo {0} é obrigatório")]
         public string Senha { get; set; }
 
-        [DisplayName("Telefone")]
+        [Compare("Senha")]
+        [DisplayName("Confirmar Senha")]
         [Required(ErrorMessage = "Campo {0} é obrigatório")]
+        public string ConfirmarSenha { get; set; }
+
+        [DisplayName("Telefone")]
         public string Telefone { get; set; }
 
         [DisplayName("Profissão")]
@@ -41,9 +45,10 @@ namespace DevCode.webapp.Models
 
         public string CaminhoImagemPerfil { get; set; }
         public string CaminhoImagemBanner { get; set; }
+        public bool Admin { get; set; }
 
         //Pontos?
-        public int ?Pontos { get; set; }
+        public int? Pontos { get; set; }
        
        
                 

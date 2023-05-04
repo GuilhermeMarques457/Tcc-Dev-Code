@@ -15,17 +15,13 @@ namespace DevCode.webapp
 
             routes.MapMvcAttributeRoutes();
 
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Noticia", action = "ListarNoticias", id = UrlParameter.Optional },
+                namespaces: new[] { "DevCode.webapp.Controllers" }
             );
-
-            //routes.MapRoute(
-            //    name: "RotaDePergunta",
-            //    url: "Respostas/Index/{IdPergunta}",
-            //    defaults: new { controller = "Respostas", action = "Index", IdPergunta = UrlParameter.Optional }
-            //);
         }
     }
 }

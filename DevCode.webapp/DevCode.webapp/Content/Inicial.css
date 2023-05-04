@@ -29,6 +29,8 @@ using System.Threading.Tasks;
 }
 
 .user-backgound-img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     height: 200%;
     width: 100%;
 }

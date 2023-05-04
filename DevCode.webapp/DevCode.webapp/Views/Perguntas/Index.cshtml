@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Index";
+    ViewBag.Css = "Question";
 }
 
 
@@ -9,9 +10,11 @@
     <div class="container">
         <div class="layout-box">
             @Html.Partial("_ViewUsuario")
+            
             <section class="section-question">
                 <div class="useful-buttons">
                     <a href="/Perguntas/Novo" class="btn-full btn-question"><i class="ph ph-question button-icon"></i>Nova Pergunta</a>
+
                     <a href="#" class="btn-full btn-question"><i class="ph ph-magnifying-glass button-icon"></i>Buscar</a>
                 </div>
                 @foreach (var item in Model)
@@ -23,10 +26,18 @@
                                      class="question-user-photo" />
                                 <p class="username-text"> @item.Usuario.Username</p>
                             </div>
-                            <span class="question-time-released">@item.DataEnvio</span>
+                            <div>
+                                <span class="tag-news @item.TagPrincipal">@item.TagPrincipal</span>
+                                @if (item.TagSecundaria != null)
+                                {
+                                    <span class="tag-news @item.TagSecundaria">@item.TagSecundaria</span>
+                                }
+                                <span class="question-time-released mg-lf-sm">@item.DataEnvio.ToShortDateString()</span>
+                            </div>
+
                         </div>
                         <div class="question-content">
-                            <a href="Respostas/Index/@item.IDPergunta">
+                            <a href="/Respostas/Index/@item.IDPergunta">
                                 <h3 class="tertiary-heading">
                                     @item.Titulo
                                 </h3>
@@ -49,16 +60,16 @@
                             <div class="question-info-box">
                                 <div class="question-info-content">
                                     <i class="ph-chat-dots question-icon"></i>
-                                    <span class="question-info question-comments"> 2.3k</span>
+                                    <span class="question-info question-comments">@item.Comments</span>
                                 </div>
                                 <div class="question-info-content">
                                     <i class="ph-eye question-icon"></i>
-                                    <span class="question-info question-views">2.3k</span>
+                                    <span class="question-info question-views">@item.Views</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                 }
 
             </section>

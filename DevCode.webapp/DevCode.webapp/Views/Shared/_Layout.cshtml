@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using DevCode.webapp.Util;
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -7,6 +9,7 @@
     <title>Dev Code - Duvidas respondidas por vocês</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/" + ViewBag.Css + "/css")
     @Scripts.Render("~/bundles/modernizr")
 
     <script src="https://unpkg.com/phosphor-icons"></script>
@@ -18,12 +21,22 @@
                 <div class="logo">DevCode</div>
                 <nav>
                     <ul class="nav-list">
-                        <li><a href="#" class="nav-item">Problemas</a></li>
-                        <li><a href="#" class="nav-item">Tags</a></li>
-                        <li><a href="#" class="nav-item">Social</a></li>
-                        <li><a href="#" class="nav-item">Sobre</a></li>
-                        <li><a href="#" class="nav-item">Contatos</a></li>     
-                        <li><a href="/Login/Sair" class="btn-full btn-logout btn-login">Sair <i class="ph ph-sign-out"></i></a></li>
+                        @if (HttpContext.Current.User.Identity.IsAuthenticated)
+                        {
+                            <li><a href="/Perguntas/Index" class="nav-item">Problemas</a></li>
+                            <li><a href="/Perguntas/Novo" class="nav-item">Nova Pergunta</a></li>
+                            <li><a href="/Noticia/ListarNoticias" class="nav-item">Ver Noticas</a></li>
+                            <li><a href="/Usuario/Alterar/@Configuracao.Usuario.IDUsuario" class="nav-item">Ver Perfil</a></li>
+                            <li><a href="/Login/Sair" class="btn-full btn-logout btn-login">Sair <i class="ph ph-sign-out"></i></a></li>
+                        }
+                        else
+                        {
+                            <li><a href="/Login/Entrar" class="nav-item">Problemas</a></li>
+                            <li><a href="/Login/Entrar" class="nav-item">Nova Pergunta</a></li>
+                            <li><a href="/Login/Entrar" class="nav-item">Ver Noticas</a></li>
+                            <li><a href="/Login/Entrar" class="nav-item">Ver Perfil</a></li>
+                            <li><button class="btn-full btn-login">Entrar &rarr;</button></li>
+                        }
                     </ul>
                 </nav>
             </div>
@@ -31,9 +44,9 @@
     </header>
     @RenderBody()
 
-    
-       
-   
+
+
+
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

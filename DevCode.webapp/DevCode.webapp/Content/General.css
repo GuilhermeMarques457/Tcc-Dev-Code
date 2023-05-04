@@ -47,7 +47,8 @@ p, input, ul, li, label {
 }
 
 .main-container {
-    background-color: #f0f0f0;
+    padding: 2.4rem 0;
+    background-image: linear-gradient(to right bottom, #ced5f8, #f3c8f5);
     min-height: 100vh;
 }
 
@@ -249,3 +250,77 @@ button:focus-visible {
 .display-none{
     display: none;
 }
+
+.text-danger{
+    font-size: 1.2rem !important;
+}
+
+/* Margens */
+
+.mg-lf-sm{
+    margin-left: 1.2rem;
+}
+
+.mg-lf-md {
+    margin-left: 2rem;
+}
+
+.mg-lf-bg {
+    margin-left: 3.2rem;
+}
+
+.mg-rg-sm {
+    margin-right: 1.2rem;
+}
+
+.mg-rg-md {
+    margin-right: 2rem;
+}
+
+.mg-rg-bg {
+    margin-right: 3.2rem;
+}
+
+.mg-tp-sm {
+    margin-top: 1.2rem;
+}
+
+.mg-tp-md {
+    margin-top: 2rem;
+}
+
+.mg-tp-bg {
+    margin-top: 3.2rem;
+}
+
+.mg-bt-sm {
+    margin-bottom: 1.2rem;
+}
+
+.mg-bt-md {
+    margin-bottom: 2rem;
+}
+
+.mg-bt-bg {
+    margin-bottom: 3.2rem;
+}
+
+
+/* Tags */
+
+.JavaScript {
+    background-color: #b19f1b;
+}
+
+.Python {
+    background-image: linear-gradient(290deg, #f7c400 50%, #00264d 50%);
+}
+
+.PHP {
+    background-color: #7377ad;
+}
+
+.CSharp {
+    background-color: #7e21d5;
+}
+

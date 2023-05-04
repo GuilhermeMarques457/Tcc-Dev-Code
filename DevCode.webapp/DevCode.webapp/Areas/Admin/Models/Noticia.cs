@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using DevCode.webapp.Models;
 using DevCode.webapp.Models.Enum;
 
 namespace DevCode.webapp.Areas.Admin.Models
@@ -12,9 +13,15 @@ namespace DevCode.webapp.Areas.Admin.Models
     {
         [Key]
         public int IDNoticia { get; set; }
+
+        [ForeignKey("IDUsuarioNoticia")]
+        public Usuario Usuario { get; set; }
+        public int IDUsuarioNoticia { get; set; }
         public string Titulo { get; set; }
         public string Detalhes { get; set; }
-        public IList<Tags> Tags { get; set; }
-        public DateTime DataEnvio { get; set; }      
+        public Tags TagPrincipal { get; set; }
+        public Tags? TagSecundaria { get; set; }
+        public DateTime DataEnvio { get; set; }
+        public int? Likes { get; set; }
     }
 }

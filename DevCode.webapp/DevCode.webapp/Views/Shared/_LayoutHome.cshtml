@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dev Code - Duvidas respondidas por vocês</title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/" + ViewBag.Css + "/css")
     @Scripts.Render("~/bundles/modernizr")
 
     <script src="https://unpkg.com/phosphor-icons"></script>
@@ -17,12 +18,7 @@
                 <div class="logo">DevCode</div>
                 <nav>
                     <ul class="nav-list">
-                        <li><a href="#" class="nav-item">Problemas</a></li>
-                        <li><a href="#" class="nav-item">Tags</a></li>
-                        <li><a href="#" class="nav-item">Social</a></li>
-                        <li><a href="#" class="nav-item">Sobre</a></li>
-                        <li><a href="#" class="nav-item">Contatos</a></li>
-                        <li><button class="btn-full btn-login">Entrar &rarr;</button></li>
+                        
                         
                     </ul>
                 </nav>

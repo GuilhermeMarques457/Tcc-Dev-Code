@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "CadastrarUsuario";
+    ViewBag.Css = "Form";
 }
 
 <main class="main-container-form">
@@ -23,7 +24,7 @@
                 <h3 class="form-heading">Criar uma conta</h3>
                 <div class="form-content">
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    <div class="form-double-box">
+                    <div class="form-double-box form-box">
                         <div class="form-input-label-box">
                             @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "label-form" })
                             @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "input-form-sign" } })
@@ -34,12 +35,12 @@
                             @Html.LabelFor(model => model.Sobrenome, htmlAttributes: new { @class = "label-form" })
                             @Html.EditorFor(model => model.Sobrenome, new { htmlAttributes = new { @class = "input-form-sign" } })
                             @Html.ValidationMessageFor(model => model.Sobrenome, "", new { @class = "text-danger" })
-                            <i class="ph-user form-icon"></i>
+                            <i class="ph ph-identification-card form-icon"></i>
                         </div>
                     </div>
 
 
-                    <div class="form-input-label-box">
+                    <div class="form-input-label-box form-box">
                         @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "label-form" })
 
                         @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "input-form-sign" } })
@@ -47,7 +48,7 @@
                         <i class="ph-at form-icon"></i>
                     </div>
 
-                    <div class="form-input-label-box">
+                    <div class="form-input-label-box form-box">
                         @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "label-form" })
 
                         @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "input-form-sign" } })
@@ -55,24 +56,20 @@
                         <i class="ph-envelope form-icon"></i>
                     </div>
 
-                    <div class="form-input-label-box">
-                        @Html.LabelFor(model => model.Senha, htmlAttributes: new { @class = "label-form" })
-
-                        @Html.PasswordFor(model => model.Senha, new { @class = "input-form-sign" })
-                        @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
-                        <i class="ph-at form-icon"></i>
+                    <div class="form-double-box">
+                        <div class="form-input-label-box form-box">
+                            @Html.LabelFor(model => model.Senha, htmlAttributes: new { @class = "label-form" })
+                            @Html.PasswordFor(model => model.Senha, new { @class = "input-form-sign" })
+                            @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+                            <i class="ph ph-key form-icon"></i>
+                        </div>
+                        <div class="form-input-label-box form-box">
+                            @Html.LabelFor(model => model.ConfirmarSenha, htmlAttributes: new { @class = "label-form" })
+                            @Html.PasswordFor(model => model.ConfirmarSenha, new { @class = "input-form-sign" })
+                            @Html.ValidationMessageFor(model => model.ConfirmarSenha, "", new { @class = "text-danger" })
+                            <i class="ph ph-lock-key form-icon"></i>
+                        </div>
                     </div>
-
-                    <div class="form-input-label-box">
-                        @Html.LabelFor(model => model.Telefone, htmlAttributes: new { @class = "label-form" })
-
-                        @Html.EditorFor(model => model.Telefone, new { htmlAttributes = new { @class = "input-form-sign" } })
-                        @Html.ValidationMessageFor(model => model.Telefone, "", new { @class = "text-danger" })
-                        <i class="ph-device-mobile form-icon"></i>
-               
-                    </div>
-
-
 
                     <button class="btn-full btn-form">Criar Conta</button>
 
@@ -84,18 +81,18 @@
                     <div class="enter-with-box">
                         <div class="logo-box-form">
                             <img src="~/Content/imgs/form/google-logo.png"
-                                 alt="logo da google"
-                                 class="form-logo-img" />
+                                    alt="logo da google"
+                                    class="form-logo-img" />
                         </div>
                         <div class="logo-box-form">
                             <img src="~/Content/imgs/form/facebook-logo.png"
-                                 alt="logo da facebook"
-                                 class="form-logo-img" />
+                                    alt="logo da facebook"
+                                    class="form-logo-img" />
                         </div>
                         <div class="logo-box-form">
                             <img src="~/Content/imgs/form/microsoft-logo.png"
-                                 alt="logo da microsoft"
-                                 class="form-logo-img" />
+                                    alt="logo da microsoft"
+                                    class="form-logo-img" />
                         </div>
                     </div>
                 </div>

@@ -1,50 +1,147 @@
-﻿@model DevCode.webapp.Areas.Admin.Models.Noticia
+﻿@using DevCode.webapp.Util;
+@model DevCode.webapp.Areas.Admin.Models.Noticia
 
 @{
     ViewBag.Title = "Novo";
+    ViewBag.Css = "News";
 }
 
-<h2>Novo</h2>
+<main class="main-container">
+    <div class="container">
+        <div class="layout-box">
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Noticia</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Titulo, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Titulo, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Titulo, "", new { @class = "text-danger" })
-            </div>
-        </div>
+            @Html.Partial("_ViewUsuario")
+            <section class="section-askQuestion">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Detalhes, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Detalhes, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Detalhes, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.DataEnvio, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DataEnvio, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DataEnvio, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                    <div class="askQuestion-box">
+                        <h2 class="secondary-heading">Escreva sua noticia</h2>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                        <div class="tittle-box">
+                            @Html.LabelFor(model => model.Titulo, htmlAttributes: new { @class = "input-label" })
+                            @Html.EditorFor(model => model.Titulo, new { htmlAttributes = new { @class = "input-form" } })
+                            @Html.ValidationMessageFor(model => model.Titulo, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="description-box">
+                            @Html.LabelFor(model => model.Detalhes, htmlAttributes: new { @class = "input-label" })
+                            @Html.TextAreaFor(model => model.Detalhes, 10, 65, htmlAttributes: new { @class = "description-text input-form" })
+                            @Html.ValidationMessageFor(model => model.Detalhes, "", new { @class = "text-danger" })
+
+                        </div>
+
+                        
+
+                        <input type="hidden" id="IDUsuarioNoticia" name="IDUsuarioNoticia" value="@Configuracao.Usuario.IDUsuario" />
+
+
+
+                        <div class="button-box">
+                            <a href="#" class="btn-full">
+                                Voltar <i class="ph ph-arrow-left"></i>
+                            </a>
+                            <button class="btn-full">
+                                Publicar <i class="ph ph-paper-plane-tilt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    @*<div class="form-group">
+                    @Html.LabelFor(model => model.DataEnvio, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.DataEnvio, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.DataEnvio, "", new { @class = "text-danger" })
+                    </div>
+                </div>*@
+                }
+            </section>
+
+            <section class="section-moderadores">
+                <div class="moders-section">
+                    <h3 class="tertiary-heading">Membros Online</h3>
+
+                    <div class="member-item">
+                        <div>
+                            <img src="~/Content/imgs/form/background-img.jpg"
+                                 class="member-img" />
+                            <p class="member-user-name">UsuarioTeste</p>
+                        </div>
+
+                        <p class="information-member">15k</p>
+                    </div>
+                    <div class="member-item">
+                        <div>
+                            <img src="~/Content/imgs/form/background-img.jpg"
+                                 class="member-img" />
+                            <p class="member-user-name">UsuarioTeste</p>
+                        </div>
+
+                        <p class="information-member">14k</p>
+                    </div>
+                    <div class="member-item">
+                        <div>
+                            <img src="~/Content/imgs/form/background-img.jpg"
+                                 class="member-img" />
+                            <p class="member-user-name">UsuarioTeste</p>
+                        </div>
+
+                        <p class="information-member">11k</p>
+                    </div>
+                    <div class="member-item">
+                        <div>
+                            <img src="~/Content/imgs/form/background-img.jpg"
+                                 class="member-img" />
+                            <p class="member-user-name">UsuarioTeste</p>
+                        </div>
+
+                        <p class="information-member">10k</p>
+                    </div>
+                    <div class="member-item">
+                        <div>
+                            <img src="~/Content/imgs/form/background-img.jpg"
+                                 class="member-img" />
+                            <p class="member-user-name">UsuarioTeste</p>
+                        </div>
+
+                        <p class="information-member">10k</p>
+                    </div>
+                    <div class="member-item">
+                        <div>
+                            <img src="~/Content/imgs/form/background-img.jpg"
+                                 class="member-img" />
+                            <p class="member-user-name">UsuarioTeste</p>
+                        </div>
+
+                        <p class="information-member">7k</p>
+                    </div>
+                    <div class="member-item">
+                        <div>
+                            <img src="~/Content/imgs/form/background-img.jpg"
+                                 class="member-img" />
+                            <p class="member-user-name">UsuarioTeste</p>
+                        </div>
+
+                        <p class="information-member">3k</p>
+                    </div>
+                    <div class="member-item">
+                        <div>
+                            <img src="~/Content/imgs/form/background-img.jpg"
+                                 class="member-img" />
+                            <p class="member-user-name">UsuarioTeste</p>
+                        </div>
+
+                        <p class="information-member">2k</p>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
-}
+</main>
 
 <div>
     @Html.ActionLink("Back to List", "Index")

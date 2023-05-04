@@ -2,7 +2,6 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 3rem;
-    padding: 4rem 0;
     height: 100%;
     align-items: flex-start;
 }
@@ -322,6 +321,7 @@ hr {
 }
 
 .answer-text {
+    
     font-size: 1.6rem;
 }
 

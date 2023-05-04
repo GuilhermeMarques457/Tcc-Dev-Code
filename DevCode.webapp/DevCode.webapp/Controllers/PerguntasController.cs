@@ -17,6 +17,7 @@ namespace DevCode.webapp.Controllers
         RepositorioPergunta repositorio = new RepositorioPergunta();
         RepositorioUsuario repositorioUsuario = new RepositorioUsuario();
 
+
         public ActionResult Index()
         {
             if (!Configuracao.VerificarUsuarioLogado())
@@ -31,14 +32,8 @@ namespace DevCode.webapp.Controllers
                 pergunta.Usuario = repositorioUsuario.ObterPorId(pergunta.IDUsuarioPergunta);
 
             }
-            
-
-
-            
 
             return View(repositorio.Listar());
-
-            
 
         }
 
@@ -49,6 +44,17 @@ namespace DevCode.webapp.Controllers
                 return RedirectToAction("Entrar", "Login");
             }
 
+            var Tags = Enum.GetValues(typeof(Tags))
+                     .Cast<Tags>()
+                     .Select(s => new SelectListItem
+                     {
+                         Value = ((int)s).ToString(),
+                         Text = s.ToString()
+                     });
+
+            ViewBag.TagPrincipal = Tags;
+            ViewBag.TagSecondaria = Tags;
+
             return View(new Perguntas());
 
         }
@@ -56,7 +62,11 @@ namespace DevCode.webapp.Controllers
         [HttpPost]
         public ActionResult Novo(Perguntas perguntas)
         {
-       
+            if (!Configuracao.VerificarUsuarioLogado())
+            {
+                return RedirectToAction("Entrar", "Login");
+            }
+
             if (ModelState.IsValid)
             {  
                 perguntas.DataEnvio = DateTime.Now;
@@ -68,6 +78,11 @@ namespace DevCode.webapp.Controllers
 
         public ActionResult Alterar(int id)
         {
+            if (!Configuracao.VerificarUsuarioLogado())
+            {
+                return RedirectToAction("Entrar", "Login");
+            }
+
             Perguntas perguntas = repositorio.ObterPorId(id);
             return View(perguntas);
         }
@@ -75,6 +90,7 @@ namespace DevCode.webapp.Controllers
         [HttpPost]
         public ActionResult Alterar(Perguntas perguntas)
         {
+
             if (ModelState.IsValid)
             {
                 repositorio.Alterar(perguntas);
@@ -87,6 +103,11 @@ namespace DevCode.webapp.Controllers
         [HttpGet]
         public ActionResult Excluir(int id)
         {
+            if (!Configuracao.VerificarUsuarioLogado())
+            {
+                return RedirectToAction("Entrar", "Login");
+            }
+
             Perguntas perguntas = repositorio.ObterPorId(id);
             return View(perguntas);
         }
@@ -101,6 +122,11 @@ namespace DevCode.webapp.Controllers
 
         public ActionResult Detalhes(int id)
         {
+            if (!Configuracao.VerificarUsuarioLogado())
+            {
+                return RedirectToAction("Entrar", "Login");
+            }
+
             Perguntas perguntas = repositorio.ObterPorId(id);
             return View(perguntas);
         }
@@ -110,7 +136,6 @@ namespace DevCode.webapp.Controllers
         {
             Perguntas pergunta = repositorio.Find(id);
 
-            
             if (pergunta != null)
             {
                 repositorio.DarLike(pergunta);

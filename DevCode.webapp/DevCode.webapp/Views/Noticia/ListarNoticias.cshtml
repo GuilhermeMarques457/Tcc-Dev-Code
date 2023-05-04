@@ -1,0 +1,105 @@
+﻿@model IEnumerable<DevCode.webapp.Areas.Admin.Models.Noticia>
+
+@{
+    ViewBag.Title = "Index";
+    ViewBag.Css = "News";
+}
+
+
+<main class="main-container">
+    <div class="container">
+        <div class="layout-box">
+            @Html.Partial("_ViewUsuario")
+            <section class="section-question">
+                <div class="useful-buttons">
+                    <a href="/Noticia/Novo" class="btn-full btn-question"><i class="ph ph-question button-icon"></i>Nova Noticia</a>
+             
+                    <a href="#" class="btn-full btn-question"><i class="ph ph-magnifying-glass button-icon"></i>Buscar</a>
+                </div>
+                @foreach (var item in Model)
+                {
+                    <div class="question-card-container">
+                        <div class="question-user-box">
+                            <div class="user-box-info">
+                                <img src="@item.Usuario.CaminhoImagemPerfil"
+                                     class="question-user-photo" />
+                                <p class="username-text"> @item.Usuario.Username</p>
+                            </div>
+                            <span class="question-time-released">@item.DataEnvio</span>
+                        </div>
+                        <div class="question-content">
+                            <a href="/Noticia/Index/@item.IDNoticia">
+                                <h3 class="tertiary-heading">
+                                    @item.Titulo
+                                </h3>
+                            </a>
+                            <p class="common-text question-text">
+                                @item.Detalhes
+
+                                <a href="#" class="keep-learning">Continuar lendo</a>
+                            </p>
+                        </div>
+                        <div class="question-card-footer">
+                            <div class="question-info-box">
+                                <div class="question-info-content">
+                                    <i class="ph ph-thumbs-up question-icon like-icon"></i>
+                                    <button class="likeButton" data-post-id="@item.IDNoticia"></button>
+                                    <span class="question-info question-comments question-like likeCount"> @item.Likes</span>
+                                </div>
+
+                            </div>
+                            <div class="question-info-box">
+                                <div class="question-info-content">
+                                    <i class="ph-chat-dots question-icon"></i>
+                                    <span class="question-info question-comments"> 2.3k</span>
+                                </div>
+                                <div class="question-info-content">
+                                    <i class="ph-eye question-icon"></i>
+                                    <span class="question-info question-views">2.3k</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                }
+
+            </section>
+            <section class="section-moderadores">
+                <div class="moders-section">
+                    <h3 class="tertiary-heading">Moderadores Online</h3>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $(document).on("click", ".likeButton", function () {
+                var postId = $(this).data("post-id");
+                var likeCountElement = $(this).siblings(".likeCount"); // Elemento HTML que exibe a contagem de likes
+                var likeIconElement = $(this).siblings(".like-icon"); // Elemento HTML do ícone de like
+
+                if (!$(this).hasClass("liked")) {
+                    likeIconElement.addClass("liked-icon")
+                    $(this).addClass("liked");
+                } else {
+                    likeIconElement.removeClass("liked-icon")
+                    $(this).removeClass("liked");
+                }
+
+                $.ajax({
+                    type: "POST",
+                    url: "/Perguntas/Like",
+                    data: { id: postId },
+                    success: function (data) {
+                        likeCountElement.text(data.likes);
+                    }
+                });
+            });
+        });
+
+        
+    </script>
+}

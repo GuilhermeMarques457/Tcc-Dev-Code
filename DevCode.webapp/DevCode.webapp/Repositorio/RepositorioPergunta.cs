@@ -62,7 +62,6 @@ namespace DevCode.webapp.Repositorio
 
         public void DarLike(Perguntas entidade)
         {
-            
             var perguntas = contexto.Pergunta.First(x => x.IDPergunta == entidade.IDPergunta);
             if (!Util.UtilClass.deuLike)
             {
@@ -82,6 +81,38 @@ namespace DevCode.webapp.Repositorio
                 Util.UtilClass.deuLike = false;
             }
 
+
+            contexto.SaveChanges();
+        }
+
+        public void Vizualizar(Perguntas entidade)
+        {
+            Perguntas pergunta = contexto.Pergunta.FirstOrDefault(x => x.IDPergunta == entidade.IDPergunta);
+
+            if (pergunta.Views == null)
+            {
+                pergunta.Views = 1;
+            }
+            else
+            {
+                pergunta.Views++;
+            }
+
+            contexto.SaveChanges();
+        }
+
+        public void UpdateCometarios(Perguntas entidade)
+        {
+            Perguntas pergunta = contexto.Pergunta.FirstOrDefault(x => x.IDPergunta == entidade.IDPergunta);
+
+            if(pergunta.Comments == null)
+            {
+                pergunta.Comments = 1;
+            }
+            else
+            {
+                pergunta.Comments++;
+            }
 
             contexto.SaveChanges();
         }

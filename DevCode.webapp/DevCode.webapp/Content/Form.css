@@ -57,9 +57,17 @@
     text-align: center;
 }
 
+.form-box{
+    margin-bottom: 2rem;
+}
+
 .form-double-box {
     display: flex;
     gap: 1rem;
+}
+
+.form-double-box div{
+    width: 50% !important;
 }
 
 .form-input-label-box {

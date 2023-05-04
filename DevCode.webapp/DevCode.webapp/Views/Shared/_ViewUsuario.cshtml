@@ -5,20 +5,27 @@
 }
 
 <section class="section-user">
-        <div class="image-box">
+    <div class="image-box">
+        @if (HttpContext.Current.User.Identity.IsAuthenticated)
+        {
             <img src="@Configuracao.Usuario.CaminhoImagemBanner"
                  alt="Imagem de background do usuario"
                  class="user-backgound-img" />
-        </div>
-        <div class="user-info-box">
-            @if (HttpContext.Current.User.Identity.IsAuthenticated)
-            {
-                <p class="username-text">@Configuracao.Usuario.Nome @Configuracao.Usuario.Sobrenome</p>
-                <p class="work-text">@Configuracao.Usuario.Username</p>
-                <a class="show-details" href="/Usuario/Alterar/@Configuracao.Usuario.IDUsuario">Exibir mais detalhes</a>
-            }
+        }
 
-        </div>
+        <img src="~/Content/imgs/ProfileImgs/foto-padrao-banner.png"
+             alt="Imagem de background do usuario"
+             class="user-backgound-img" />
+    </div>
+    <div class="user-info-box">
+        @if (HttpContext.Current.User.Identity.IsAuthenticated)
+        {
+            <p class="username-text">@Configuracao.Usuario.Nome @Configuracao.Usuario.Sobrenome</p>
+            <p class="work-text">@Configuracao.Usuario.Username</p>
+            <a class="show-details" href="/Usuario/Alterar/@Configuracao.Usuario.IDUsuario">Exibir mais detalhes</a>
+        }
+
+    </div>
         <hr />
         <div class="friends-box">
             <p class="friends-title">Amigos Online</p>
@@ -102,9 +109,13 @@
                 </div>
             </div>
             <div class="profile-picture">
-                <img src="@Configuracao.Usuario.CaminhoImagemPerfil"
-                     alt="Foto de Perfil"
-                     class="profile-user-picture" />
+                @if (HttpContext.Current.User.Identity.IsAuthenticated)
+                {
+                    <img src="@Configuracao.Usuario.CaminhoImagemPerfil"
+                         alt="Foto de Perfil"
+                         class="profile-user-picture" />
+                }
+
             </div>
 
         </div>

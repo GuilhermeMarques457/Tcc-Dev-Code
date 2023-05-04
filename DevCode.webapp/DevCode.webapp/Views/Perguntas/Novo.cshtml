@@ -3,6 +3,7 @@
 
 @{
     ViewBag.Title = "Novo";
+    ViewBag.Css = "Question";
 }
 
 <main class="main-container">
@@ -21,21 +22,41 @@
 
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
+                    <div class="tags-box">
+                        <div class="tag-box">
+                            <div class="options-box">
+                                @Html.LabelFor(model => model.TagPrincipal, htmlAttributes: new { @class = "input-label-question" })
+                                @Html.DropDownListFor(m => m.TagPrincipal, (IEnumerable<SelectListItem>)ViewBag.TagPrincipal, new { @id = "TagPrincipal", @onchange = "atualizarResultadoPrimario()" })
+                                @Html.ValidationMessageFor(model => model.TagPrincipal, "", new { @class = "text-danger" })
+                            </div>
+
+                            <span class="tag-news" id="tag-principal"></span>
+                        </div>
+                        <div class="tag-box">
+                            <span class="tag-news" id="tag-secundario"></span>
+                            <div class="options-box">
+                                @Html.LabelFor(model => model.TagSecundaria, htmlAttributes: new { @class = "input-label-question" })
+                                @Html.DropDownListFor(m => m.TagSecundaria, (IEnumerable<SelectListItem>)ViewBag.TagSecondaria, new { @id = "TagSecundario", @onchange = "atualizarResultadoSecundario()" })
+                                @Html.ValidationMessageFor(model => model.TagSecundaria, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
                         <div class="tittle-box">
-                            @Html.LabelFor(model => model.Titulo, htmlAttributes: new { @class = "input-label" })
+                            @Html.LabelFor(model => model.Titulo, htmlAttributes: new { @class = "input-label-question" })
                             @Html.EditorFor(model => model.Titulo, new { htmlAttributes = new { @class = "input-form" } })
                             @Html.ValidationMessageFor(model => model.Titulo, "", new { @class = "text-danger" })
                         </div>
 
                         <div class="description-box">
-                            @Html.LabelFor(model => model.Detalhes, htmlAttributes: new { @class = "input-label" })
+                            @Html.LabelFor(model => model.Detalhes, htmlAttributes: new { @class = "input-label-questionl" })
                             @Html.TextAreaFor(model => model.Detalhes, 10, 65, htmlAttributes: new { @class = "description-text input-form" })
                             @Html.ValidationMessageFor(model => model.Detalhes, "", new { @class = "text-danger" })
 
                         </div>
 
-                        <div class="expected-box">
-                            @Html.LabelFor(model => model.Esperado, htmlAttributes: new { @class = "input-label" })
+                        <div class="expected-box-question">
+                            @Html.LabelFor(model => model.Esperado, htmlAttributes: new { @class = "input-label-question" })
                             @Html.TextAreaFor(model => model.Esperado, 1, 65, htmlAttributes: new { @class = "description-text input-form" })
                             @Html.ValidationMessageFor(model => model.Esperado, "", new { @class = "text-danger" })
                         </div>
@@ -53,14 +74,6 @@
                             </button>
                         </div>
                     </div>
-
-                    @*<div class="form-group">
-                    @Html.LabelFor(model => model.DataEnvio, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.DataEnvio, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.DataEnvio, "", new { @class = "text-danger" })
-                    </div>
-                </div>*@
                 }
             </section>
 
@@ -146,6 +159,32 @@
     </div>
 </main>
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+@section scripts {
+    <script>
+        function atualizarResultadoPrimario() {
+            var combo = document.getElementById("TagPrincipal");
+            var resultado = document.getElementById("tag-principal");
+            resultado.classList = "";
+            resultado.classList.add("tag-news");
+            resultado.classList.add(combo.options[combo.selectedIndex].text);
+            resultado.innerText = combo.options[combo.selectedIndex].text;
+        }
+
+        function atualizarResultadoSecundario() {
+            var combo = document.getElementById("TagSecundario");
+            var resultado = document.getElementById("tag-secundario");
+            resultado.classList = "";
+            resultado.classList.add("tag-news");
+            resultado.classList.add(combo.options[combo.selectedIndex].text);
+            resultado.innerText = combo.options[combo.selectedIndex].text;
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var comboPrimario = document.getElementById("TagPrincipal");
+            comboPrimario.addEventListener("change", atualizarResultadoPrimario);
+
+            var comboSecundario = document.getElementById("TagSecundario");
+            comboSecundario.addEventListener("change", atualizarResultadoSecundario);
+        });
+    </script>
+}

@@ -30,6 +30,8 @@ namespace DevCode.webapp.Controllers
             if (ModelState.IsValid)
             {
                 usuario.Senha = MD5.GerarHashMd5(usuario.Senha);
+                usuario.CaminhoImagemBanner = "/Content/imgs/ProfileImgs/foto-padrao-banner.png";
+                usuario.CaminhoImagemPerfil = "/Content/imgs/ProfileImgs/foto-padrao-perfil.png";
                 repositorio.Salvar(usuario);
                 return RedirectToAction("Index", "Perguntas");
             }
@@ -54,6 +56,7 @@ namespace DevCode.webapp.Controllers
                 if (profile != null && profile.ContentLength > 0)
                 {
                     usuario.CaminhoImagemPerfil = MudarFoto(profile);
+                    Configuracao.Usuario.CaminhoImagemPerfil = MudarFoto(profile);
                 }
                 else
                 {
@@ -63,6 +66,7 @@ namespace DevCode.webapp.Controllers
                 if (banner != null && banner.ContentLength > 0)
                 {
                     usuario.CaminhoImagemBanner = MudarFoto(banner);
+                    Configuracao.Usuario.CaminhoImagemBanner = MudarFoto(banner);
                 }
                 else
                 {

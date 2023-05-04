@@ -30,9 +30,11 @@ namespace DevCode.webapp.Models
         [DisplayName("O que eu espero com essa pergunta")]
         [Required(ErrorMessage = "Campo {0} é obrigatório")]
         public string Esperado { get; set; }
-        public IList<Tags?> TagPrincipal { get; set; }
+        public Tags TagPrincipal { get; set; }
+        public Tags? TagSecundaria { get; set; }
         public DateTime DataEnvio { get; set; }
-        
+        public int? Views { get; set; }
+        public int? Comments { get; set; }
         public int? Likes { get; set; }
 
 

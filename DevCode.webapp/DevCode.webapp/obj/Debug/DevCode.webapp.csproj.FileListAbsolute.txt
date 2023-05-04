@@ -1072,3 +1072,13 @@ C:\Users\Microsoft\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCod
 C:\Users\Microsoft\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.addlikestable.resources
 C:\Users\Microsoft\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.delelelikedatabase.resources
 C:\Users\Microsoft\Documents\Tcc DevCode\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.addimagefields.resources
+C:\Users\etds2022-08\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.addimagefields.resources
+C:\Users\etds2022-08\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.updatenoticiatable.resources
+C:\Users\Microsoft\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.addimagefields.resources
+C:\Users\Microsoft\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.updatenoticiatable.resources
+C:\Users\Microsoft\Downloads\Tcc-Dev-Code-try-to-show-data\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.addtagsfields.resources
+C:\Users\Microsoft\Documents\Tcc DevCode\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.updatenoticiatable.resources
+C:\Users\Microsoft\Documents\Tcc DevCode\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.addtagsfields.resources
+C:\Users\Microsoft\Documents\Tcc DevCode\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.addtagsfieldsandadminfield.resources
+C:\Users\Microsoft\Documents\Tcc DevCode\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.addviewsandcommentsfields.resources
+C:\Users\Microsoft\Documents\Tcc DevCode\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.addconfirmpasswordfield.resources
