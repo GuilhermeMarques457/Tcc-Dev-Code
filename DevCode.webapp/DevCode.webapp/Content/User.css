@@ -58,6 +58,21 @@
     left: 14.5rem;
 }
 
+.admin-box{
+    justify-content: space-between;
+    display: flex;
+    gap: 7rem;
+}
+
+.admin {
+    font-size: 1rem;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #3d5af1;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+
 .user-name {
     font-size: 1.6rem;
     font-weight: 700;
@@ -65,7 +80,7 @@
 }
 
 .user-job {
-    margin-top: 1.5rem;
+
     font-size: 1.2rem;
     font-weight: 600;
     line-height: 0.5;
@@ -310,4 +325,16 @@
 .information-member {
     color: #3d5af1;
     font-size: 1.4rem;
+}
+
+.excluir-text{
+    font-size: 1rem;
+    color: #777;
+}
+
+.excluir-box{
+    padding: 1.2rem 3.2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
 }

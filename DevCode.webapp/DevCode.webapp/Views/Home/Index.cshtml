@@ -1,4 +1,4 @@
-﻿@model DevCode.webapp.Models.UsuarioVM
+﻿@model DevCode.webapp.Models.HomeVM
 @using DevCode.webapp.Util
 @{
     ViewBag.Title = "Home Page";
@@ -30,126 +30,39 @@
         <div class="container">
             <div class="news-header">
                 <h2 class="secondary-heading">Notícias</h2>
-                <a class="news-show-action" href="#">Mostrar tudo &rarr;</a>
+                <a class="news-show-action" href="/noticia/ListarNoticias">Mostrar tudo &rarr;</a>
             </div>
 
             <div class="news-box">
-                <div class="news-card">
-                    <div class="news-img-box">
-                        <img class="news-img"
-                             src="~/Content/imgs/noticia/noticia1.jpg"
-                             alt="Imagem de noticia" />
-                    </div>
-                    <div class="news-content">
-                        <h3 class="tertiary-heading">Titulo</h3>
-                        <p class="common-text news-text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
-                            corporis dolorem modi enim quas. Veniam, corporis asperiores?
-                            Eos ex perspiciatis repellat vel, excepturi unde modi dolor,
-                            fuga veritatis suscipit nihil?
-                        </p>
-                        <div class="news-card-footer">
-                            <div class="news-info-box">
-                                <div class="news-info-content">
-                                    <i class="ph-chat-dots news-icon"></i>
-                                    <span class="news-info news-comments"> 2.3k</span>
+                @foreach (var noticias in Model.Noticias)
+                {
+                    <div class="news-card">
+                        <div class="news-img-box">
+                            <img class="news-img"
+                                 src="~/Content/imgs/noticia/noticia1.jpg"
+                                 alt="Imagem de noticia" />
+                        </div>
+                        <div class="news-content">
+                            <h3 class="tertiary-heading">@noticias.Titulo</h3>
+                            <p class="common-text news-text">
+                                @noticias.DetalhesAbreviada
+                            </p>
+                            <div class="news-card-footer">
+                                <div class="news-info-box">
+                                    <div class="news-info-content">
+                                        <i class="ph-chat-dots news-icon"></i>
+                                        <span class="news-info news-comments">@noticias.Likes</span>
+                                    </div>
+                                    <div class="news-info-content">
+                                        <i class="ph-eye news-icon"></i>
+                                        <span class="news-info news-views">20k</span>
+                                    </div>
                                 </div>
-                                <div class="news-info-content">
-                                    <i class="ph-eye news-icon"></i>
-                                    <span class="news-info news-views">2.3k</span>
-                                </div>
+                                <span class="news-time-released">@noticias.DataEnvio</span>
                             </div>
-                            <span class="news-time-released">2hrs ago</span>
                         </div>
                     </div>
-                </div>
-                <div class="news-card">
-                    <div class="news-img-box">
-                        <img class="news-img"
-                             src="~/Content/imgs/noticia/noticia2.jpg"
-                             alt="Imagem de noticia" />
-                    </div>
-                    <div class="news-content">
-                        <h3 class="tertiary-heading">Titulo</h3>
-                        <p class="common-text news-text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
-                            corporis dolorem modi enim quas. Veniam, corporis asperiores?
-                            Eos ex perspiciatis repellat vel, excepturi unde modi dolor,
-                            fuga veritatis suscipit nihil?
-                        </p>
-                        <div class="news-card-footer">
-                            <div class="news-info-box">
-                                <div class="news-info-content">
-                                    <i class="ph-chat-dots news-icon"></i>
-                                    <span class="news-info news-comments"> 2.3k</span>
-                                </div>
-                                <div class="news-info-content">
-                                    <i class="ph-eye news-icon"></i>
-                                    <span class="news-info news-views">2.3k</span>
-                                </div>
-                            </div>
-                            <span class="news-time-released">2hrs ago</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="news-card">
-                    <div class="news-img-box">
-                        <img class="news-img"
-                             src="~/Content/imgs/noticia/noticia3.jpg"
-                             alt="Imagem de noticia" />
-                    </div>
-                    <div class="news-content">
-                        <h3 class="tertiary-heading">Titulo</h3>
-                        <p class="common-text news-text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
-                            corporis dolorem modi enim quas. Veniam, corporis asperiores?
-                            Eos ex perspiciatis repellat vel, excepturi unde modi dolor,
-                            fuga veritatis suscipit nihil?
-                        </p>
-                        <div class="news-card-footer">
-                            <div class="news-info-box">
-                                <div class="news-info-content">
-                                    <i class="ph-chat-dots news-icon"></i>
-                                    <span class="news-info news-comments"> 2.3k</span>
-                                </div>
-                                <div class="news-info-content">
-                                    <i class="ph-eye news-icon"></i>
-                                    <span class="news-info news-views">2.3k</span>
-                                </div>
-                            </div>
-                            <span class="news-time-released">2hrs ago</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="news-card">
-                    <div class="news-img-box">
-                        <img class="news-img"
-                             src="~/Content/imgs/noticia/noticia4.jpg"
-                             alt="Imagem de noticia" />
-                    </div>
-                    <div class="news-content">
-                        <h3 class="tertiary-heading">Titulo</h3>
-                        <p class="common-text news-text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
-                            corporis dolorem modi enim quas. Veniam, corporis asperiores?
-                            Eos ex perspiciatis repellat vel, excepturi unde modi dolor,
-                            fuga veritatis suscipit nihil?
-                        </p>
-                        <div class="news-card-footer">
-                            <div class="news-info-box">
-                                <div class="news-info-content">
-                                    <i class="ph-chat-dots news-icon"></i>
-                                    <span class="news-info news-comments"> 2.3k</span>
-                                </div>
-                                <div class="news-info-content">
-                                    <i class="ph-eye news-icon"></i>
-                                    <span class="news-info news-views">2.3k</span>
-                                </div>
-                            </div>
-                            <span class="news-time-released">2hrs ago</span>
-                        </div>
-                    </div>
-                </div>
+                }      
             </div>
         </div>
     </section>
@@ -157,155 +70,45 @@
         <div class="container">
             <h2 class="secondary-heading">Perguntas</h2>
             <div class="question-box">
-                <div class="question-card">
-                    <div class="question-content">
-                        <div class="tags-card-news-box">
-                            <span class="tag-news js">JavaScript</span>
-                            <span class="tag-news c">C#</span>
-                            <span class="tag-news php">PHP</span>
-                            <span class="tag-news py">Python</span>
-                        </div>
-                        <h3 class="tertiary-heading">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        </h3>
-                        <p class="common-text question-text">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim
-                            eius necessitatibus debitis architecto! Reiciendis,
-                            dignissimos maiores nemo ipsum autem minima minus id,
-                            inventore laboriosam quo at quas nobis ab officia? Lorem ipsum
-                            dolor, sit amet consectetur adipisicing elit. Enim eius
-                            necessitatibus debitis architecto! Reiciendis, dignissimos
-                            maiores nemo ipsum autem minima minus id, inventore laboriosam
-                            quo at quas nobis ab officia? Lorem ipsum dolor, sit amet
-                            consectetur adipisicing elit. Enim eius necessitatibus debitis
-                            architecto! Reiciendis, dignissimos maiores nemo ipsum autem
-                            minima minus id, inventore laboriosam quo at quas nobis ab
-                            officia? Lorem ipsum dolor, sit amet consectetur adipisicing
-                            elit. Enim eius necessitatibus debitis architecto! Reiciendis,
-                            dignissimos maiores nemo ipsum autem minima minus id,
-                            inventore laboriosam quo at quas nobis ab officia? Lorem ipsum
-                            dolor, sit amet consectetur adipisicing elit. Enim eius
-                            necessitatibus debitis architecto! Reiciendis, dignissimos
-                            maiores nemo ipsum autem minima minus id, inventore laboriosam
-                            quo at quas nobis ab officia?
-                        </p>
-                        <div class="question-card-footer">
-                            <div class="question-info-box">
-                                <div class="question-info-content">
-                                    <i class="ph-chat-dots question-icon"></i>
-                                    <span class="question-info question-comments"> 2.3k</span>
-                                </div>
-                                <div class="question-info-content">
-                                    <i class="ph-eye question-icon"></i>
-                                    <span class="question-info question-views">2.3k</span>
-                                </div>
-                            </div>
-                            <span class="question-time-released">2hrs ago</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="question-card">
-                    <div class="question-content">
-                        <div class="tags-card-news-box">
-                            <span class="tag-news js">JavaScript</span>
-                            <span class="tag-news c">C#</span>
-                            <span class="tag-news php">PHP</span>
-                            <span class="tag-news py">Python</span>
-                        </div>
-                        <h3 class="tertiary-heading">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        </h3>
+                @foreach (var perguntas in Model.Perguntas)
+                {
 
-                        <p class="common-text question-text">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim
-                            eius necessitatibus debitis architecto! Reiciendis,
-                            dignissimos maiores nemo ipsum autem minima minus id,
-                            inventore laboriosam quo at quas nobis ab officia?
-                        </p>
-                        <div class="question-card-footer">
-                            <div class="question-info-box">
-                                <div class="question-info-content">
-                                    <i class="ph-chat-dots question-icon"></i>
-                                    <span class="question-info question-comments"> 2.3k</span>
-                                </div>
-                                <div class="question-info-content">
-                                    <i class="ph-eye question-icon"></i>
-                                    <span class="question-info question-views">2.3k</span>
-                                </div>
+                    <div class="question-card">
+                        <div class="question-content">
+                            <div class="tags-card-news-box">
+                                <span class="tag-news @perguntas.TagPrincipal">@perguntas.TagPrincipal</span>
+                                <span class="tag-news @perguntas.TagSecundaria">@perguntas.TagSecundaria</span>
+
                             </div>
-                            <span class="question-time-released">2hrs ago</span>
+                            <h3 class="tertiary-heading">
+                                @perguntas.Titulo
+                            </h3>
+                            <p class="common-text question-text">
+                                @perguntas.DetalhesAbreviada
+                            </p>
+                            <div class="question-card-footer">
+                                <div class="question-info-box">
+                                    <div class="question-info-content">
+                                        <i class="ph-chat-dots question-icon"></i>
+                                        <span class="question-info question-comments"> @perguntas.Comments</span>
+                                    </div>
+                                    <div class="question-info-content">
+                                        <i class="ph-eye question-icon"></i>
+                                        <span class="question-info question-views">@perguntas.Views</span>
+                                    </div>
+                                </div>
+                                <span class="question-time-released">@perguntas.DataEnvio</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="question-card">
-                    <div class="question-content">
-                        <div class="tags-card-news-box">
-                            <span class="tag-news js">JavaScript</span>
-                            <span class="tag-news c">C#</span>
-                            <span class="tag-news php">PHP</span>
-                            <span class="tag-news py">Python</span>
-                        </div>
-                        <h3 class="tertiary-heading">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        </h3>
-                        <p class="common-text question-text">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim
-                            eius necessitatibus debitis architecto! Reiciendis,
-                            dignissimos maiores nemo ipsum autem minima minus id,
-                            inventore laboriosam quo at quas nobis ab officia?
-                        </p>
-                        <div class="question-card-footer">
-                            <div class="question-info-box">
-                                <div class="question-info-content">
-                                    <i class="ph-chat-dots question-icon"></i>
-                                    <span class="question-info question-comments"> 2.3k</span>
-                                </div>
-                                <div class="question-info-content">
-                                    <i class="ph-eye question-icon"></i>
-                                    <span class="question-info question-views">2.3k</span>
-                                </div>
-                            </div>
-                            <span class="question-time-released">2hrs ago</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="question-card">
-                    <div class="question-content">
-                        <div class="tags-card-news-box">
-                            <span class="tag-news js">JavaScript</span>
-                            <span class="tag-news c">C#</span>
-                            <span class="tag-news php">PHP</span>
-                            <span class="tag-news py">Python</span>
-                        </div>
-                        <h3 class="tertiary-heading">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        </h3>
-                        <p class="common-text question-text">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim
-                            eius necessitatibus debitis architecto! Reiciendis,
-                            dignissimos maiores nemo ipsum autem minima minus id,
-                            inventore laboriosam quo at quas nobis ab officia?
-                        </p>
-                        <div class="question-card-footer">
-                            <div class="question-info-box">
-                                <div class="question-info-content">
-                                    <i class="ph-chat-dots question-icon"></i>
-                                    <span class="question-info question-comments"> 2.3k</span>
-                                </div>
-                                <div class="question-info-content">
-                                    <i class="ph-eye question-icon"></i>
-                                    <span class="question-info question-views">2.3k</span>
-                                </div>
-                            </div>
-                            <span class="question-time-released">2hrs ago</span>
-                        </div>
-                    </div>
+                }
+            </div>
+
+                <div class="box-btn-footer">
+                    <a class="btn-outline" href="/Perguntas/Index">Ver mais</a>
                 </div>
             </div>
-            <div class="box-btn-footer">
-                <a class="btn-outline" href="/Perguntas/Index">Ver mais</a>
-            </div>
-        </div>
+
     </section>
     <section class="login-section element-hidden">
         <form class="form-login-sign-in home-form" method="post">
@@ -315,19 +118,19 @@
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
                 <div class="form-input-label-box">
-                    @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "label-form" })
+                    @Html.LabelFor(model => model.UsuarioVM.Username, htmlAttributes: new { @class = "label-form" })
 
-                    @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "input-form-sign input-enter" } })
-                    @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.UsuarioVM.Username, new { htmlAttributes = new { @class = "input-form-sign input-enter" } })
+                    @Html.ValidationMessageFor(model => model.UsuarioVM.Username, "", new { @class = "text-danger" })
                     <i class="ph-user form-icon"></i>
                 </div>
 
                 <div class="form-input-label-box">
-                    @Html.LabelFor(model => model.Senha, htmlAttributes: new { @class = "label-form" })
+                    @Html.LabelFor(model => model.UsuarioVM.Senha, htmlAttributes: new { @class = "label-form" })
 
 
-                    @Html.PasswordFor(model => model.Senha, new { @class = "input-form-sign input-enter" })
-                    @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+                    @Html.PasswordFor(model => model.UsuarioVM.Senha, new { @class = "input-form-sign input-enter" })
+                    @Html.ValidationMessageFor(model => model.UsuarioVM.Senha, "", new { @class = "text-danger" })
                     <i class="ph ph-lock-key form-icon"></i>
                 </div>
 

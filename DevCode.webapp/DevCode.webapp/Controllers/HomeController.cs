@@ -12,32 +12,39 @@ namespace DevCode.webapp.Controllers
 {
     public class HomeController : Controller
     {
-        RepositorioUsuario repositorio = new RepositorioUsuario();
+        RepositorioUsuario RepositorioUsuario = new RepositorioUsuario();
+        RepositorioNoticia RepositorioNoticia = new RepositorioNoticia();
+        RepositorioPergunta RepositorioPergunta = new RepositorioPergunta();
 
         public ActionResult Index()
         {
-            return View(new UsuarioVM());
+            HomeVM homeVM = new HomeVM();
+            homeVM.Perguntas = RepositorioPergunta.Listar().OrderByDescending(x => x.IDPergunta).Take(4).ToList();
+            homeVM.Noticias = RepositorioNoticia.Listar().OrderByDescending(x => x.IDNoticia).Take(4).ToList();
+            return View(homeVM);
         }
 
         [HttpPost]
-        public ActionResult Index(UsuarioVM usuarioVM)
+        public ActionResult Index(HomeVM homeVM)
         {
             if (ModelState.IsValid)
             {
-                var buscaUsuario = repositorio.Listar()
-                    .Where(x => x.Username == usuarioVM.Username).FirstOrDefault();
+                var buscaUsuario = RepositorioUsuario.Listar()
+                    .Where(x => x.Username == homeVM.UsuarioVM.Username).FirstOrDefault();
 
                 if (buscaUsuario != null)
                 {
-                    if (buscaUsuario.Senha == MD5.GerarHashMd5(usuarioVM.Senha))
+                    if (buscaUsuario.Senha == MD5.GerarHashMd5(homeVM.UsuarioVM.Senha))
                     {
-                        FormsAuthentication.SetAuthCookie(usuarioVM.Username, true);
+                        FormsAuthentication.SetAuthCookie(homeVM.UsuarioVM.Username, true);
                         Configuracao.Usuario = buscaUsuario;
                         return RedirectToAction("Index", "Perguntas");
                     }
                 }
             }
-            return View(usuarioVM);
+            homeVM.Perguntas = RepositorioPergunta.Listar().OrderByDescending(x => x.IDPergunta).Take(4).ToList();
+            homeVM.Noticias = RepositorioNoticia.Listar().OrderByDescending(x => x.IDNoticia).Take(4).ToList();
+            return View(homeVM);
         }
 
         [Authorize]

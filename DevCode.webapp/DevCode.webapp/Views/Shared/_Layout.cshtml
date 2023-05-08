@@ -18,11 +18,17 @@
     <header class="header-container">
         <div class="container">
             <div class="header-box">
-                <div class="logo">DevCode</div>
+                <a href="/home/index">
+                    <div class="logo">DevCode</div>
+                </a>  
                 <nav>
                     <ul class="nav-list">
                         @if (HttpContext.Current.User.Identity.IsAuthenticated)
                         {
+                            if (Configuracao.Usuario.Admin == true)
+                            {
+                                <li><a href="/Admin/Noticia/Novo" class="nav-item">Nova Noticia</a></li>
+                            }
                             <li><a href="/Perguntas/Index" class="nav-item">Problemas</a></li>
                             <li><a href="/Perguntas/Novo" class="nav-item">Nova Pergunta</a></li>
                             <li><a href="/Noticia/ListarNoticias" class="nav-item">Ver Noticas</a></li>

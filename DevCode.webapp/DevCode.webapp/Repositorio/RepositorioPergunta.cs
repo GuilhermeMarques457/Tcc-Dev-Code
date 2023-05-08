@@ -34,8 +34,12 @@ namespace DevCode.webapp.Repositorio
 
         public void Excluir(Perguntas entidade)
         {
-            var perguntas = contexto.Pergunta.First(x => x.IDPergunta == entidade.IDPergunta);
-            contexto.Set<Perguntas>().Remove(perguntas);
+            var pergunta = contexto.Pergunta.First(x => x.IDPergunta == entidade.IDPergunta);
+
+            var respostas = contexto.Respostas.Where(x => x.IDPergunta == pergunta.IDPergunta);
+            contexto.Respostas.RemoveRange(respostas);
+
+            contexto.Set<Perguntas>().Remove(pergunta);
             contexto.SaveChanges();
         }
 

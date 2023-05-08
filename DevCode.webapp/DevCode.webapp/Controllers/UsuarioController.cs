@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -12,6 +13,7 @@ namespace DevCode.webapp.Controllers
 {
     public class UsuarioController : Controller
     {
+
         RepositorioUsuario repositorio = new RepositorioUsuario();
 
         public ActionResult Index()
@@ -30,6 +32,7 @@ namespace DevCode.webapp.Controllers
             if (ModelState.IsValid)
             {
                 usuario.Senha = MD5.GerarHashMd5(usuario.Senha);
+                usuario.ConfirmarSenha = MD5.GerarHashMd5(usuario.ConfirmarSenha);
                 usuario.CaminhoImagemBanner = "/Content/imgs/ProfileImgs/foto-padrao-banner.png";
                 usuario.CaminhoImagemPerfil = "/Content/imgs/ProfileImgs/foto-padrao-perfil.png";
                 repositorio.Salvar(usuario);
@@ -81,19 +84,14 @@ namespace DevCode.webapp.Controllers
 
         }
 
-        [HttpGet]
-        public ActionResult Excluir(int id)
-        {
-            Usuario usuario = repositorio.ObterPorId(id);
-            return View(usuario);
-        }
-
         [HttpPost]
-        public ActionResult Excluir(Usuario usuario)
+        [ValidateAntiForgeryToken]
+        public ActionResult Excluir(int Id)
         {
+            Usuario usuario = repositorio.ObterPorId(Id);
             repositorio.Excluir(usuario);
-            return View(usuario);
 
+            return RedirectToAction("Sair", "Login");
         }
 
         public ActionResult Detalhes(int id)

@@ -23,5 +23,14 @@ namespace DevCode.webapp.Areas.Admin.Models
         public Tags? TagSecundaria { get; set; }
         public DateTime DataEnvio { get; set; }
         public int? Likes { get; set; }
+
+        public virtual string DetalhesAbreviada
+        {
+            get
+            {
+                return Detalhes.Length > 100 ? $"{Detalhes.Substring(0, 180)}..." : Detalhes;
+
+            }
+        }
     }
 }

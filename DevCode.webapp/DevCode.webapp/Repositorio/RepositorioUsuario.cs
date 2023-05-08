@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using DevCode.webapp.Data;
@@ -35,10 +36,33 @@ namespace DevCode.webapp.Repositorio
         }
 
         public void Excluir(Usuario entidade)
-        {
+        {         
             var usuario = contexto.Usuario.First(x => x.IDUsuario == entidade.IDUsuario);
+            if(usuario != null)
+            {
+                var perguntas = contexto.Pergunta.Where(x => x.IDUsuarioPergunta == usuario.IDUsuario);
+
+                foreach (var pergunta in perguntas)
+                {
+                    var respostasPergunta = contexto.Respostas.Where(x => x.IDPergunta == pergunta.IDPergunta);
+
+                    contexto.Respostas.RemoveRange(respostasPergunta);
+                    contexto.Pergunta.Remove(pergunta);
+                }
+
+                var respostas = contexto.Respostas.Where(x => x.IDUsuarioResposta == usuario.IDUsuario);
+                contexto.Respostas.RemoveRange(respostas);
+
+                var noticias = contexto.Noticia.Where(n => n.IDUsuarioNoticia == usuario.IDUsuario);
+
+                contexto.Noticia.RemoveRange(noticias);
+
+            }
+           
             contexto.Set<Usuario>().Remove(usuario);
             contexto.SaveChanges();
+
+           
         }
 
         public void Salvar(Usuario entidade)

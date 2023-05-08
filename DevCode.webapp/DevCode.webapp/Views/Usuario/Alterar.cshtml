@@ -22,7 +22,14 @@
                          class="profile-img-user"
                          alt="profile-img-user" />
                     <div class="user-header-info">
-                        <p class="user-name">@Model.Username</p>
+                        <div class="admin-box">
+                            <p class="user-name">@Model.Username</p>
+                            @if (Configuracao.Usuario.Admin == true)
+                            {
+                                <p class="admin">administrador</p>
+                            }
+                        </div>
+                        
                         <p class="user-job">@Model.Profissao</p>
                     </div>
                 </div>
@@ -48,8 +55,9 @@
                                 @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
                                 @Html.EditorFor(model => model.Sobrenome, new { htmlAttributes = new { @class = "input-info" } })
                                 @Html.ValidationMessageFor(model => model.Sobrenome, "", new { @class = "text-danger" })
-                                @Html.EditorFor(model => model.Telefone, new { htmlAttributes = new { @class = "display-none" } })
+
                                 @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "display-none" } })
+                                @Html.EditorFor(model => model.ConfirmarSenha, new { htmlAttributes = new { @class = "display-none" } })
                             </div>
                         </div>
                         <div class="info-user-box info-box">
@@ -97,7 +105,7 @@
                             <div class="change-banner-box">
                                 <div class="change-banner-box">
                                     <div class="change-img-container">
-                                        
+
                                         <img src="@Model.CaminhoImagemBanner"
                                              class="banner-change-img"
                                              alt="profile-img-user" />
@@ -107,7 +115,7 @@
                                             <input type="file" name="banner" class="input-banner-select input-select-img input-banner" />
                                             <i class="ph ph-cloud-arrow-up icon-change"></i>
                                         </div>
-                                        
+
                                         <p class="send-text-banner send-text">
                                             <span class="highlight-text">Clique para mandar </span>
                                             SVG, PNG, JPG (max. 800x400px)
@@ -125,6 +133,17 @@
                                 @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
 
                             </div>
+
+                        </div>
+                        <div class="info-user-box info-box">
+                            <div>
+                                @Html.LabelFor(model => model.Telefone, htmlAttributes: new { @class = "label-info" })
+                            </div>
+                            <div class="input-box">
+                                @Html.EditorFor(model => model.Telefone, new { htmlAttributes = new { @class = "input-info" } })
+                                @Html.ValidationMessageFor(model => model.Telefone, "", new { @class = "text-danger" })
+
+                            </div>
                         </div>
                         <div class="info-user-box info-box">
                             <div>
@@ -135,9 +154,17 @@
                                 @Html.ValidationMessageFor(model => model.Profissao, "", new { @class = "text-danger" })
                             </div>
                         </div>
-
                     </div>
-                 }
+                }
+               
+                <form method="post" action="@Url.Action("Excluir", "Usuario", new { id = Model.IDUsuario })">
+                    @Html.AntiForgeryToken()
+                    <div class="excluir-box">
+                        <button type="submit" class="btn btn-danger">Excluir Conta</button>
+                        <span class="excluir-text">Ao clicar nesse botão você excluira sua conta e todas as suas publicações. Tem certeza disso?</span>
+                    </div>
+                    
+                </form>
             </section>
             <section class="section-moderadores">
                 <div class="moders-section">

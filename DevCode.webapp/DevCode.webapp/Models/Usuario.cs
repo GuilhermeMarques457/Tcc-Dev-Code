@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.ModelBinding;
 
 namespace DevCode.webapp.Models
 {
@@ -28,11 +29,12 @@ namespace DevCode.webapp.Models
         [Required(ErrorMessage = "Campo {0} é obrigatório")]
         public string Email { get; set; }
 
+        [BindNever]
         [DisplayName("Senha")]
         [Required(ErrorMessage = "Campo {0} é obrigatório")]
         public string Senha { get; set; }
 
-        [Compare("Senha")]
+        [BindNever]
         [DisplayName("Confirmar Senha")]
         [Required(ErrorMessage = "Campo {0} é obrigatório")]
         public string ConfirmarSenha { get; set; }

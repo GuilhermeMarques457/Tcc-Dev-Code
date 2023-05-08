@@ -195,8 +195,13 @@
     <Compile Include="Migrations\202305011656514_add-confirm-password-field.designer.cs">
       <DependentUpon>202305011656514_add-confirm-password-field.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202305061614443_add-something.cs" />
+    <Compile Include="Migrations\202305061614443_add-something.designer.cs">
+      <DependentUpon>202305061614443_add-something.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Enum\Tags.cs" />
+    <Compile Include="Models\HomeVM.cs" />
     <Compile Include="Models\ListarPerguntaRespostasVM.cs" />
     <Compile Include="Models\Perguntas.cs" />
     <Compile Include="Models\ResponderPeguntaVM.cs" />
@@ -331,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202305011656514_add-confirm-password-field.resx">
       <DependentUpon>202305011656514_add-confirm-password-field.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305061614443_add-something.resx">
+      <DependentUpon>202305061614443_add-something.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

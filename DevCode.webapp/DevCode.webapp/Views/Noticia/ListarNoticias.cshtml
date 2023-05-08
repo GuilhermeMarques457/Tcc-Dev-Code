@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<DevCode.webapp.Areas.Admin.Models.Noticia>
+@using DevCode.webapp.Util
 
 @{
     ViewBag.Title = "Index";
@@ -12,7 +13,7 @@
             @Html.Partial("_ViewUsuario")
             <section class="section-question">
                 <div class="useful-buttons">
-                    <a href="/Noticia/Novo" class="btn-full btn-question"><i class="ph ph-question button-icon"></i>Nova Noticia</a>
+                    <div></div>
              
                     <a href="#" class="btn-full btn-question"><i class="ph ph-magnifying-glass button-icon"></i>Buscar</a>
                 </div>
@@ -25,7 +26,24 @@
                                      class="question-user-photo" />
                                 <p class="username-text"> @item.Usuario.Username</p>
                             </div>
-                            <span class="question-time-released">@item.DataEnvio</span>
+                            <div>
+                                <span class="tag-news @item.TagPrincipal">@item.TagPrincipal</span>
+                                @if (item.TagSecundaria != null)
+                                {
+                                    <span class="tag-news @item.TagSecundaria">@item.TagSecundaria</span>
+                                }
+                                <span class="question-time-released mg-lf-sm">@item.DataEnvio.ToShortDateString()</span>
+                            </div>
+                            @if (item.IDUsuarioNoticia == Configuracao.Usuario.IDUsuario
+                                || Configuracao.Usuario.Admin == true)
+                            {
+                                <div class="delete-box">
+                                    <form method="post" action="@Url.Action("Excluir", "Perguntas", new { id = item.IDNoticia })">
+                                        @Html.AntiForgeryToken()
+                                        <button class="btn-excluir"><i class="ph ph-trash"></i></button>
+                                    </form>
+                                </div>
+                            }
                         </div>
                         <div class="question-content">
                             <a href="/Noticia/Index/@item.IDNoticia">
@@ -34,7 +52,7 @@
                                 </h3>
                             </a>
                             <p class="common-text question-text">
-                                @item.Detalhes
+                                @item.DetalhesAbreviada
 
                                 <a href="#" class="keep-learning">Continuar lendo</a>
                             </p>

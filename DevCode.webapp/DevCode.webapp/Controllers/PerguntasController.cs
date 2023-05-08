@@ -44,16 +44,27 @@ namespace DevCode.webapp.Controllers
                 return RedirectToAction("Entrar", "Login");
             }
 
-            var Tags = Enum.GetValues(typeof(Tags))
+            var TagsPrincipal = Enum.GetValues(typeof(Tags))
                      .Cast<Tags>()
                      .Select(s => new SelectListItem
                      {
                          Value = ((int)s).ToString(),
                          Text = s.ToString()
-                     });
+                     }).ToList();
 
-            ViewBag.TagPrincipal = Tags;
-            ViewBag.TagSecondaria = Tags;
+            var TagsSecundaria = Enum.GetValues(typeof(Tags))
+                     .Cast<Tags>()
+                     .Select(s => new SelectListItem
+                     {
+                         Value = ((int)s).ToString(),
+                         Text = s.ToString()
+                     }).ToList();
+
+            ViewBag.TagPrincipal = TagsPrincipal;
+
+            TagsSecundaria.Insert(0, new SelectListItem { Value = "", Text = "" });
+
+            ViewBag.TagSecondaria = TagsSecundaria;
 
             return View(new Perguntas());
 
@@ -100,24 +111,14 @@ namespace DevCode.webapp.Controllers
 
         }
 
-        [HttpGet]
-        public ActionResult Excluir(int id)
-        {
-            if (!Configuracao.VerificarUsuarioLogado())
-            {
-                return RedirectToAction("Entrar", "Login");
-            }
-
-            Perguntas perguntas = repositorio.ObterPorId(id);
-            return View(perguntas);
-        }
-
         [HttpPost]
-        public ActionResult Excluir(Perguntas perguntas)
+        [ValidateAntiForgeryToken]
+        public ActionResult Excluir(int Id)
         {
-            repositorio.Excluir(perguntas);
-            return View(perguntas);
+            Perguntas pergunta = repositorio.ObterPorId(Id);
+            repositorio.Excluir(pergunta);
 
+            return RedirectToAction("Index", "Perguntas");
         }
 
         public ActionResult Detalhes(int id)

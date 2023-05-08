@@ -37,6 +37,15 @@ namespace DevCode.webapp.Models
         public int? Comments { get; set; }
         public int? Likes { get; set; }
 
+        public virtual string DetalhesAbreviada
+        {
+            get
+            {
+                return Detalhes.Length > 100 ? $"{Detalhes.Substring(0, 180)}..." : Detalhes;
+
+            }
+        }
+
 
     }
 }
