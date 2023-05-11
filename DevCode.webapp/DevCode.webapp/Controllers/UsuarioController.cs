@@ -35,6 +35,10 @@ namespace DevCode.webapp.Controllers
                 usuario.ConfirmarSenha = MD5.GerarHashMd5(usuario.ConfirmarSenha);
                 usuario.CaminhoImagemBanner = "/Content/imgs/ProfileImgs/foto-padrao-banner.png";
                 usuario.CaminhoImagemPerfil = "/Content/imgs/ProfileImgs/foto-padrao-perfil.png";
+                if(repositorio.Listar().Count == 0)
+                {
+                    usuario.Admin = true;
+                }
                 repositorio.Salvar(usuario);
                 return RedirectToAction("Index", "Perguntas");
             }

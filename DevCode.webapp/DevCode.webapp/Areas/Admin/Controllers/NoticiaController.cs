@@ -72,19 +72,14 @@ namespace DevCode.webapp.Areas.Admin.Controllers
             return View(noticia);
         }
 
-        [HttpGet]
-        public ActionResult Excluir(int id)
-        {
-            Noticia noticia = repositorio.ObterPorId(id);
-            return View(noticia);
-        }
-
         [HttpPost]
-        public ActionResult Excluir(Noticia noticia)
+        [ValidateAntiForgeryToken]
+        public ActionResult Excluir(int Id)
         {
+            Noticia noticia = repositorio.ObterPorId(Id);
             repositorio.Excluir(noticia);
-            return View(noticia);
 
+            return RedirectToAction("ListarNoticias", "Noticia", new { area = "" });
         }
 
         public ActionResult Alterar(int id)

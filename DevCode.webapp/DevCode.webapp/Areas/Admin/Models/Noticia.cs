@@ -24,11 +24,18 @@ namespace DevCode.webapp.Areas.Admin.Models
         public DateTime DataEnvio { get; set; }
         public int? Likes { get; set; }
 
+        public virtual string TituloAbreviado
+        {
+            get
+            {
+                return Titulo.Length > 35 ? $"{Titulo.Substring(0, 35)}..." : Titulo; 
+            }
+        }
         public virtual string DetalhesAbreviada
         {
             get
             {
-                return Detalhes.Length > 100 ? $"{Detalhes.Substring(0, 180)}..." : Detalhes;
+                return Detalhes.Length > 180 ? $"{Detalhes.Substring(0, 180)}..." : Detalhes;
 
             }
         }

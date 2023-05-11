@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using DevCode.webapp.Areas.Admin.Models;
 using DevCode.webapp.Data;
+using DevCode.webapp.Models;
 
 namespace DevCode.webapp.Repositorio
 {
@@ -40,9 +41,44 @@ namespace DevCode.webapp.Repositorio
             return contexto.Noticia.First(x => x.IDNoticia == id);
         }
 
+        public Noticia Find(int id)
+        {
+            return contexto.Noticia.Find(id);
+        }
+
+        public void DarLike(Noticia entidade)
+        {
+            var noticia = contexto.Noticia.First(x => x.IDNoticia == entidade.IDNoticia);
+            if (!Util.UtilClass.deuLike)
+            {
+                if (noticia.Likes == null)
+                {
+                    noticia.Likes = 1;
+                }
+                else
+                {
+                    noticia.Likes++;
+                }
+                Util.UtilClass.deuLike = true;
+            }
+            else
+            {
+                noticia.Likes--;
+                Util.UtilClass.deuLike = false;
+            }
+
+
+            contexto.SaveChanges();
+        }
+
         public void Alterar(Noticia entidade)
         {
             throw new NotImplementedException();
+        }
+
+        public List<Noticia> SearchNoticias(string query)
+        {
+            return contexto.Noticia.Where(n => n.Titulo.Contains(query) || n.Detalhes.Contains(query)).ToList();
         }
     }
 }

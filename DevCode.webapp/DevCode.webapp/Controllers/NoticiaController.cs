@@ -14,7 +14,7 @@ namespace DevCode.webapp.Controllers
         RepositorioNoticia repositorio = new RepositorioNoticia();
         RepositorioUsuario repositorioUsuario = new RepositorioUsuario();
         // GET: Noticia
-        public ActionResult ListarNoticias()
+        public ActionResult ListarNoticias(string search)
         {
             if (!Configuracao.VerificarUsuarioLogado())
             {
@@ -23,14 +23,35 @@ namespace DevCode.webapp.Controllers
 
             IList<Noticia> noticias = repositorio.Listar();
 
+            if(search != null)
+            {
+                noticias = repositorio.SearchNoticias(search);
+            }
+
             foreach (Noticia noticia in noticias)
             {
                 noticia.Usuario = repositorioUsuario.ObterPorId(noticia.IDUsuarioNoticia);
 
             }
 
-            return View(repositorio.Listar());
+            return View(noticias);
 
+        }
+
+        [HttpPost]
+        public JsonResult Like(int id)
+        {
+            Noticia noticia = repositorio.Find(id);
+
+            if (noticia != null)
+            {
+                repositorio.DarLike(noticia);
+                return Json(new { likes = noticia.Likes });
+            }
+            else
+            {
+                return Json(new { error = "Não foi possivel encontrar pergunta" });
+            }
         }
     }
 }

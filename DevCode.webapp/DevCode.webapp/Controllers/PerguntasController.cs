@@ -18,22 +18,27 @@ namespace DevCode.webapp.Controllers
         RepositorioUsuario repositorioUsuario = new RepositorioUsuario();
 
 
-        public ActionResult Index()
+        public ActionResult Index(string search)
         {
             if (!Configuracao.VerificarUsuarioLogado())
             {
                 return RedirectToAction("Entrar", "Login");
             }
 
-            IList<Perguntas> perguntas = repositorio.Listar();
-         
+            IList<Perguntas> perguntas = repositorio.Listar().OrderByDescending(x => x.DataEnvio).ToList();
+
+            if (search != null)
+            {
+                perguntas = repositorio.SearchPerguntas(search);
+            }
+
             foreach (Perguntas pergunta in perguntas)
             {
                 pergunta.Usuario = repositorioUsuario.ObterPorId(pergunta.IDUsuarioPergunta);
 
             }
 
-            return View(repositorio.Listar());
+            return View(perguntas);
 
         }
 

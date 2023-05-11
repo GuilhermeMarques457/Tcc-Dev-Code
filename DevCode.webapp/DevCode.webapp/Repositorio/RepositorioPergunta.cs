@@ -121,6 +121,11 @@ namespace DevCode.webapp.Repositorio
             contexto.SaveChanges();
         }
 
+        public List<Perguntas> SearchPerguntas(string query)
+        {
+            return contexto.Pergunta.Where(p => p.Titulo.Contains(query) || p.Detalhes.Contains(query)).ToList();
+        }
+
    
     }
 }

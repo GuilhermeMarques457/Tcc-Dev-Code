@@ -25,6 +25,15 @@
     flex-direction: column;
 }
 
+.search-box{
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-question{
+    padding: 1rem 1rem;
+}
+
 .input-label-question {
     font-size: 1.6rem;
     margin-bottom: 1rem;
@@ -58,6 +67,10 @@
 .expected-text {
     padding: 1rem 1rem;
     height: 8rem;
+}
+
+.common-text{
+    height: 5rem !important;
 }
 
 .btn-full {

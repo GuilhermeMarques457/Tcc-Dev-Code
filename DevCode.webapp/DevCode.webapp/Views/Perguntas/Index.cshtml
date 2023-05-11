@@ -15,8 +15,15 @@
             <section class="section-question">
                 <div class="useful-buttons">
                     <a href="/Perguntas/Novo" class="btn-full btn-question"><i class="ph ph-question button-icon"></i>Nova Pergunta</a>
+                    @using (Html.BeginForm("Index", "Perguntas", FormMethod.Get))
+                    {
+                        <div class="search-box">
+                            @Html.TextBox("search", null, new { placeholder = "Digite sua busca..." })
+                            <button class="btn-full btn-question"><i class="ph ph-magnifying-glass button-icon"></i></button>
+                        </div>
+                        
+                    }
 
-                    <a href="#" class="btn-full btn-question"><i class="ph ph-magnifying-glass button-icon"></i>Buscar</a>
                 </div>
                 @foreach (var item in Model)
                 {
@@ -49,7 +56,7 @@
                         <div class="question-content">
                             <a href="/Respostas/Index/@item.IDPergunta">
                                 <h3 class="tertiary-heading">
-                                    @item.Titulo
+                                    @item.TituloAbreviado
                                 </h3>
                             </a>
                             <p class="common-text question-text">
@@ -63,6 +70,7 @@
                                 <div class="question-info-content">
                                     <i class="ph ph-thumbs-up question-icon like-icon"></i>
                                     <button class="likeButton" data-post-id="@item.IDPergunta"></button>
+                                    
                                     <span class="question-info question-comments question-like likeCount"> @item.Likes</span>
                                 </div>
 

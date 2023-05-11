@@ -14,8 +14,15 @@
             <section class="section-question">
                 <div class="useful-buttons">
                     <div></div>
-             
-                    <a href="#" class="btn-full btn-question"><i class="ph ph-magnifying-glass button-icon"></i>Buscar</a>
+                    @using (Html.BeginForm("ListarNoticias", "Noticia", FormMethod.Get))
+                    {
+                        <div class="search-box">
+                            @Html.TextBox("search", null, new { placeholder = "Digite sua busca..." })
+                            <button class="btn-full btn-question"><i class="ph ph-magnifying-glass button-icon"></i></button>
+                        </div>
+
+                    }
+                    
                 </div>
                 @foreach (var item in Model)
                 {
@@ -38,7 +45,7 @@
                                 || Configuracao.Usuario.Admin == true)
                             {
                                 <div class="delete-box">
-                                    <form method="post" action="@Url.Action("Excluir", "Perguntas", new { id = item.IDNoticia })">
+                                    <form method="post" action="@Url.Action("Excluir", "Noticia", new { id = item.IDNoticia, area = "Admin" })">
                                         @Html.AntiForgeryToken()
                                         <button class="btn-excluir"><i class="ph ph-trash"></i></button>
                                     </form>
@@ -96,8 +103,8 @@
         $(document).ready(function () {
             $(document).on("click", ".likeButton", function () {
                 var postId = $(this).data("post-id");
-                var likeCountElement = $(this).siblings(".likeCount"); // Elemento HTML que exibe a contagem de likes
-                var likeIconElement = $(this).siblings(".like-icon"); // Elemento HTML do ícone de like
+                var likeCountElement = $(this).siblings(".likeCount"); 
+                var likeIconElement = $(this).siblings(".like-icon"); 
 
                 if (!$(this).hasClass("liked")) {
                     likeIconElement.addClass("liked-icon")
@@ -109,7 +116,7 @@
 
                 $.ajax({
                     type: "POST",
-                    url: "/Perguntas/Like",
+                    url: "/Noticia/Like",
                     data: { id: postId },
                     success: function (data) {
                         likeCountElement.text(data.likes);

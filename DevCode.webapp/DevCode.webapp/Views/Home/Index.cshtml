@@ -34,35 +34,40 @@
             </div>
 
             <div class="news-box">
+                @{ 
+                    int count = 1;
+                }
+
                 @foreach (var noticias in Model.Noticias)
                 {
+                    string src = "/Content/imgs/noticia/noticia" + count + ".jpg"; 
+
+
                     <div class="news-card">
                         <div class="news-img-box">
-                            <img class="news-img"
-                                 src="~/Content/imgs/noticia/noticia1.jpg"
-                                 alt="Imagem de noticia" />
+                            <img class="news-img" src="@src" alt="Imagem de noticia" />
                         </div>
                         <div class="news-content">
-                            <h3 class="tertiary-heading">@noticias.Titulo</h3>
+                            <h3 class="tertiary-heading">@noticias.TituloAbreviado</h3>
                             <p class="common-text news-text">
                                 @noticias.DetalhesAbreviada
+                                <a href="#" class="keep-learning">Continuar lendo</a>
+                              
                             </p>
                             <div class="news-card-footer">
                                 <div class="news-info-box">
                                     <div class="news-info-content">
-                                        <i class="ph-chat-dots news-icon"></i>
+                                        <i class="ph ph-thumbs-up news-icon"></i>
+                                       
                                         <span class="news-info news-comments">@noticias.Likes</span>
-                                    </div>
-                                    <div class="news-info-content">
-                                        <i class="ph-eye news-icon"></i>
-                                        <span class="news-info news-views">20k</span>
                                     </div>
                                 </div>
                                 <span class="news-time-released">@noticias.DataEnvio</span>
                             </div>
                         </div>
                     </div>
-                }      
+                    count++;
+                }
             </div>
         </div>
     </section>
@@ -80,8 +85,8 @@
                                 <span class="tag-news @perguntas.TagSecundaria">@perguntas.TagSecundaria</span>
 
                             </div>
-                            <h3 class="tertiary-heading">
-                                @perguntas.Titulo
+                            <h3 class="tertiary-heading title-home-news">
+                                @perguntas.TituloAbreviado
                             </h3>
                             <p class="common-text question-text">
                                 @perguntas.DetalhesAbreviada
