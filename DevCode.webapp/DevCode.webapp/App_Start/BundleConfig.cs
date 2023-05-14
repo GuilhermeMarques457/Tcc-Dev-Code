@@ -65,6 +65,10 @@ namespace DevCode.webapp
                     "~/Content/News.css"
             ));
 
+            bundles.Add(new StyleBundle("~/Amizade/css").Include(
+                    "~/Content/Amizade.css"
+            ));
+
 
         }
     }

@@ -16,6 +16,7 @@ namespace DevCode.webapp.Controllers
         RepositorioNoticia RepositorioNoticia = new RepositorioNoticia();
         RepositorioPergunta RepositorioPergunta = new RepositorioPergunta();
 
+        [Route("")]
         public ActionResult Index()
         {
             HomeVM homeVM = new HomeVM();
@@ -24,6 +25,7 @@ namespace DevCode.webapp.Controllers
             return View(homeVM);
         }
 
+        [Route("")]
         [HttpPost]
         public ActionResult Index(HomeVM homeVM)
         {

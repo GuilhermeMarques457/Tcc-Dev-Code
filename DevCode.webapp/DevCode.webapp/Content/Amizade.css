@@ -1,0 +1,160 @@
+﻿
+
+.friends-section {
+    grid-column: 2/5;
+}
+
+.grid {
+    row-gap: 4.8rem;
+    column-gap: 2rem;
+}
+
+.acept-section{
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.box-acept-friendship {
+    transition: all 1s;
+    background-color: #fff;
+    padding: 1.2rem 2.2rem;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.image-user-request {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%
+}
+
+
+.buttons-box-friendship{
+    display: flex;
+    gap: 1.6rem
+}
+
+.btn-friendship {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    font-size: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border: 0;
+    transition: all 0.3s;
+}
+
+.btn-aceitar {
+    background-color: #099268; 
+    
+}
+.btn-rejeitar {
+    background-color: #ff6b6b;
+}
+
+.btn-aceitar:hover {
+    color: #099268;
+    box-shadow: inset 0 0 0 2px #099268;
+    background-color: #fff;
+}
+
+.btn-rejeitar:hover {
+    color: #ff6b6b;
+    box-shadow: inset 0 0 0 2px #ff6b6b;
+    background-color: #fff;
+}
+
+
+.box-user {
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #aaa;
+    background-color: #fff;
+    border-radius: 5px;
+}
+.image-user-box{
+    width: 100%;
+    height: 10rem;
+    overflow: hidden;
+}
+
+.image-banner{
+    width: 100%;
+}
+
+.image-profile {
+    height: 8rem;
+    width: 8rem;
+    position: absolute;
+    border-radius: 50%;
+    top: 6rem;
+    left: 2rem;
+}
+
+.info-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2.8rem;
+    padding: 5.5rem 1.8rem 1rem 1.8rem;
+}
+
+.username {
+    font-weight: 500;
+    font-size: 1.6rem;
+}
+
+.btn-solicitacao {
+    border-radius: 5px !important;
+    padding: 0.8rem 2rem; 
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn-ja-amigo {
+    border-radius: 5px !important;
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    background-color: #099268 !important;
+}
+
+    .btn-ja-amigo:hover {
+        background-color: #099268 !important;
+        color: #f0f0f0;
+        box-shadow: none;
+    }
+
+.btn-pendente {
+    border-radius: 5px !important;
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    background-color: #868e96 !important;
+}
+
+    .btn-pendente:hover {
+        background-color: #868e96 !important;
+        color: #f0f0f0;
+        box-shadow: none;
+    }
+
+.btn-amigo-rejeitado {
+    border-radius: 5px !important;
+    padding: 0.8rem 1.6rem;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    background-color: #ff6b6b !important;
+}
+
+    .btn-amigo-rejeitado:hover {
+        background-color: #ff6b6b !important;
+        color: #f0f0f0;
+        box-shadow: none;
+    }

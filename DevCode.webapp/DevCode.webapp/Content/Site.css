@@ -21,7 +21,7 @@
 .nav-list {
     list-style: none;
     display: flex;
-    gap: 5.8rem;
+    gap: 2.8rem;
     align-items: center;
 }
 
@@ -662,7 +662,7 @@
     display: flex;
     gap: 1rem;
     position: relative;
-    transition: 0.3s all;
+    transition: 0.8s all;
     align-items: center;
     border-top-left-radius: 40px;
     border-bottom-left-radius: 40px;
@@ -681,7 +681,7 @@
     opacity: 0 !important;
     pointer-events: none;
     visibility: hidden;
-    transform: translateX(-100%) !important;
+    transform: translateX(-150%) !important;
 }
 
 .picture-me{
@@ -703,7 +703,7 @@
 }
 
 .info-us{
-    transition: 0.4s all;
+    transition: 0.8s all;
     position: absolute;
 }
 

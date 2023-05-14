@@ -13,7 +13,8 @@ namespace DevCode.webapp.Controllers
     {
         RepositorioNoticia repositorio = new RepositorioNoticia();
         RepositorioUsuario repositorioUsuario = new RepositorioUsuario();
-        // GET: Noticia
+
+        [Route("Noticia/ListarNoticias/{search?}")]
         public ActionResult ListarNoticias(string search)
         {
             if (!Configuracao.VerificarUsuarioLogado())

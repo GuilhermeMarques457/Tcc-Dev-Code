@@ -9,6 +9,8 @@ namespace DevCode.webapp.Util
 {
     public class Configuracao
     {
+        
+
         public static Usuario Usuario
         {
             get
@@ -32,5 +34,8 @@ namespace DevCode.webapp.Util
             else
                 return true;
         }
+
+       
+
     }
 }

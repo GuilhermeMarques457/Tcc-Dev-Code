@@ -1,0 +1,197 @@
+﻿@model DevCode.webapp.Models.UsuarioAmigosVM
+@using DevCode.webapp.Util
+
+@{
+    ViewBag.Title = "Amizade";
+    ViewBag.Css = "Amizade";
+}
+
+<main class="main-container">
+    <div class="container">
+        <div class="layout-box">
+            @Html.Partial("_ViewUsuario")
+            <section class="friends-section">
+                <h2 class="secondary-heading text-center mg-tp-bg mg-bt-md">Faça novas conexões com outros usuarios</h2>
+                <div class="acept-section">
+                    @foreach (var item in Model.Amizades)
+                    {
+                        if (item.Pendente == true)
+                        {
+                            <div class="box-acept-friendship">
+                                <div class="flex">
+                                    <img class="image-user-request" src="@item.UsuarioPedido.CaminhoImagemPerfil" />
+                                    <p><strong> @item.UsuarioPedido.Username</strong> te enviou solicitação de amizade</p>
+                                </div>
+                                <div class="buttons-box-friendship">
+                                    <button class="btn-friendship btn-aceitar" data-user-id="@item.IDUsuarioPedido"><i class="ph ph-check"></i></button>
+                                    <button class="btn-friendship btn-rejeitar" data-user-id="@item.IDUsuarioPedido"><i class="ph ph-x"></i></button>
+                                </div>
+                            </div>
+
+
+
+                        }
+                    }
+                </div>
+                
+            <div class="grid--4--cols grid mg-tp-md">
+                @foreach (var item in Model.Usuarios)
+                {
+                    if (item.IDUsuario != Configuracao.Usuario.IDUsuario)
+                    {
+                        var amigos = UtilMethods.PegarAmizade(Configuracao.Usuario.IDUsuario, item.IDUsuario);
+
+                        if (amigos != null)
+                        {
+
+                            if (amigos.Pendente == true)
+                            {
+                                // Se esta pendente, exibe a mensagem "Pendente"
+                                <div class="box-user">
+                                    <div class="image-user-box">
+                                        <img class="image-banner" src="@item.CaminhoImagemBanner" />
+                                    </div>
+                                    <div class="info-box">
+                                        <p class="username">@item.Username</p>
+                                        <button class="btn-full btn-pendente">Pendente...</button>
+                                        <img class="image-profile" src="@item.CaminhoImagemPerfil" />
+                                    </div>
+                                </div>
+                            }
+                            else
+                            {
+                                if (amigos.Amigos == false)
+                                {
+                                    // Se foi rejeitado, exibe a mensagem "Amizade Rejeitada"
+                                    <div class="box-user">
+                                        <div class="image-user-box">
+                                            <img class="image-banner" src="@item.CaminhoImagemBanner" />
+                                        </div>
+                                        <div class="info-box">
+                                            <p class="username">@item.Username</p>
+                                            <button class="btn-full btn-amigo-rejeitado">Amizade Rejeitada  <i class="ph ph-prohibit"></i></button>
+                                            <img class="image-profile" src="@item.CaminhoImagemPerfil" />
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    // Se já são amigos, exibe a mensagem "já é amigo"
+                                    <div class="box-user">
+                                        <div class="image-user-box">
+                                            <img class="image-banner" src="@item.CaminhoImagemBanner" />
+                                        </div>
+                                        <div class="info-box">
+                                            <p class="username">@item.Username</p>
+                                            <button class="btn-full btn-ja-amigo">Já é amigo   <i class="ph ph-check"></i></button>
+                                            <img class="image-profile" src="@item.CaminhoImagemPerfil" />
+                                        </div>
+                                    </div>
+                                }
+                            }
+
+
+                        }
+                        else
+                        {
+                            // Se não são amigos, exibe o botão "enviar solicitação"
+                            <div class="box-user">
+                                <div class="image-user-box">
+                                    <img class="image-banner" src="@item.CaminhoImagemBanner" />
+                                </div>
+                                <div class="info-box">
+                                    <p class="username">@item.Username</p>
+                                    <button class="btn-full btn-solicitacao" data-user-id="@item.IDUsuario">Enviar solicitação</button>
+                                    <img class="image-profile" src="@item.CaminhoImagemPerfil" />
+                                </div>
+                            </div>
+                        }
+                    }
+
+
+                }
+            </div>
+            </section>
+            
+        </div>
+    </div>
+</main>
+
+
+@section scripts {
+    <script>
+        $(document).on('click', '.btn-solicitacao', function () {
+            var idUsuarioResposta = $(this).data('user-id');
+            var btn = $(this);
+            $.ajax({
+                type: 'POST',
+                url: '/Amizade/EnviarSolicitacao',
+                data: { IdUsuarioResposta: idUsuarioResposta },
+                success: function (result) {
+                    if (result.success) {
+                       btn.addClass('btn-pendente').removeClass('btn-solicitacao').text('Pendente...');
+                    } else {
+                        alert(result.message);
+                    }
+                },
+                error: function () {
+                    alert('Ocorreu um erro ao enviar a solicitação de amizade.');
+                }
+            });
+           
+        });
+
+        $(document).on('click', '.btn-aceitar', function () {
+            var aceitarBox = $(this).closest('.box-acept-friendship');
+            var idUsuarioPedido = $(this).data('user-id');
+            $.ajax({
+                type: 'POST',
+                url: '/Amizade/AceitarSolicitacao',
+                data: { IdUsuarioPedido: idUsuarioPedido },
+                success: function (result) {
+                    if (result.success) {
+                        aceitarBox.addClass("element-hidden");
+
+                        // Espera meio segundo e adiciona outra classe
+                        setTimeout(function () {
+                            aceitarBox.addClass("display-none");
+                        }, 500);
+                    } else {
+                        alert(result.message);
+                    }
+                },
+                error: function () {
+                    alert('Ocorreu um erro ao aceitar a solicitação de amizade.');
+                }
+            });
+
+            
+        });
+
+        $(document).on('click', '.btn-rejeitar', function () {
+            var idUsuarioPedido = $(this).data('user-id');
+            var aceitarBox = $(this).closest('.box-acept-friendship');
+            $.ajax({
+                type: 'POST',
+                url: '/Amizade/RejeitarSolicitacao',
+                data: { IdUsuarioPedido: idUsuarioPedido },
+                success: function (result) {
+                    if (result.success) {
+                        aceitarBox.addClass("element-hidden");
+
+                        // Espera meio segundo e adiciona outra classe
+                        setTimeout(function () {
+                            aceitarBox.addClass("display-none");
+                        }, 500);
+                    } else {
+                        alert(result.message);
+                    }
+                },
+                error: function () {
+                    alert('Ocorreu um erro ao rejeitar a solicitação de amizade.');
+                }
+            });
+        });
+    </script>
+}
+

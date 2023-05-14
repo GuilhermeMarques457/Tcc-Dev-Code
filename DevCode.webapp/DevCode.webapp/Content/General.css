@@ -249,11 +249,17 @@ button:focus-visible {
 }
 
 .display-none{
-    display: none;
+    display: none !important;
 }
 
 .text-danger{
     font-size: 1.2rem !important;
+}
+
+.flex{
+    display: flex;
+    gap: 1rem;
+    align-items: center
 }
 
 /* Margens */

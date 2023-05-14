@@ -145,6 +145,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\NoticiaController.cs" />
     <Compile Include="Areas\Admin\Models\Noticia.cs" />
+    <Compile Include="Controllers\AmizadeController.cs" />
     <Compile Include="Controllers\NoticiaController.cs" />
     <Compile Include="Controllers\RespostasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -199,7 +200,12 @@
     <Compile Include="Migrations\202305061614443_add-something.designer.cs">
       <DependentUpon>202305061614443_add-something.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202305120021071_create-table-amigos.cs" />
+    <Compile Include="Migrations\202305120021071_create-table-amigos.designer.cs">
+      <DependentUpon>202305120021071_create-table-amigos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Amizade.cs" />
     <Compile Include="Models\Enum\Tags.cs" />
     <Compile Include="Models\HomeVM.cs" />
     <Compile Include="Models\ListarPerguntaRespostasVM.cs" />
@@ -207,9 +213,11 @@
     <Compile Include="Models\ResponderPeguntaVM.cs" />
     <Compile Include="Models\Respostas.cs" />
     <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Models\UsuarioAmigosVM.cs" />
     <Compile Include="Models\UsuarioVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorio\Interface\IRepositorio.cs" />
+    <Compile Include="Repositorio\RepositorioAmizade.cs" />
     <Compile Include="Repositorio\RepositorioResposta.cs" />
     <Compile Include="Repositorio\RepositorioNoticia.cs" />
     <Compile Include="Repositorio\RepositorioPergunta.cs" />
@@ -217,8 +225,10 @@
     <Compile Include="Util\Configuracao.cs" />
     <Compile Include="Util\MD5.cs" />
     <Compile Include="Util\UtilClass.cs" />
+    <Compile Include="Util\UtilMethods.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Amizade.css" />
     <Content Include="Content\Answer.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -287,6 +297,10 @@
     <Content Include="Views\Respostas\Novo.cshtml" />
     <Content Include="Views\Shared\_ViewPergunta.cshtml" />
     <Content Include="Views\Noticia\ListarNoticias.cshtml" />
+    <Content Include="Views\Amizade\VerPessoas.cshtml" />
+    <Content Include="Views\Shared\_LayoutLogar.cshtml" />
+    <Content Include="Views\Login\_ViewStart.cshtml" />
+    <Content Include="Views\Home\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -338,6 +352,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202305061614443_add-something.resx">
       <DependentUpon>202305061614443_add-something.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305120021071_create-table-amigos.resx">
+      <DependentUpon>202305120021071_create-table-amigos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
