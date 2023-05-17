@@ -192,6 +192,11 @@ button:focus-visible {
 
 /* helper classes */
 
+.links {
+    color: #3d4465;
+    text-decoration: none !important;
+}
+
 .centered {
     align-items: center;
     justify-content: center;
@@ -259,7 +264,7 @@ button:focus-visible {
 .flex{
     display: flex;
     gap: 1rem;
-    align-items: center
+    align-items: center;
 }
 
 /* Margens */

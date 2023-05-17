@@ -209,6 +209,7 @@
     <Compile Include="Models\Enum\Tags.cs" />
     <Compile Include="Models\HomeVM.cs" />
     <Compile Include="Models\ListarPerguntaRespostasVM.cs" />
+    <Compile Include="Models\PerguntaRespostaVM.cs" />
     <Compile Include="Models\Perguntas.cs" />
     <Compile Include="Models\ResponderPeguntaVM.cs" />
     <Compile Include="Models\Respostas.cs" />
@@ -234,6 +235,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\imgs\bronze.png" />
     <Content Include="Content\Form.css" />
     <Content Include="Content\General.css" />
     <Content Include="Content\imgs\form\background-img.jpg" />
@@ -241,6 +243,7 @@
     <Content Include="Content\imgs\form\google-logo.png" />
     <Content Include="Content\imgs\form\microsoft-logo.png" />
     <Content Include="Content\imgs\hero\notebook.png" />
+    <Content Include="Content\MostrarAmigo.css" />
     <Content Include="Content\News.css" />
     <Content Include="Content\imgs\noticia\noticia1.jpg" />
     <Content Include="Content\imgs\noticia\noticia2.jpg" />
@@ -250,6 +253,8 @@
     <Content Include="Content\imgs\ProfileImgs\foto-padrao-banner.png" />
     <Content Include="Content\imgs\ProfileImgs\foto-padrao-perfil.png" />
     <Content Include="Content\Inicial.css" />
+    <Content Include="Content\imgs\ouro.png" />
+    <Content Include="Content\imgs\prata.png" />
     <Content Include="Content\Question.css" />
     <Content Include="Content\User.css" />
     <Content Include="favicon.ico" />
@@ -301,6 +306,7 @@
     <Content Include="Views\Shared\_LayoutLogar.cshtml" />
     <Content Include="Views\Login\_ViewStart.cshtml" />
     <Content Include="Views\Home\_ViewStart.cshtml" />
+    <Content Include="Views\Usuario\MostrarAmigo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

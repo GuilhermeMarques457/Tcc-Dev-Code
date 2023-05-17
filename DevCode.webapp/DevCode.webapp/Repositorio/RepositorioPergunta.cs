@@ -126,6 +126,11 @@ namespace DevCode.webapp.Repositorio
             return contexto.Pergunta.Where(p => p.Titulo.Contains(query) || p.Detalhes.Contains(query)).ToList();
         }
 
+        public List<Perguntas> ObterPerguntasDoUsuario(int id)
+        {
+            return contexto.Pergunta.Where(p => p.IDUsuarioPergunta == id).ToList();
+        }
+
    
     }
 }

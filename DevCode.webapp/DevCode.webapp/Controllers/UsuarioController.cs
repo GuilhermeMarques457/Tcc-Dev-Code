@@ -15,6 +15,8 @@ namespace DevCode.webapp.Controllers
     {
 
         RepositorioUsuario repositorio = new RepositorioUsuario();
+        RepositorioPergunta repositorioPergunta = new RepositorioPergunta();
+        RepositorioResposta repositorioResposta = new RepositorioResposta();
 
         public ActionResult Index()
         {
@@ -86,6 +88,25 @@ namespace DevCode.webapp.Controllers
             }
             return View(usuario);
 
+        }
+
+        public ActionResult MostrarAmigo(int? Id)
+        {
+            if (!Configuracao.VerificarUsuarioLogado())
+            {
+                return RedirectToAction("Entrar", "Login");
+            }
+
+            int id = Convert.ToInt32(Id);
+
+            Usuario usuario = repositorio.ObterPorId(id);
+            PerguntaRespostaVM perguntaRespostaVM = new PerguntaRespostaVM();
+
+            perguntaRespostaVM.Perguntas = repositorioPergunta.ObterPerguntasDoUsuario(usuario.IDUsuario);
+            perguntaRespostaVM.Respostas = repositorioResposta.ObterRespostasDoUsuario(usuario.IDUsuario);
+            perguntaRespostaVM.Usuario = usuario;
+
+            return View(perguntaRespostaVM);
         }
 
         [HttpPost]

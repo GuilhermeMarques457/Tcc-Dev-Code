@@ -23,5 +23,12 @@ namespace DevCode.webapp.Util
             return RepositorioAmizade.PegarAmizade(IdUsuario, IdUsuarioAmigo);
 
         }
+
+        public static int? PegarPontos(int idUsuario)
+        {
+            RepositorioUsuario repositorioUsuario = new RepositorioUsuario();
+
+            return repositorioUsuario.PegarPontos(idUsuario);
+        }
     }
 }

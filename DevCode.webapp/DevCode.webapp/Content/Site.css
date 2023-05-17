@@ -723,3 +723,17 @@
     fill:#fff;
   stroke: #fff;
 }
+
+.img-medalha{
+    width: 2.5rem;
+    height: 2.8rem;
+}
+
+.box-username-medal{
+    margin-top: 1rem;
+}
+
+.pontos-text{
+    font-size: 1.2rem;
+    margin-top: 0.8rem;
+}

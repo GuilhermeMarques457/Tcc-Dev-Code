@@ -1,0 +1,152 @@
+﻿@model DevCode.webapp.Models.PerguntaRespostaVM
+
+@{
+    ViewBag.Title = "MostrarAmigo";
+    ViewBag.Css = "MostrarAmigo";
+}
+
+<main class="main-container">
+    <div class="container">
+        <div class="layout-box grid grid--4--cols">
+            @Html.Partial("_ViewUsuario")
+            <div class="friend-container">
+                <p>@Model.Usuario.Username</p>
+
+                @if (Model.Perguntas.Count == 0)
+                {
+                    <p>Não ha perguntas feitas por esse usuario</p>
+                }
+                <h2 class="secondary-heading">Perguntas feitas por esse usuario</h2>
+                <div class="box-item">
+                    @foreach (var item in Model.Perguntas)
+                    {
+
+                        <div class="question-card-container">
+                            <div class="question-user-box">
+                                <div class="user-box-info">
+                                    <img src="@Model.Usuario.CaminhoImagemPerfil"
+                                         class="question-user-photo" />
+                                    <p class="username-text"> @Model.Usuario.Username</p>
+                                </div>
+                                <div>
+                                    <span class="tag-news @item.TagPrincipal">@item.TagPrincipal</span>
+                                    @if (item.TagSecundaria != null)
+                                    {
+                                        <span class="tag-news @item.TagSecundaria">@item.TagSecundaria</span>
+                                    }
+                                    <span class="question-time-released mg-lf-sm">@item.DataEnvio.ToShortDateString()</span>
+                                </div>
+
+                            </div>
+                            <div class="question-content">
+                                <a href="/Respostas/Index/@item.IDPergunta">
+                                    <h3 class="tertiary-heading">
+                                        @item.TituloAbreviado
+                                    </h3>
+                                </a>
+                                <p class="common-text question-text">
+                                    @item.DetalhesAbreviada
+
+                                    <a href="#" class="keep-learning">Continuar lendo</a>
+                                </p>
+                            </div>
+                            <div class="question-card-footer">
+                                <div class="question-info-box">
+                                    <div class="question-info-content">
+                                        <i class="ph ph-thumbs-up question-icon like-icon"></i>
+                                        <button class="likeButton" data-post-id="@item.IDPergunta"></button>
+
+                                        <span class="question-info question-comments question-like likeCount"> @item.Likes</span>
+                                    </div>
+
+                                </div>
+                                <div class="question-info-box">
+                                    <div class="question-info-content">
+                                        <i class="ph-chat-dots question-icon"></i>
+                                        <span class="question-info question-comments">@item.Comments</span>
+                                    </div>
+                                    <div class="question-info-content">
+                                        <i class="ph-eye question-icon"></i>
+                                        <span class="question-info question-views">@item.Views</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+                @if (Model.Respostas.Count == 0)
+                {
+                    <p>Não ha perguntas feitas por esse usuario</p>
+                }
+                <h2 class="secondary-heading mg-tp-bg">Respostas feitas por esse usuario</h2>
+                <div class="box-items">
+                    @foreach (var item in Model.Respostas)
+                    {
+
+                        <div class="question-card-container">
+                            <div class="question-user-box">
+                                <div class="user-box-info">
+                                    <img src="@Model.Usuario.CaminhoImagemPerfil"
+                                         class="question-user-photo" />
+                                    <p class="username-text"> @Model.Usuario.Username</p>
+                                </div>
+                                <div>
+                                    <span class="question-time-released mg-lf-sm">@item.DataResposta.ToShortDateString()</span>
+                                </div>
+                            </div>
+                            <div class="question-content">
+                                <p class="text-answer question-text">
+                                    @item.ExplicacaoResposta
+
+                                    <a href="#" class="keep-learning">Continuar lendo</a>
+                                </p>
+                            </div>
+
+                        </div>
+                    }
+                </div>
+
+               
+            </div>
+        </div>
+
+    </div>
+</main>
+
+
+@section scripts {
+    <script>$(document).ready(function () {
+            $(document).on("click", ".likeButton", function () {
+                var postId = $(this).data("post-id");
+                var likeCountElement = $(this).siblings(".likeCount"); // Elemento HTML que exibe a contagem de likes
+                var likeIconElement = $(this).siblings(".like-icon"); // Elemento HTML do ícone de like
+
+                if (!$(this).hasClass("liked")) {
+                    likeIconElement.addClass("liked-icon")
+                    $(this).addClass("liked");
+                } else {
+                    likeIconElement.removeClass("liked-icon")
+                    $(this).removeClass("liked");
+                }
+
+                $.ajax({
+                    type: "POST",
+                    url: "/Perguntas/Like",
+                    data: { id: postId },
+                    success: function (data) {
+                        likeCountElement.text(data.likes);
+                    }
+                });
+            });
+        });</script>
+}
+
+
+
+
+
+
+
+
+
+

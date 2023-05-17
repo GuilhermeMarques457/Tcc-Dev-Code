@@ -69,6 +69,10 @@ namespace DevCode.webapp
                     "~/Content/Amizade.css"
             ));
 
+            bundles.Add(new StyleBundle("~/MostrarAmigo/css").Include(
+                    "~/Content/MostrarAmigo.css"
+            ));
+
 
         }
     }

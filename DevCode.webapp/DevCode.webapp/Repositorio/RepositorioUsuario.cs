@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -40,6 +41,7 @@ namespace DevCode.webapp.Repositorio
             var usuario = contexto.Usuario.First(x => x.IDUsuario == entidade.IDUsuario);
             if(usuario != null)
             {
+               
                 var perguntas = contexto.Pergunta.Where(x => x.IDUsuarioPergunta == usuario.IDUsuario);
 
                 foreach (var pergunta in perguntas)
@@ -53,8 +55,10 @@ namespace DevCode.webapp.Repositorio
                 var respostas = contexto.Respostas.Where(x => x.IDUsuarioResposta == usuario.IDUsuario);
                 contexto.Respostas.RemoveRange(respostas);
 
-                var noticias = contexto.Noticia.Where(n => n.IDUsuarioNoticia == usuario.IDUsuario);
+                var amizades = contexto.Amizades.Where(x => x.IDUsuarioResposta == usuario.IDUsuario || x.IDUsuarioPedido == usuario.IDUsuario);
+                contexto.Amizades.RemoveRange(amizades);
 
+                var noticias = contexto.Noticia.Where(n => n.IDUsuarioNoticia == usuario.IDUsuario);
                 contexto.Noticia.RemoveRange(noticias);
 
             }
@@ -91,14 +95,28 @@ namespace DevCode.webapp.Repositorio
             return contexto.Usuario.First(x => x.IDUsuario == id).CaminhoImagemPerfil;
         }
 
-        //public void AlterarFotoDePerfil(int userId, string profileImagePath)
-        //{
-        //    Usuario user = contexto.Usuario.Find(userId);
-        //    if (user != null)
-        //    {
-        //        user.CaminhoImagemPerfil = profileImagePath;
-        //        contexto.SaveChanges();
-        //    }
-        //}
+        public void AumentarPontos(int id)
+        {
+            Usuario usuario = contexto.Usuario.First(x => x.IDUsuario == id);
+            if(usuario != null)
+            {
+                if (usuario.Pontos == null)
+                {
+                    usuario.Pontos = 5;
+                }
+                else
+                {
+                    usuario.Pontos+= 5;
+                }
+            }
+            contexto.SaveChanges();
+        
+        }
+
+        public int? PegarPontos(int id)
+        {
+            Usuario usuario = contexto.Usuario.First(x => x.IDUsuario == id);
+            return usuario.Pontos;
+        }
     }
 }

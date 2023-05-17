@@ -16,7 +16,7 @@ using System.Threading.Tasks;
     padding: 3.2rem 1.8rem;
     position: relative;
     border-radius: 10px;
-    height: 50rem;
+    height: 55rem;
 }
 
 .image-box {
@@ -63,7 +63,7 @@ using System.Threading.Tasks;
     font-weight: 600;
     font-size: 1.2rem;
     margin: 0;
-    margin-top: 7px;
+
 }
 
 .local-text {
@@ -104,7 +104,7 @@ using System.Threading.Tasks;
     .friend-box::after {
         content: "";
         position: absolute;
-        top: 40px;
+        top: 29px;
         left: 40px;
         height: 1px;
         width: 100px;
@@ -114,9 +114,6 @@ using System.Threading.Tasks;
         margin: 0;
     }
 
-    .friend-box:last-child::after {
-        height: 0;
-    }
 
 .profile-img {
     width: 2rem;

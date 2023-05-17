@@ -141,9 +141,11 @@ namespace DevCode.webapp.Controllers
         public JsonResult Like(int id)
         {
             Perguntas pergunta = repositorio.Find(id);
+            Usuario usuario = repositorioUsuario.ObterPorId(pergunta.IDUsuarioPergunta);
 
             if (pergunta != null)
             {
+                repositorioUsuario.AumentarPontos(usuario.IDUsuario);
                 repositorio.DarLike(pergunta);
                 return Json(new { likes = pergunta.Likes });
             }
