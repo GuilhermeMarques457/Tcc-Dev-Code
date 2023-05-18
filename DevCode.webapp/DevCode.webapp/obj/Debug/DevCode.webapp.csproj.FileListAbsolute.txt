@@ -1317,3 +1317,5 @@ C:\Users\Microsoft\Downloads\Tcc-Dev-Code-some-new-features\DevCode.webapp\DevCo
 C:\Users\Microsoft\Downloads\Tcc-Dev-Code-some-new-features\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.csproj.CopyComplete
 C:\Users\Microsoft\Downloads\Tcc-Dev-Code-some-new-features\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.dll
 C:\Users\Microsoft\Downloads\Tcc-Dev-Code-some-new-features\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.pdb
+C:\Users\Microsoft\Documents\Tcc DevCode\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.addsomething.resources
+C:\Users\Microsoft\Documents\Tcc DevCode\DevCode.webapp\DevCode.webapp\obj\Debug\DevCode.webapp.Migrations.createtableamigos.resources

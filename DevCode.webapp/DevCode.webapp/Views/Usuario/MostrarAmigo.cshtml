@@ -82,7 +82,31 @@
                 <div class="box-items">
                     @foreach (var item in Model.Respostas)
                     {
+                        <div class="question-card-container">
+                            <div class="question-user-box">
+                                <div class="user-box-info">
+                                    <img src="@item.Perguntas.Usuario.CaminhoImagemPerfil"
+                                         class="question-user-photo" />
+                                    <p class="username-text"> @item.Perguntas.Usuario.Username</p>
+                                </div>
+                                <div>
+                                    <span class="tag-news @item.Perguntas.TagPrincipal">@item.Perguntas.TagPrincipal</span>
+                                    @if (item.Perguntas.TagSecundaria != null)
+                                    {
+                                        <span class="tag-news @item.Perguntas.TagSecundaria">@item.Perguntas.TagSecundaria</span>
+                                    }
+                                    <span class="question-time-released mg-lf-sm">@item.Perguntas.DataEnvio.ToShortDateString()</span>
+                                </div>
+                            </div>
+                            <div class="question-content">
+                                <p class="text-answer question-text">
+                                    @item.Perguntas.Titulo
 
+                                    <a href="#" class="keep-learning">Continuar lendo</a>
+                                </p>
+                            </div>
+
+                        </div>
                         <div class="question-card-container">
                             <div class="question-user-box">
                                 <div class="user-box-info">

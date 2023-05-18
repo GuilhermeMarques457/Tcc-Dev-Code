@@ -118,5 +118,10 @@ namespace DevCode.webapp.Repositorio
             Usuario usuario = contexto.Usuario.First(x => x.IDUsuario == id);
             return usuario.Pontos;
         }
+
+        public List<Usuario> ObterListaPorUsername(string username)
+        {
+            return contexto.Usuario.Where(p => p.Username.Contains(username)).ToList();
+        }
     }
 }

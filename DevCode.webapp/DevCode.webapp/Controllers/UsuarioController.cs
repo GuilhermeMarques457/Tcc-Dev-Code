@@ -17,6 +17,7 @@ namespace DevCode.webapp.Controllers
         RepositorioUsuario repositorio = new RepositorioUsuario();
         RepositorioPergunta repositorioPergunta = new RepositorioPergunta();
         RepositorioResposta repositorioResposta = new RepositorioResposta();
+        RepositorioUsuario repositorioUsuario = new RepositorioUsuario();
 
         public ActionResult Index()
         {
@@ -105,6 +106,13 @@ namespace DevCode.webapp.Controllers
             perguntaRespostaVM.Perguntas = repositorioPergunta.ObterPerguntasDoUsuario(usuario.IDUsuario);
             perguntaRespostaVM.Respostas = repositorioResposta.ObterRespostasDoUsuario(usuario.IDUsuario);
             perguntaRespostaVM.Usuario = usuario;
+            for (int i = 0; perguntaRespostaVM.Respostas.Count > i; i++)
+            {
+                int IdPergunta = perguntaRespostaVM.Respostas[i].IDPergunta;
+                perguntaRespostaVM.Respostas[i].Perguntas = repositorioPergunta.ObterPorId(IdPergunta);
+                perguntaRespostaVM.Respostas[i].Perguntas.Usuario = repositorioUsuario.ObterPorId(perguntaRespostaVM.Respostas[i].Perguntas.IDUsuarioPergunta);
+            }
+            
 
             return View(perguntaRespostaVM);
         }
@@ -131,6 +139,8 @@ namespace DevCode.webapp.Controllers
             return RedirectToAction("Index", "Perguntas");
         }
 
+
+
         public string MudarFoto(HttpPostedFileBase img)
         {
             var fileName = Path.GetFileName(Configuracao.Usuario.IDUsuario + img.FileName);
@@ -138,6 +148,15 @@ namespace DevCode.webapp.Controllers
             img.SaveAs(path);
 
             return "/Content/imgs/ProfileImgs/" + fileName;
+        }
+
+        public ActionResult ObterListaUsuario()
+        {
+            // Lógica para obter a lista atualizada de usuários do seu sistema
+            IList<Usuario> listaUsuarios = repositorio.Listar(); // Substitua com a sua lógica de obtenção da lista de usuários
+
+            // Retorna a lista de usuários em formato JSON
+            return Json(listaUsuarios, JsonRequestBehavior.AllowGet);
         }
 
     }

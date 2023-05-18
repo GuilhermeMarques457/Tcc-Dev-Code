@@ -14,12 +14,13 @@ namespace DevCode.webapp.Controllers
         RepositorioAmizade RepositorioAmizade = new RepositorioAmizade();
         RepositorioUsuario RepositorioUsuario = new RepositorioUsuario();
 
-        public ActionResult VerPessoas()
+        public ActionResult VerPessoas(string search)
         {
             if (!Configuracao.VerificarUsuarioLogado())
             {
                 return RedirectToAction("Entrar", "Login");
             }
+
 
             UsuarioAmigosVM usuarioAmigosVM = new UsuarioAmigosVM()
             {
@@ -34,6 +35,13 @@ namespace DevCode.webapp.Controllers
                     RepositorioUsuario.ObterPorId(
                         usuarioAmigosVM.Amizades[i].IDUsuarioPedido);
 
+            }
+
+            
+
+            if(search!= null)
+            {
+                usuarioAmigosVM.Usuarios = RepositorioUsuario.ObterListaPorUsername(search);
             }
             
 

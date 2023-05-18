@@ -158,3 +158,13 @@
         color: #f0f0f0;
         box-shadow: none;
     }
+
+.search-box{
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-search{
+    border-radius: 5px;
+    width: 3rem;
+}
