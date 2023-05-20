@@ -673,7 +673,7 @@
 
     .about-me:hover {
         margin-right: 0rem;
-        width: 25rem;
+        width: 30rem;
         background-color: #3D4465;
     }
 
@@ -694,7 +694,7 @@
 }
 
 .about-me:hover .info-us {
-    width: 25rem;
+    width: 30rem;
     opacity: 100 !important;
     pointer-events: auto !important;
     visibility: visible !important;
@@ -709,7 +709,7 @@
 
 .info-us p{
     color: #fff;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 }
 
 .links-box{
@@ -718,7 +718,7 @@
 }
 
 .icon-link{
-    font-size: 2rem;
+    font-size: 1.6rem;
     color: #fff !important;
     fill:#fff;
   stroke: #fff;

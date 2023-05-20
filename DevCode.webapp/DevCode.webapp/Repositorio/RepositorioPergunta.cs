@@ -67,7 +67,9 @@ namespace DevCode.webapp.Repositorio
         public void DarLike(Perguntas entidade)
         {
             var perguntas = contexto.Pergunta.First(x => x.IDPergunta == entidade.IDPergunta);
-            if (!Util.UtilClass.deuLike)
+         
+
+            if (UtilClass.ListIdPerguntasLiked.Count == 0)
             {
                 if (perguntas.Likes == null)
                 {
@@ -77,15 +79,36 @@ namespace DevCode.webapp.Repositorio
                 {
                     perguntas.Likes++;
                 }
-                Util.UtilClass.deuLike = true;
+                UtilClass.ListIdPerguntasLiked.Add(entidade.IDPergunta);
             }
             else
             {
-                perguntas.Likes--;
-                Util.UtilClass.deuLike = false;
+                if (!UtilClass.ListIdPerguntasLiked.Contains(entidade.IDPergunta))
+                {
+                    if (perguntas.Likes == null)
+                    {
+                        perguntas.Likes = 1;
+                        UtilClass.ListIdPerguntasLiked.Add(entidade.IDPergunta);
+                         
+                    }
+                    else
+                    {
+                        perguntas.Likes++;
+                        UtilClass.ListIdPerguntasLiked.Add(entidade.IDPergunta);
+                         
+                    }
+
+                }
+                else
+                {
+                    UtilClass.ListIdPerguntasLiked.Remove(entidade.IDPergunta);
+                    perguntas.Likes--;
+                       
+                }
+                
             }
-
-
+            
+           
             contexto.SaveChanges();
         }
 

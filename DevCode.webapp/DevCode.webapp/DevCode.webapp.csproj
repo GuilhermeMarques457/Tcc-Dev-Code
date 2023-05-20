@@ -235,6 +235,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\imgs\Geize.jpg" />
     <Content Include="Content\imgs\bronze.png" />
     <Content Include="Content\Form.css" />
     <Content Include="Content\General.css" />
@@ -242,7 +243,12 @@
     <Content Include="Content\imgs\form\facebook-logo.png" />
     <Content Include="Content\imgs\form\google-logo.png" />
     <Content Include="Content\imgs\form\microsoft-logo.png" />
+    <Content Include="Content\imgs\Gabriel.png" />
+    <Content Include="Content\imgs\Guilherme.jpg" />
     <Content Include="Content\imgs\hero\notebook.png" />
+    <Content Include="Content\imgs\Jackson.jpg" />
+    <Content Include="Content\imgs\Lucas.png" />
+    <Content Include="Content\imgs\Vinicius.jpeg" />
     <Content Include="Content\MostrarAmigo.css" />
     <Content Include="Content\News.css" />
     <Content Include="Content\imgs\noticia\noticia1.jpg" />
@@ -255,6 +261,7 @@
     <Content Include="Content\Inicial.css" />
     <Content Include="Content\imgs\ouro.png" />
     <Content Include="Content\imgs\prata.png" />
+    <Content Include="Content\imgs\Pedro.png" />
     <Content Include="Content\Question.css" />
     <Content Include="Content\User.css" />
     <Content Include="favicon.ico" />
@@ -307,6 +314,7 @@
     <Content Include="Views\Login\_ViewStart.cshtml" />
     <Content Include="Views\Home\_ViewStart.cshtml" />
     <Content Include="Views\Usuario\MostrarAmigo.cshtml" />
+    <Content Include="Views\Shared\_LayoutHomePage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

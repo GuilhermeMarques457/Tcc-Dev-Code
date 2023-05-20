@@ -5,6 +5,7 @@ using System.Web;
 using DevCode.webapp.Areas.Admin.Models;
 using DevCode.webapp.Data;
 using DevCode.webapp.Models;
+using DevCode.webapp.Util;
 
 namespace DevCode.webapp.Repositorio
 {
@@ -49,7 +50,9 @@ namespace DevCode.webapp.Repositorio
         public void DarLike(Noticia entidade)
         {
             var noticia = contexto.Noticia.First(x => x.IDNoticia == entidade.IDNoticia);
-            if (!Util.UtilClass.deuLike)
+
+
+            if (UtilClass.ListIdNoticiasLiked.Count == 0)
             {
                 if (noticia.Likes == null)
                 {
@@ -59,12 +62,33 @@ namespace DevCode.webapp.Repositorio
                 {
                     noticia.Likes++;
                 }
-                Util.UtilClass.deuLike = true;
+                UtilClass.ListIdNoticiasLiked.Add(entidade.IDNoticia);
             }
             else
             {
-                noticia.Likes--;
-                Util.UtilClass.deuLike = false;
+               
+                if (!UtilClass.ListIdNoticiasLiked.Contains(entidade.IDNoticia))
+                {
+                    if (noticia.Likes == null)
+                    {
+                        noticia.Likes = 1;
+                        UtilClass.ListIdNoticiasLiked.Add(entidade.IDNoticia);
+                      
+                    }
+                    else
+                    {
+                        noticia.Likes++;
+                        UtilClass.ListIdNoticiasLiked.Add(entidade.IDNoticia);
+                    }
+
+                }
+                else
+                {
+                    UtilClass.ListIdNoticiasLiked.Remove(entidade.IDNoticia);
+                    noticia.Likes--;
+                   
+                }
+             
             }
 
 
