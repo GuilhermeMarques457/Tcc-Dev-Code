@@ -41,9 +41,19 @@ namespace DevCode.webapp.Controllers
                         FormsAuthentication.SetAuthCookie(homeVM.UsuarioVM.Username, true);
                         Configuracao.Usuario = buscaUsuario;
                         return RedirectToAction("Index", "Perguntas");
+
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("UsuarioVM.Senha", "Senha incorreta. Tente novamente.");
                     }
                 }
+                else
+                {
+                    ModelState.AddModelError("UsuarioVM.Username", "Não foi possivel encontrar conta. Tente novamente");
+                }
             }
+            
             homeVM.Perguntas = RepositorioPergunta.Listar().OrderByDescending(x => x.IDPergunta).Take(4).ToList();
             homeVM.Noticias = RepositorioNoticia.Listar().OrderByDescending(x => x.IDNoticia).Take(4).ToList();
             return View(homeVM);

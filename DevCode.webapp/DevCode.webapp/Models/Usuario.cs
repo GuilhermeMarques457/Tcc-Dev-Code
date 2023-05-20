@@ -26,6 +26,8 @@ namespace DevCode.webapp.Models
         public string Username { get; set; }
 
         [DisplayName("Email")]
+        [DataType(DataType.EmailAddress, ErrorMessage = "Por favor entre com um email valido.")]
+        [RegularExpression(@"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$", ErrorMessage = "Por favor entre com um email valido.")]
         [Required(ErrorMessage = "Campo {0} é obrigatório")]
         public string Email { get; set; }
 

@@ -37,6 +37,10 @@ namespace DevCode.webapp.Controllers
                         return RedirectToAction("Index", "Perguntas");
                     }
                 }
+                else
+                {
+                    ModelState.AddModelError("Username", "Não foi possivel encontrar conta. Tente novamente");
+                }
             }
             return View(usuarioVM);
         }

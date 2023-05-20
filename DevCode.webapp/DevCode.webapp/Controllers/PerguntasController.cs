@@ -49,6 +49,7 @@ namespace DevCode.webapp.Controllers
                 return RedirectToAction("Entrar", "Login");
             }
 
+            
             var TagsPrincipal = Enum.GetValues(typeof(Tags))
                      .Cast<Tags>()
                      .Select(s => new SelectListItem
@@ -89,6 +90,29 @@ namespace DevCode.webapp.Controllers
                 repositorio.Salvar(perguntas);
                 return RedirectToAction("Index", "Perguntas");
             }
+
+            var TagsPrincipal = Enum.GetValues(typeof(Tags))
+                     .Cast<Tags>()
+                     .Select(s => new SelectListItem
+                     {
+                         Value = ((int)s).ToString(),
+                         Text = s.ToString()
+                     }).ToList();
+
+            var TagsSecundaria = Enum.GetValues(typeof(Tags))
+                     .Cast<Tags>()
+                     .Select(s => new SelectListItem
+                     {
+                         Value = ((int)s).ToString(),
+                         Text = s.ToString()
+                     }).ToList();
+
+            ViewBag.TagPrincipal = TagsPrincipal;
+
+            TagsSecundaria.Insert(0, new SelectListItem { Value = "", Text = "" });
+
+            ViewBag.TagSecondaria = TagsSecundaria;
+
             return View(perguntas);
         }
 

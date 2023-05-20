@@ -17,7 +17,7 @@ namespace DevCode.webapp.Controllers
         RepositorioUsuario repositorio = new RepositorioUsuario();
         RepositorioPergunta repositorioPergunta = new RepositorioPergunta();
         RepositorioResposta repositorioResposta = new RepositorioResposta();
-        RepositorioUsuario repositorioUsuario = new RepositorioUsuario();
+       
 
         public ActionResult Index()
         {
@@ -34,16 +34,23 @@ namespace DevCode.webapp.Controllers
         {
             if (ModelState.IsValid)
             {
-                usuario.Senha = MD5.GerarHashMd5(usuario.Senha);
-                usuario.ConfirmarSenha = MD5.GerarHashMd5(usuario.ConfirmarSenha);
-                usuario.CaminhoImagemBanner = "/Content/imgs/ProfileImgs/foto-padrao-banner.png";
-                usuario.CaminhoImagemPerfil = "/Content/imgs/ProfileImgs/foto-padrao-perfil.png";
-                if(repositorio.Listar().Count == 0)
+                if (repositorio.ObterPorUsername(usuario.Username) == null)
                 {
-                    usuario.Admin = true;
+                    usuario.Senha = MD5.GerarHashMd5(usuario.Senha);
+                    usuario.ConfirmarSenha = MD5.GerarHashMd5(usuario.ConfirmarSenha);
+                    usuario.CaminhoImagemBanner = "/Content/imgs/ProfileImgs/foto-padrao-banner.png";
+                    usuario.CaminhoImagemPerfil = "/Content/imgs/ProfileImgs/foto-padrao-perfil.png";
+                    if (repositorio.Listar().Count == 0)
+                    {
+                        usuario.Admin = true;
+                    }
+                    repositorio.Salvar(usuario);
+                    return RedirectToAction("Index", "Perguntas");
                 }
-                repositorio.Salvar(usuario);
-                return RedirectToAction("Index", "Perguntas");
+                else
+                {
+                    ModelState.AddModelError("Username", "Username existente. Tente outro usuario");
+                }
             }
             return View(usuario);
         }
@@ -61,8 +68,10 @@ namespace DevCode.webapp.Controllers
         public ActionResult Alterar(Usuario usuario, HttpPostedFileBase profile, HttpPostedFileBase banner)
         {
             
+
             if (ModelState.IsValid)
             {
+           
                 if (profile != null && profile.ContentLength > 0)
                 {
                     usuario.CaminhoImagemPerfil = MudarFoto(profile);
@@ -110,7 +119,7 @@ namespace DevCode.webapp.Controllers
             {
                 int IdPergunta = perguntaRespostaVM.Respostas[i].IDPergunta;
                 perguntaRespostaVM.Respostas[i].Perguntas = repositorioPergunta.ObterPorId(IdPergunta);
-                perguntaRespostaVM.Respostas[i].Perguntas.Usuario = repositorioUsuario.ObterPorId(perguntaRespostaVM.Respostas[i].Perguntas.IDUsuarioPergunta);
+                perguntaRespostaVM.Respostas[i].Perguntas.Usuario = repositorio.ObterPorId(perguntaRespostaVM.Respostas[i].Perguntas.IDUsuarioPergunta);
             }
             
 

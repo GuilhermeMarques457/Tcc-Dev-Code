@@ -13,7 +13,11 @@
             @Html.Partial("_ViewUsuario")
             <section class="section-question">
                 <div class="useful-buttons">
-                    <div></div>
+                    @if (Configuracao.Usuario.Admin == true)
+                    {
+                        <a href="/Admin/Noticia/Novo" class="btn-full btn-question"><i class="ph ph-question button-icon"></i>Nova Noticia</a>
+                    }
+
                     @using (Html.BeginForm("ListarNoticias", "Noticia", FormMethod.Get))
                     {
                         <div class="search-box">
@@ -22,7 +26,7 @@
                         </div>
 
                     }
-                    
+
                 </div>
                 @foreach (var item in Model)
                 {
