@@ -41,9 +41,11 @@ namespace DevCode.webapp.Models
         {
             get
             {
-                return Titulo.Length > 60 ? $"{Titulo.Substring(0, 60)}..." : Titulo;
+                return Titulo.Length > 50 ? $"{Titulo.Substring(0, 50)}..." : Titulo;
             }
         }
+
+       
         public virtual string DetalhesAbreviada
         {
             get

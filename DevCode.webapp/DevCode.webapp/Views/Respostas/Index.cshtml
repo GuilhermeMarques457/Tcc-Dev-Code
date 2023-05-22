@@ -13,7 +13,7 @@
                 <a href="/Perguntas/Index" class="btn-outline btn-user-page mg-tp-md">Voltar</a>
             </section>
             <section class="section-answer">
-               
+
                 <div class="answer-section">
                     <div class="question-box-answer">
                         <div class="answer-user-box">
@@ -67,7 +67,7 @@
                                 <div class="answer-content">
                                     <p class="answer-text">
                                         @respostas.ExplicacaoResposta
-                                        
+
                                     </p>
                                 </div>
                                 <div class="answer-card-footer">
@@ -78,7 +78,7 @@
                                             <span class="question-info question-comments question-like likeCount"> @respostas.Likes</span>
                                         </div>
                                     </div>
-                                    
+
                                 </div>
                             </div>
 
@@ -86,85 +86,10 @@
                     </div>
                 </div>
             </section>
-            <section class="section-moderadores">
-                <div class="moders-section">
-                    <h3 class="tertiary-heading">Membros Online</h3>
+            <section>
+                @Html.Partial("_ViewUsuariosPontos")
 
-                    @*<div class="member-item">
-                        <div>
-                            <img src="/Login & Sign-in Page/imgs/form/background-img.jpg"
-                                 class="member-img" />
-                            <p class="member-user-name">UsuarioTeste</p>
-                        </div>
-
-                        <p class="information-member">15k</p>
-                    </div>
-                    <div class="member-item">
-                        <div>
-                            <img src="/Login & Sign-in Page/imgs/form/background-img.jpg"
-                                 class="member-img" />
-                            <p class="member-user-name">UsuarioTeste</p>
-                        </div>
-
-                        <p class="information-member">14k</p>
-                    </div>
-                    <div class="member-item">
-                        <div>
-                            <img src="/Login & Sign-in Page/imgs/form/background-img.jpg"
-                                 class="member-img" />
-                            <p class="member-user-name">UsuarioTeste</p>
-                        </div>
-
-                        <p class="information-member">11k</p>
-                    </div>
-                    <div class="member-item">
-                        <div>
-                            <img src="/Login & Sign-in Page/imgs/form/background-img.jpg"
-                                 class="member-img" />
-                            <p class="member-user-name">UsuarioTeste</p>
-                        </div>
-
-                        <p class="information-member">10k</p>
-                    </div>
-                    <div class="member-item">
-                        <div>
-                            <img src="/Login & Sign-in Page/imgs/form/background-img.jpg"
-                                 class="member-img" />
-                            <p class="member-user-name">UsuarioTeste</p>
-                        </div>
-
-                        <p class="information-member">10k</p>
-                    </div>
-                    <div class="member-item">
-                        <div>
-                            <img src="/Login & Sign-in Page/imgs/form/background-img.jpg"
-                                 class="member-img" />
-                            <p class="member-user-name">UsuarioTeste</p>
-                        </div>
-
-                        <p class="information-member">7k</p>
-                    </div>
-                    <div class="member-item">
-                        <div>
-                            <img src="/Login & Sign-in Page/imgs/form/background-img.jpg"
-                                 class="member-img" />
-                            <p class="member-user-name">UsuarioTeste</p>
-                        </div>
-
-                        <p class="information-member">3k</p>
-                    </div>
-                    <div class="member-item">
-                        <div>
-                            <img src="/Login & Sign-in Page/imgs/form/background-img.jpg"
-                                 class="member-img" />
-                            <p class="member-user-name">UsuarioTeste</p>
-                        </div>
-
-                        <p class="information-member">2k</p>
-                    </div>*@
-                </div>
-
-                <a href="/Respostas/Novo/@Model.Pergunta.IDPergunta" class="btn-full btn-see-answer">Responder</a>
+                <a href="/Respostas/Novo/@Model.Pergunta.IDPergunta" class="btn-full btn-see-answer mg-tp-md">Responder</a>
             </section>
         </div>
     </div>

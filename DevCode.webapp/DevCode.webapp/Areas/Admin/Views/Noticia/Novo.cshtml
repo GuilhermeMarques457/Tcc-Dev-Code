@@ -72,93 +72,16 @@
                     </div>
 
                     @*<div class="form-group">
-                            @Html.LabelFor(model => model.DataEnvio, htmlAttributes: new { @class = "control-label col-md-2" })
-                            <div class="col-md-10">
-                                @Html.EditorFor(model => model.DataEnvio, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.DataEnvio, "", new { @class = "text-danger" })
-                            </div>
-                        </div>*@
+                    @Html.LabelFor(model => model.DataEnvio, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.DataEnvio, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.DataEnvio, "", new { @class = "text-danger" })
+                    </div>
+                </div>*@
                 }
             </section>
 
-            <section class="section-moderadores">
-                <div class="moders-section">
-                    <h3 class="tertiary-heading">Membros Online</h3>
-
-                    <div class="member-item">
-                        <div>
-                            <img src="~/Content/imgs/form/background-img.jpg"
-                                 class="member-img" />
-                            <p class="member-user-name">UsuarioTeste</p>
-                        </div>
-
-                        <p class="information-member">15k</p>
-                    </div>
-                    <div class="member-item">
-                        <div>
-                            <img src="~/Content/imgs/form/background-img.jpg"
-                                 class="member-img" />
-                            <p class="member-user-name">UsuarioTeste</p>
-                        </div>
-
-                        <p class="information-member">14k</p>
-                    </div>
-                    <div class="member-item">
-                        <div>
-                            <img src="~/Content/imgs/form/background-img.jpg"
-                                 class="member-img" />
-                            <p class="member-user-name">UsuarioTeste</p>
-                        </div>
-
-                        <p class="information-member">11k</p>
-                    </div>
-                    <div class="member-item">
-                        <div>
-                            <img src="~/Content/imgs/form/background-img.jpg"
-                                 class="member-img" />
-                            <p class="member-user-name">UsuarioTeste</p>
-                        </div>
-
-                        <p class="information-member">10k</p>
-                    </div>
-                    <div class="member-item">
-                        <div>
-                            <img src="~/Content/imgs/form/background-img.jpg"
-                                 class="member-img" />
-                            <p class="member-user-name">UsuarioTeste</p>
-                        </div>
-
-                        <p class="information-member">10k</p>
-                    </div>
-                    <div class="member-item">
-                        <div>
-                            <img src="~/Content/imgs/form/background-img.jpg"
-                                 class="member-img" />
-                            <p class="member-user-name">UsuarioTeste</p>
-                        </div>
-
-                        <p class="information-member">7k</p>
-                    </div>
-                    <div class="member-item">
-                        <div>
-                            <img src="~/Content/imgs/form/background-img.jpg"
-                                 class="member-img" />
-                            <p class="member-user-name">UsuarioTeste</p>
-                        </div>
-
-                        <p class="information-member">3k</p>
-                    </div>
-                    <div class="member-item">
-                        <div>
-                            <img src="~/Content/imgs/form/background-img.jpg"
-                                 class="member-img" />
-                            <p class="member-user-name">UsuarioTeste</p>
-                        </div>
-
-                        <p class="information-member">2k</p>
-                    </div>
-                </div>
-            </section>
+            @Html.Partial("_ViewUsuariosPontos")
         </div>
     </div>
 </main>

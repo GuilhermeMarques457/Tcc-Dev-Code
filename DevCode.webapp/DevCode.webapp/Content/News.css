@@ -65,7 +65,8 @@
 }
 
 .common-text {
-    height: 5rem !important;
+    min-height: 5rem !important;
+    height: auto !important;
 }
 
 .expected-text {

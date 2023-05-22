@@ -1,0 +1,34 @@
+﻿
+@using DevCode.webapp.Util;
+@using DevCode.webapp.Models;
+
+
+@{
+    ViewBag.Title = "_ViewUsuariosPontos";
+}
+
+<section class="pontos-section">
+    <div>
+        <h3 class="tertiary-heading">Usuarios com mais pontos</h3>
+        <div class="container-pontos">
+            @{
+                List<Usuario> usuarios = UtilMethods.PegarUsuarioPorPontos();
+                foreach (var item in usuarios)
+                {
+                    <a href="/Usuario/MostrarAmigo/@item.IDUsuario">
+                        <div class="box-pontos">
+                            <div class="flex">
+                                <img src="@item.CaminhoImagemPerfil" class="img-perfil-points" />
+                                <p>@item.Username</p>
+                            </div>
+                            <div>
+                                <p>@item.Pontos</p>
+                            </div>
+
+                        </div>
+                    </a>
+                }
+            }
+        </div>
+    </div>
+</section>

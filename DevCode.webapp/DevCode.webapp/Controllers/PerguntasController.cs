@@ -42,6 +42,7 @@ namespace DevCode.webapp.Controllers
 
         }
 
+        [ValidateInput(false)]
         public ActionResult Novo()
         {
             if (!Configuracao.VerificarUsuarioLogado())
@@ -76,6 +77,7 @@ namespace DevCode.webapp.Controllers
 
         }
 
+        [ValidateInput(false)]
         [HttpPost]
         public ActionResult Novo(Perguntas perguntas)
         {
@@ -114,30 +116,6 @@ namespace DevCode.webapp.Controllers
             ViewBag.TagSecondaria = TagsSecundaria;
 
             return View(perguntas);
-        }
-
-        public ActionResult Alterar(int id)
-        {
-            if (!Configuracao.VerificarUsuarioLogado())
-            {
-                return RedirectToAction("Entrar", "Login");
-            }
-
-            Perguntas perguntas = repositorio.ObterPorId(id);
-            return View(perguntas);
-        }
-
-        [HttpPost]
-        public ActionResult Alterar(Perguntas perguntas)
-        {
-
-            if (ModelState.IsValid)
-            {
-                repositorio.Alterar(perguntas);
-
-            }
-            return View(perguntas);
-
         }
 
         [HttpPost]

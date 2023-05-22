@@ -63,9 +63,9 @@
                                 </h3>
                             </a>
                             <p class="common-text question-text">
-                                @item.DetalhesAbreviada
+                                @item.Detalhes
 
-                                <a href="#" class="keep-learning">Continuar lendo</a>
+
                             </p>
                         </div>
                         <div class="question-card-footer">
@@ -77,27 +77,14 @@
                                 </div>
 
                             </div>
-                            <div class="question-info-box">
-                                <div class="question-info-content">
-                                    <i class="ph-chat-dots question-icon"></i>
-                                    <span class="question-info question-comments"> 2.3k</span>
-                                </div>
-                                <div class="question-info-content">
-                                    <i class="ph-eye question-icon"></i>
-                                    <span class="question-info question-views">2.3k</span>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
-                    
+
                 }
 
             </section>
-            <section class="section-moderadores">
-                <div class="moders-section">
-                    <h3 class="tertiary-heading">Moderadores Online</h3>
-                </div>
-            </section>
+            @Html.Partial("_ViewUsuariosPontos")
         </div>
     </div>
 </main>

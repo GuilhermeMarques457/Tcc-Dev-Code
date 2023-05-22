@@ -9,9 +9,7 @@
 <main class="main-container">
     <div class="container">
         <div class="layout-box">
-            <section class="section-user">
-        
-            </section>
+            
             <section class="section-user-information">
                 <div class="user-header">
                     <div class="banner-box">
@@ -30,7 +28,7 @@
                                 <p class="admin">administrador</p>
                             }
                         </div>
-                        
+
                         <p class="user-job">@Model.Profissao</p>
                     </div>
                 </div>
@@ -157,94 +155,17 @@
                         </div>
                     </div>
                 }
-               
+
                 <form method="post" action="@Url.Action("Excluir", "Usuario", new { id = Model.IDUsuario })">
                     @Html.AntiForgeryToken()
                     <div class="excluir-box">
                         <button type="submit" class="btn btn-danger">Excluir Conta</button>
                         <span class="excluir-text">Ao clicar nesse botão você excluira sua conta e todas as suas publicações. Tem certeza disso?</span>
                     </div>
-                    
+
                 </form>
             </section>
-            <section class="section-moderadores">
-                <div class="moders-section">
-                    <h3 class="tertiary-heading">Membros Online</h3>
-
-                    <div class="member-item">
-                        <div>
-                            <img src="/Login & Sign-in Page/imgs/form/background-img.jpg"
-                                    class="member-img" />
-                            <p class="member-user-name">UsuarioTeste</p>
-                        </div>
-
-                        <p class="information-member">15k</p>
-                    </div>
-                    <div class="member-item">
-                        <div>
-                            <img src="/Login & Sign-in Page/imgs/form/background-img.jpg"
-                                    class="member-img" />
-                            <p class="member-user-name">UsuarioTeste</p>
-                        </div>
-
-                        <p class="information-member">14k</p>
-                    </div>
-                    <div class="member-item">
-                        <div>
-                            <img src="/Login & Sign-in Page/imgs/form/background-img.jpg"
-                                    class="member-img" />
-                            <p class="member-user-name">UsuarioTeste</p>
-                        </div>
-
-                        <p class="information-member">11k</p>
-                    </div>
-                    <div class="member-item">
-                        <div>
-                            <img src="/Login & Sign-in Page/imgs/form/background-img.jpg"
-                                    class="member-img" />
-                            <p class="member-user-name">UsuarioTeste</p>
-                        </div>
-
-                        <p class="information-member">10k</p>
-                    </div>
-                    <div class="member-item">
-                        <div>
-                            <img src="/Login & Sign-in Page/imgs/form/background-img.jpg"
-                                    class="member-img" />
-                            <p class="member-user-name">UsuarioTeste</p>
-                        </div>
-
-                        <p class="information-member">10k</p>
-                    </div>
-                    <div class="member-item">
-                        <div>
-                            <img src="/Login & Sign-in Page/imgs/form/background-img.jpg"
-                                    class="member-img" />
-                            <p class="member-user-name">UsuarioTeste</p>
-                        </div>
-
-                        <p class="information-member">7k</p>
-                    </div>
-                    <div class="member-item">
-                        <div>
-                            <img src="/Login & Sign-in Page/imgs/form/background-img.jpg"
-                                    class="member-img" />
-                            <p class="member-user-name">UsuarioTeste</p>
-                        </div>
-
-                        <p class="information-member">3k</p>
-                    </div>
-                    <div class="member-item">
-                        <div>
-                            <img src="/Login & Sign-in Page/imgs/form/background-img.jpg"
-                                    class="member-img" />
-                            <p class="member-user-name">UsuarioTeste</p>
-                        </div>
-
-                        <p class="information-member">2k</p>
-                    </div>
-                </div>
-            </section>
+            @Html.Partial("_ViewUsuariosPontos")
         </div>
     </div>
 </main>

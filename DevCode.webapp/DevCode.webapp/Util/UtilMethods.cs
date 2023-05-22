@@ -30,5 +30,12 @@ namespace DevCode.webapp.Util
 
             return repositorioUsuario.PegarPontos(idUsuario);
         }
+
+        public static List<Usuario> PegarUsuarioPorPontos()
+        {
+            RepositorioUsuario repositorioUsuario = new RepositorioUsuario();
+
+            return repositorioUsuario.ObterListaPorPontuação();
+        }
     }
 }

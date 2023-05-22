@@ -315,6 +315,7 @@
     <Content Include="Views\Home\_ViewStart.cshtml" />
     <Content Include="Views\Usuario\MostrarAmigo.cshtml" />
     <Content Include="Views\Shared\_LayoutHomePage.cshtml" />
+    <Content Include="Views\Shared\_ViewUsuariosPontos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

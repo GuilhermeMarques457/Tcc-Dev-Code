@@ -357,21 +357,9 @@
     justify-content: center;
 }
 
-/* Tags news */
 
-.tags-card-news-box {
-    display: flex;
-    gap: 1rem;
-}
 
-.tag-news {
-    display: inline-block;
-    border-radius: 2px;
-    color: #f0f0f0;
-    padding: 0.5rem 0.8rem;
-    font-size: 1rem;
-    font-weight: 700;
-}
+
 
 
 
@@ -623,25 +611,60 @@
 }
 
 /**********************    
-*** Moders Question *** 
+*** Pointers Question *** 
 ***********************/
 
-.moders-section {
+.pontos-section {
     background-color: #fff;
     border-radius: 20px;
-    padding: 2rem 2rem;
+    padding: 2.4rem 0;
+    height: 55rem;
+
 }
 
-    .moders-section .tertiary-heading {
+    .pontos-section .tertiary-heading {
         text-align: center;
+        font-size: 1.6rem !important;
+        margin-top: 0;
+        margin-bottom: 1rem !important;
+    }
+
+.container-pontos {
+    display: flex;
+    flex-direction: column;
+}
+
+    .container-pontos a {
+        text-decoration: none !important;
+        color: #3d4465 !important;
+    }
+
+.box-pontos {
+    padding: 1rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.2rem;
+    transition: all 0.5s;
+}
+
+    .box-pontos:hover{
+        background-color: #eee;
+    }
+
+    .img-perfil-points {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%
     }
 
 
 /**********************    
-*** Footer *** 
+*** Footer Question *** 
 ***********************/
 
-.footer-container{
+
+.footer-container {
     padding: 3.2rem 0;
     display: grid;
     gap: 2.6rem;
@@ -669,6 +692,7 @@
     border-bottom-left-radius: 40px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+    background-color: #fff;
    
 }
 
@@ -738,3 +762,168 @@
     font-size: 1.2rem;
     margin-top: 0.8rem;
 }
+
+.tags-card-news-box {
+    display: flex;
+    gap: 1rem;
+}
+
+/**********************    
+*** Footer *** 
+***********************/
+
+.tag-news {
+    display: inline-block;
+    border-radius: 2px;
+    color: #f0f0f0;
+    padding: 0.5rem 0.8rem;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.JavaScript {
+    background-color: #b19f1b;
+}
+
+.Python {
+    background-image: linear-gradient(290deg, #f7c400 50%, #00264d 50%);
+}
+
+.PHP {
+    background-color: #7377ad;
+}
+
+.CSharp {
+    background-color: #7e21d5;
+}
+
+.Introducao {
+    background-color: #3e464d; /* Cinza escuro */
+}
+
+.Linguagens {
+    background-color: #1e7b34; /* Verde escuro */
+}
+
+.Web {
+    background-color: #8e1a23; /* Vermelho escuro */
+}
+
+.Mobile {
+    background-color: #c66e00; /* Laranja escuro */
+}
+
+.BD {
+    background-color: #3a246a; /* Roxo escuro */
+}
+
+.InteligenciaArtificial {
+    background-color: #d32e23; /* Vermelho escuro */
+}
+
+.Seguranca {
+    background-color: #628e35; /* Verde escuro */
+}
+
+.Arquitetura {
+    background-color: #5a3d33; /* Marrom escuro */
+}
+
+.Java {
+    background-color: #b35e00; /* Laranja escuro */
+}
+
+.CMaisMais {
+    background-color: #004474; /* Azul escuro */
+}
+
+.JSON {
+    background-color: #006a35; /* Verde escuro */
+}
+
+
+
+.Ruby {
+    background-color: #9c1c1b; /* Vermelho escuro */
+}
+
+.HTML {
+    background-color: #a8311f; /* Laranja avermelhado escuro */
+}
+
+.CSS {
+    background-color: #1e3d9f; /* Azul claro escuro */
+}
+
+.Swift {
+    background-color: #bf7c30; /* Amarelo claro escuro */
+}
+
+.Kotlin {
+    background-color: #254496; /* Azul escuro */
+}
+
+.Go {
+    background-color: #0087b8; /* Azul claro escuro */
+}
+
+.Rust {
+    background-color: #a56b3b; /* Laranja claro escuro */
+}
+
+.TypeScript {
+    background-color: #005c85; /* Azul escuro */
+}
+
+.SQL {
+    background-color: #bb630e; /* Laranja escuro */
+}
+
+.RubyOnRails {
+    background-color: #800000; /* Vermelho escuro */
+}
+
+.Scala {
+    background-color: #8d1e2b; /* Vermelho escuro */
+}
+
+.Lua {
+    background-color: #00004d; /* Azul escuro */
+}
+
+.R {
+    background-color: #195c9c; /* Azul claro escuro */
+}
+
+.Perl {
+    background-color: #027b9d; /* Azul claro escuro */
+}
+
+.ShellScript {
+    background-color: #000000; /* Preto */
+}
+
+.SwiftUI {
+    background-color: #b3305a; /* Rosa escuro */
+}
+
+.Django {
+    background-color: #05230f; /* Verde escuro */
+}
+
+.Flutter {
+    background-color: #3189b3; /* Azul claro escuro */
+}
+
+.VueJS {
+    background-color: #2d7b61; /* Verde claro escuro */
+}
+
+.AngularJS {
+    background-color: #8c2024; /* Vermelho escuro */
+}
+
+.SpringFramework {
+    background-color: #508a26; /* Verde escuro */
+}
+

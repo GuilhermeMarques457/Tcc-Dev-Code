@@ -1,5 +1,5 @@
 ﻿.friend-container{
-    grid-column: 2/4
+    grid-column: 2/5
 }
 
 .section-question {
@@ -13,6 +13,7 @@
     background-color: #ffffff;
     border-radius: 10px;
     padding: 1.5rem 2rem;
+    transition: all 0.5s;
 }
 
 .useful-buttons {
@@ -97,10 +98,16 @@
     font-size: 1.4rem;
 }
 
+.box-items{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem
+}
+
 .box-item{
     display: flex;
     flex-direction: column;
-    gap: 2rem
+    gap: 1.5rem;
 }
 
 .secondary-heading{
@@ -110,3 +117,68 @@
 .text-answer{
     margin-top: 2rem;
 }
+
+.question-answer-box-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.question-answer-box-info p{
+    margin: 0;
+}
+
+.pergunta-resposta-box{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+   
+}
+
+.friend-box-activity {
+    padding: 3rem 2rem;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.friend-details {
+    display: flex;
+    align-items: center;
+    gap: 2rem
+
+}
+.img-perfil{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%
+}
+.user-information-activity{
+    align-items: center;
+     display: flex;
+     gap: 2rem;
+}
+.img-medalha{
+    width: 3.5rem;
+    height: 4rem;
+}
+
+.info-text{
+    font-size: 1.2rem;
+}
+
+.secondary-respostas{
+    margin-top: 15rem;
+}
+
+.link-box-answer {
+    text-decoration: none !important;
+    color: #3d4465 !important;
+    
+}
+
+    .link-box-answer:hover .question-card-container {
+         background-color: #f1f1f1;
+    }

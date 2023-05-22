@@ -128,5 +128,10 @@ namespace DevCode.webapp.Repositorio
         {
             return contexto.Usuario.Where(p => p.Username.Contains(username)).ToList();
         }
+
+        public List<Usuario> ObterListaPorPontuação()
+        {
+            return contexto.Usuario.ToList().Take(10).OrderByDescending(x => x.Pontos).ToList();
+        }
     }
 }

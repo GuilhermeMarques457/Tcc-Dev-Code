@@ -22,25 +22,25 @@
 
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                    <div class="tags-box">
-                        <div class="tag-box">
-                            <div class="options-box">
-                                @Html.LabelFor(model => model.TagPrincipal, htmlAttributes: new { @class = "input-label-question" })
-                                @Html.DropDownListFor(m => m.TagPrincipal, (IEnumerable<SelectListItem>)ViewBag.TagPrincipal, new { @id = "TagPrincipal", @onchange = "atualizarResultadoPrimario()" })
-                                @Html.ValidationMessageFor(model => model.TagPrincipal, "", new { @class = "text-danger" })
-                            </div>
+                        <div class="tags-box">
+                            <div class="tag-box">
+                                <div class="options-box">
+                                    @Html.LabelFor(model => model.TagPrincipal, htmlAttributes: new { @class = "input-label-question" })
+                                    @Html.DropDownListFor(m => m.TagPrincipal, (IEnumerable<SelectListItem>)ViewBag.TagPrincipal, new { @id = "TagPrincipal", @onchange = "atualizarResultadoPrimario()" })
+                                    @Html.ValidationMessageFor(model => model.TagPrincipal, "", new { @class = "text-danger" })
+                                </div>
 
-                            <span class="tag-news" id="tag-principal"></span>
-                        </div>
-                        <div class="tag-box">
-                            <span class="tag-news" id="tag-secundario"></span>
-                            <div class="options-box">
-                                @Html.LabelFor(model => model.TagSecundaria, htmlAttributes: new { @class = "input-label-question" })
-                                @Html.DropDownListFor(m => m.TagSecundaria, (IEnumerable<SelectListItem>)ViewBag.TagSecondaria, new { @id = "TagSecundario", @onchange = "atualizarResultadoSecundario()" })
-                                @Html.ValidationMessageFor(model => model.TagSecundaria, "", new { @class = "text-danger" })
+                                <span class="tag-news" id="tag-principal"></span>
+                            </div>
+                            <div class="tag-box">
+                                <span class="tag-news" id="tag-secundario"></span>
+                                <div class="options-box">
+                                    @Html.LabelFor(model => model.TagSecundaria, htmlAttributes: new { @class = "input-label-question" })
+                                    @Html.DropDownListFor(m => m.TagSecundaria, (IEnumerable<SelectListItem>)ViewBag.TagSecondaria, new { @id = "TagSecundario", @onchange = "atualizarResultadoSecundario()" })
+                                    @Html.ValidationMessageFor(model => model.TagSecundaria, "", new { @class = "text-danger" })
+                                </div>
                             </div>
                         </div>
-                    </div>
 
                         <div class="tittle-box">
                             @Html.LabelFor(model => model.Titulo, htmlAttributes: new { @class = "input-label-question" })
@@ -66,7 +66,7 @@
 
 
                         <div class="button-box">
-                            <a href="#" class="btn-full">
+                            <a href="/Perguntas/Index" class="btn-full">
                                 Voltar <i class="ph ph-arrow-left"></i>
                             </a>
                             <button class="btn-full">
@@ -77,84 +77,7 @@
                 }
             </section>
 
-            <section class="section-moderadores">
-                <div class="moders-section">
-                    <h3 class="tertiary-heading">Membros Online</h3>
-
-                    <div class="member-item">
-                        <div>
-                            <img src="~/Content/imgs/form/background-img.jpg"
-                                 class="member-img" />
-                            <p class="member-user-name">UsuarioTeste</p>
-                        </div>
-
-                        <p class="information-member">15k</p>
-                    </div>
-                    <div class="member-item">
-                        <div>
-                            <img src="~/Content/imgs/form/background-img.jpg"
-                                 class="member-img" />
-                            <p class="member-user-name">UsuarioTeste</p>
-                        </div>
-
-                        <p class="information-member">14k</p>
-                    </div>
-                    <div class="member-item">
-                        <div>
-                            <img src="~/Content/imgs/form/background-img.jpg"
-                                 class="member-img" />
-                            <p class="member-user-name">UsuarioTeste</p>
-                        </div>
-
-                        <p class="information-member">11k</p>
-                    </div>
-                    <div class="member-item">
-                        <div>
-                            <img src="~/Content/imgs/form/background-img.jpg"
-                                 class="member-img" />
-                            <p class="member-user-name">UsuarioTeste</p>
-                        </div>
-
-                        <p class="information-member">10k</p>
-                    </div>
-                    <div class="member-item">
-                        <div>
-                            <img src="~/Content/imgs/form/background-img.jpg"
-                                 class="member-img" />
-                            <p class="member-user-name">UsuarioTeste</p>
-                        </div>
-
-                        <p class="information-member">10k</p>
-                    </div>
-                    <div class="member-item">
-                        <div>
-                            <img src="~/Content/imgs/form/background-img.jpg"
-                                 class="member-img" />
-                            <p class="member-user-name">UsuarioTeste</p>
-                        </div>
-
-                        <p class="information-member">7k</p>
-                    </div>
-                    <div class="member-item">
-                        <div>
-                            <img src="~/Content/imgs/form/background-img.jpg"
-                                 class="member-img" />
-                            <p class="member-user-name">UsuarioTeste</p>
-                        </div>
-
-                        <p class="information-member">3k</p>
-                    </div>
-                    <div class="member-item">
-                        <div>
-                            <img src="~/Content/imgs/form/background-img.jpg"
-                                 class="member-img" />
-                            <p class="member-user-name">UsuarioTeste</p>
-                        </div>
-
-                        <p class="information-member">2k</p>
-                    </div>
-                </div>
-            </section>
+            @Html.Partial("_ViewUsuariosPontos")
         </div>
     </div>
 </main>

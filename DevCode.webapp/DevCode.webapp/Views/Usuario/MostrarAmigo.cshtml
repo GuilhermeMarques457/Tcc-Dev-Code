@@ -1,4 +1,5 @@
 ﻿@model DevCode.webapp.Models.PerguntaRespostaVM
+@using DevCode.webapp.Util;
 
 @{
     ViewBag.Title = "MostrarAmigo";
@@ -10,12 +11,44 @@
         <div class="layout-box grid grid--4--cols">
             @Html.Partial("_ViewUsuario")
             <div class="friend-container">
-                <p>@Model.Usuario.Username</p>
+                <div class="friend-box-activity">
+                    <div class="friend-details">
+                        <div>
+                            <img src="@Model.Usuario.CaminhoImagemPerfil" class="img-perfil" />
+                        </div>
+                        <p>@Model.Usuario.Username</p>
+                    </div>
+                    <div class="user-information-activity">
+                        <p class="info-text">N/perguntas totais: @Model.Perguntas.Count</p>
+                        <p class="info-text">N/respostas totais: @Model.Respostas.Count</p>
+                        @if (UtilMethods.PegarPontos(Model.Usuario.IDUsuario) >= 1000)
+                        {
+                            if (UtilMethods.PegarPontos(Model.Usuario.IDUsuario) > 2500)
+                            {
+                                if (UtilMethods.PegarPontos(Model.Usuario.IDUsuario) > 10000)
+                                {
+                                    <img class="img-medalha" src="~/Content/imgs/ouro.png" />
+                                }
+                                else 
+                                { 
+                                    <img class="img-medalha" src="~/Content/imgs/prata.png" />
+                                }  
+                            }
+                            else
+                            {
+                                <img class="img-medalha" src="~/Content/imgs/bronze.png" />
+                            }
+                        }
+                        else
+                        {
+                            <p class="info-text">Esse usuario não possui nenhuma conquista</p>
+                        }
 
-                @if (Model.Perguntas.Count == 0)
-                {
-                    <p>Não ha perguntas feitas por esse usuario</p>
-                }
+                    </div>
+                </div>
+
+
+
                 <h2 class="secondary-heading">Perguntas feitas por esse usuario</h2>
                 <div class="box-item">
                     @foreach (var item in Model.Perguntas)
@@ -47,7 +80,7 @@
                                 <p class="common-text question-text">
                                     @item.DetalhesAbreviada
 
-                                    <a href="#" class="keep-learning">Continuar lendo</a>
+
                                 </p>
                             </div>
                             <div class="question-card-footer">
@@ -74,63 +107,70 @@
                         </div>
                     }
                 </div>
-                @if (Model.Respostas.Count == 0)
+                @if (Model.Perguntas.Count == 0)
                 {
                     <p>Não ha perguntas feitas por esse usuario</p>
                 }
-                <h2 class="secondary-heading mg-tp-bg">Respostas feitas por esse usuario</h2>
+                <h2 class="secondary-heading secondary-respostas">Respostas feitas por esse usuario</h2>
                 <div class="box-items">
+
                     @foreach (var item in Model.Respostas)
                     {
-                        <div class="question-card-container">
-                            <div class="question-user-box">
-                                <div class="user-box-info">
-                                    <img src="@item.Perguntas.Usuario.CaminhoImagemPerfil"
-                                         class="question-user-photo" />
-                                    <p class="username-text"> @item.Perguntas.Usuario.Username</p>
+                        <a class="link-box-answer" href="/Respostas/Index/@item.IDPergunta">
+                            <div class="pergunta-resposta-box">
+                                <div class="question-card-container">
+                                    <div class="question-user-box">
+                                        <div class="user-box-info">
+                                            <img src="@item.Perguntas.Usuario.CaminhoImagemPerfil"
+                                                 class="question-user-photo" />
+                                            <p class="username-text"> @item.Perguntas.Usuario.Username</p>
+                                        </div>
+                                        <div class="question-answer-box-info">
+                                            <p class="text-answer question-text mg-rg-md">
+                                                @item.Perguntas.TituloAbreviado
+                                            </p>
+                                            <span class="tag-news @item.Perguntas.TagPrincipal">@item.Perguntas.TagPrincipal</span>
+                                            @if (item.Perguntas.TagSecundaria != null)
+                                            {
+                                                <span class="tag-news @item.Perguntas.TagSecundaria">@item.Perguntas.TagSecundaria</span>
+                                            }
+                                            <span class="question-time-released mg-lf-sm">@item.Perguntas.DataEnvio.ToShortDateString()</span>
+                                        </div>
+                                    </div>
+
                                 </div>
-                                <div>
-                                    <span class="tag-news @item.Perguntas.TagPrincipal">@item.Perguntas.TagPrincipal</span>
-                                    @if (item.Perguntas.TagSecundaria != null)
-                                    {
-                                        <span class="tag-news @item.Perguntas.TagSecundaria">@item.Perguntas.TagSecundaria</span>
-                                    }
-                                    <span class="question-time-released mg-lf-sm">@item.Perguntas.DataEnvio.ToShortDateString()</span>
+                                <div class="question-card-container">
+                                    <div class="question-user-box">
+                                        <div class="user-box-info">
+                                            <img src="@Model.Usuario.CaminhoImagemPerfil"
+                                                 class="question-user-photo" />
+                                            <p class="username-text"> @Model.Usuario.Username</p>
+                                        </div>
+                                        <div>
+                                            <span class="question-time-released mg-lf-sm">@item.DataResposta.ToShortDateString()</span>
+                                        </div>
+                                    </div>
+                                    <div class="question-content">
+                                        <p class="text-answer question-text">
+                                            @item.ExplicacaoResposta
+
+                                        </p>
+                                    </div>
+
                                 </div>
                             </div>
-                            <div class="question-content">
-                                <p class="text-answer question-text">
-                                    @item.Perguntas.Titulo
-
-                                    <a href="#" class="keep-learning">Continuar lendo</a>
-                                </p>
-                            </div>
-
-                        </div>
-                        <div class="question-card-container">
-                            <div class="question-user-box">
-                                <div class="user-box-info">
-                                    <img src="@Model.Usuario.CaminhoImagemPerfil"
-                                         class="question-user-photo" />
-                                    <p class="username-text"> @Model.Usuario.Username</p>
-                                </div>
-                                <div>
-                                    <span class="question-time-released mg-lf-sm">@item.DataResposta.ToShortDateString()</span>
-                                </div>
-                            </div>
-                            <div class="question-content">
-                                <p class="text-answer question-text">
-                                    @item.ExplicacaoResposta
-
-                                    <a href="#" class="keep-learning">Continuar lendo</a>
-                                </p>
-                            </div>
-
-                        </div>
+                        </a>
+                        
                     }
-                </div>
 
-               
+                </div>
+                @if (Model.Respostas.Count == 0)
+                {
+                    <p>Não ha respostas feitas por esse usuario</p>
+                }
+
+
+
             </div>
         </div>
 
@@ -139,7 +179,8 @@
 
 
 @section scripts {
-    <script>$(document).ready(function () {
+    <script>
+    $(document).ready(function () {
             $(document).on("click", ".likeButton", function () {
                 var postId = $(this).data("post-id");
                 var likeCountElement = $(this).siblings(".likeCount"); // Elemento HTML que exibe a contagem de likes
