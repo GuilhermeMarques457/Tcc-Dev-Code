@@ -32,7 +32,10 @@
                             <div class="box-acept-friendship">
                                 <div class="flex">
                                     <img class="image-user-request" src="@item.UsuarioPedido.CaminhoImagemPerfil" />
-                                    <p><strong> @item.UsuarioPedido.Username</strong> te enviou solicitação de amizade</p>
+                                    <div class="info-amizade-box">
+                                        <p><strong> @item.UsuarioPedido.Username</strong> te enviou solicitação de amizade</p>
+                                        <a href="/Usuario/MostrarAmigo/@item.UsuarioPedido.IDUsuario" class="btn-full btn-perfil">Ver perfil</a>
+                                    </div>
                                 </div>
                                 <div class="buttons-box-friendship">
                                     <button class="btn-friendship btn-aceitar" data-user-id="@item.IDUsuarioPedido"><i class="ph ph-check"></i></button>

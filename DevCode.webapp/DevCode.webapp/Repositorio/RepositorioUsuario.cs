@@ -90,9 +90,15 @@ namespace DevCode.webapp.Repositorio
             return contexto.Usuario.First(x => x.IDUsuario == id).Username;
         }
 
-        public Usuario ObterPorUsername(string username)
+        public Usuario? ObterPorUsername(string username)
         {
-            return contexto.Usuario.First(x => x.Username == username);
+            if(contexto.Usuario.FirstOrDefault(x => x.Username == username) != null)
+            {
+                return contexto.Usuario.FirstOrDefault(x => x.Username == username);
+            }
+
+            return null;
+            
         }
 
         public string ObterFotoPerfilPorId(int id)

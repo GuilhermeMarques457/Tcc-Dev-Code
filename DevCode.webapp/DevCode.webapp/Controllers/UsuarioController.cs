@@ -59,6 +59,12 @@ namespace DevCode.webapp.Controllers
         public ActionResult Alterar(int IdUsuario)
         {
             Usuario usuario = repositorio.ObterPorId(IdUsuario);
+            List<Respostas> respostas = new List<Respostas>();
+            List<Perguntas> perguntas = new List<Perguntas>();
+            respostas = repositorioResposta.ObterRespostasDoUsuario(usuario.IDUsuario);
+            perguntas = repositorioPergunta.ObterPerguntasDoUsuario(usuario.IDUsuario);
+            ViewBag.Perguntas = perguntas.Count;
+            ViewBag.Respostas = respostas.Count;
             return View(usuario);
         }
 
@@ -67,7 +73,6 @@ namespace DevCode.webapp.Controllers
         [HttpPost]
         public ActionResult Alterar(Usuario usuario, HttpPostedFileBase profile, HttpPostedFileBase banner)
         {
-            
 
             if (ModelState.IsValid)
             {

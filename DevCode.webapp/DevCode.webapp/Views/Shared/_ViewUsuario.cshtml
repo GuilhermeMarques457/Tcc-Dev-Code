@@ -22,21 +22,7 @@
         @if (HttpContext.Current.User.Identity.IsAuthenticated)
         {
             <p class="username-text">@Configuracao.Usuario.Nome @Configuracao.Usuario.Sobrenome</p>
-            <div class="flex box-username-medal">
-                <p class="work-text">@Configuracao.Usuario.Username</p>
-                @if (UtilMethods.PegarPontos(Configuracao.Usuario.IDUsuario) > 1000)
-                {
-                    <img class="img-medalha" src="~/Content/imgs/bronze.png" />
-                }
-                @if (UtilMethods.PegarPontos(Configuracao.Usuario.IDUsuario) > 2500)
-                {
-                    <img class="img-medalha" src="~/Content/imgs/prata.png" />
-                }
-                @if (UtilMethods.PegarPontos(Configuracao.Usuario.IDUsuario) > 10000)
-                {
-                    <img class="img-medalha" src="~/Content/imgs/ouro.png" />
-                }
-            </div>
+            
             <p class="pontos-text">Total de pontos: @Configuracao.Usuario.Pontos</p>
             <a class="show-details" href="/Usuario/Alterar/@Configuracao.Usuario.IDUsuario">Exibir mais detalhes</a>
         }

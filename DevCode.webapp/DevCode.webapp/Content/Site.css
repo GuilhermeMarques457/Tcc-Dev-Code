@@ -42,10 +42,26 @@
     font-weight: 400;
 }
 
+.notification-box{
+    position: relative;
+}
+
+.notification-item {
+    position: absolute;
+    top: -50%;
+    left: 100%;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: #fa5252;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
 /*******************  
 *** Hero-section *** 
 ********************/
-
 .hero-section {
     background-color: #f0f0f0;
     position: relative;
@@ -618,7 +634,7 @@
     background-color: #fff;
     border-radius: 20px;
     padding: 2.4rem 0;
-    height: 55rem;
+    height: 60rem;
 
 }
 

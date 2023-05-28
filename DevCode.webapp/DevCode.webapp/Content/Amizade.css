@@ -114,7 +114,6 @@
     border-radius: 5px !important;
     padding: 0.8rem 2rem; 
     font-size: 1.2rem;
-    margin-bottom: 2rem;
 }
 
 .btn-ja-amigo {
@@ -167,4 +166,18 @@
 .btn-search{
     border-radius: 5px;
     width: 3rem;
+}
+
+.info-amizade-box{
+    margin-left: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: start;
+}
+
+.btn-perfil {
+    border-radius: 5px !important;
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
 }

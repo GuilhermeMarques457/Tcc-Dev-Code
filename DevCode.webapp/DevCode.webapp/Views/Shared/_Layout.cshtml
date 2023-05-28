@@ -27,8 +27,22 @@
                         <li><a href="/Perguntas/Novo" class="nav-item">Nova Pergunta</a></li>
                         <li><a href="/Noticia/ListarNoticias" class="nav-item">Ver Noticas</a></li>
                         <li><a href="/Usuario/Alterar/@Configuracao.Usuario.IDUsuario" class="nav-item">Ver Perfil</a></li>
-                        <li><a href="/Amizade/VerPessoas" class="nav-item">Social</a></li>
-                        <li><a href="/Login/Sair" class="btn-full mg-lf-bg btn-logout btn-login">Sair<i class="ph ph-sign-out"></i></a></li> 
+                        @if (UtilMethods.SearchAmizadeEncontrada(@Configuracao.Usuario.IDUsuario) >= 1)
+                        {
+                            <li>
+                                <div class="notification-box">
+                                    <a href="/Amizade/VerPessoas" class="nav-item">Social</a>
+                                    <span class="notification-item">@UtilMethods.SearchAmizadeEncontrada(@Configuracao.Usuario.IDUsuario)</span>
+                                </div>
+                            </li>
+                        }
+                        else
+                        {
+                            <li>
+                                <a href="/Amizade/VerPessoas" class="nav-item">Social</a>          
+                            </li>
+                        }
+                        <li><a href="/Login/Sair" class="btn-full mg-lf-bg btn-logout btn-login">Sair<i class="ph ph-sign-out"></i></a></li>
                     </ul>
                 </nav>
             </div>

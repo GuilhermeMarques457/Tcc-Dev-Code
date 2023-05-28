@@ -182,3 +182,51 @@
     .link-box-answer:hover .question-card-container {
          background-color: #f1f1f1;
     }
+
+.status-achiviments-box {
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    width: 50rem;
+}
+
+.img-achiviment {
+    width: 3rem;
+    height: 3rem;
+}
+
+.img-achiviment-box {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.img-diferente {
+    height: 4rem !important;
+}
+
+.admin-box {
+    margin-top: 2rem;
+    position: relative;
+}
+
+
+.status-achiviments-box {
+    position: relative;
+}
+
+.achiviments-description {
+    position: absolute;
+    top: -1.5rem;
+    font-size: 1.1rem;
+    color: #888;
+}
+
+.nao-conquistada {
+    opacity: 25%;
+}
+
+.box-admin {
+    width: 17rem;
+}

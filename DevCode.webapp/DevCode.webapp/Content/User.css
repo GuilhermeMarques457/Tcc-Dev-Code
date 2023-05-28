@@ -61,7 +61,7 @@
 .admin-box{
     justify-content: space-between;
     display: flex;
-    gap: 7rem;
+
 }
 
 .admin {
@@ -71,6 +71,7 @@
     background-color: #3d5af1;
     align-items: center;
     padding: 0.5rem 1rem;
+    display: inline;
 }
 
 .user-name {
@@ -88,7 +89,8 @@
 }
 
 .user-information-content {
-    padding: 1.2rem 3.2rem;
+    margin-top: 3rem;
+    padding: 4.2rem 3.2rem;
 }
 
 .info-header {
@@ -339,3 +341,55 @@
     gap: 2rem;
 }
 
+.status-achiviments-box{
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    width: 50rem;
+}
+
+.img-achiviment{
+    width: 3rem;
+    height: 3rem;
+}
+
+.img-achiviment-box{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.img-diferente {
+    height: 4rem !important;
+}
+
+.admin-box{
+    margin-top: 2rem;
+    position: relative;
+}
+
+.user-name{
+    position: absolute;
+    top: -2.5rem;
+}
+
+.status-achiviments-box{
+    position: relative;
+}
+
+.achiviments-description{
+    position: absolute;
+    top: -2rem;
+    font-size: 1.1rem;
+    color: #888;
+
+}
+
+.nao-conquistada{
+    opacity: 25%;
+}
+
+.box-admin{
+    width: 17rem;
+}

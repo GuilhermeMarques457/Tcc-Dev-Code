@@ -19,30 +19,195 @@
                         <p>@Model.Usuario.Username</p>
                     </div>
                     <div class="user-information-activity">
-                        <p class="info-text">N/perguntas totais: @Model.Perguntas.Count</p>
-                        <p class="info-text">N/respostas totais: @Model.Respostas.Count</p>
-                        @if (UtilMethods.PegarPontos(Model.Usuario.IDUsuario) >= 1000)
-                        {
-                            if (UtilMethods.PegarPontos(Model.Usuario.IDUsuario) > 2500)
-                            {
-                                if (UtilMethods.PegarPontos(Model.Usuario.IDUsuario) > 10000)
+                        <div class="status-achiviments-box">
+                            <div class="achiviments-container">
+                                <span class="achiviments-description">Medalhas por perguntas</span>
+                                @if (ViewBag.Perguntas >= 1)
                                 {
-                                    <img class="img-medalha" src="~/Content/imgs/ouro.png" />
+                                    if (ViewBag.Perguntas >= 2)
+                                    {
+                                        if (ViewBag.Perguntas >= 3)
+                                        {
+
+                                            if (ViewBag.Perguntas >= 4)
+                                            {
+                                                <div class="img-achiviment-box">
+                                                    <img src="~/Content/imgs/Conquistas/Conquistas Perguntas/Primeira-pergunta.png" title="Medalha recebida pela primeira pergunta" class="img-achiviment" />
+                                                    <img src="~/Content/imgs/Conquistas/Conquistas Perguntas/10-perguntas.png" title="Medalha recebida por 10 perguntas feitas" class="img-achiviment" />
+                                                    <img src="~/Content/imgs/Conquistas/Conquistas Perguntas/100-perguntas.png" title="Medalha recebida por 100 perguntas feitas" class="img-achiviment" />
+                                                    <img src="~/Content/imgs/Conquistas/Conquistas Perguntas/1000-perguntas.png" title="Medalha recebida por 1000 perguntas feitas" class="img-achiviment img-diferente" />
+                                                </div>
+                                            }
+                                            else
+                                            {
+                                                <div class="img-achiviment-box">
+                                                    <img src="~/Content/imgs/Conquistas/Conquistas Perguntas/Primeira-pergunta.png" title="Medalha recebida pela primeira pergunta" class="img-achiviment" />
+                                                    <img src="~/Content/imgs/Conquistas/Conquistas Perguntas/10-perguntas.png" title="Medalha recebida por 10 perguntas feitas" class="img-achiviment" />
+                                                    <img src="~/Content/imgs/Conquistas/Conquistas Perguntas/100-perguntas.png" title="Medalha recebida por 100 perguntas feitas" class="img-achiviment" />
+                                                    <img src="~/Content/imgs/Conquistas/Conquistas Perguntas/1000-perguntas.png" title="Medalha recebida por 1000 perguntas feitas" class="img-achiviment img-diferente nao-conquistada" />
+                                                </div>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <div class="img-achiviment-box">
+                                                <img src="~/Content/imgs/Conquistas/Conquistas Perguntas/Primeira-pergunta.png" title="Medalha recebida pela primeira pergunta" class="img-achiviment" />
+                                                <img src="~/Content/imgs/Conquistas/Conquistas Perguntas/10-perguntas.png" title="Medalha recebida por 10 perguntas feitas" class="img-achiviment" />
+                                                <img src="~/Content/imgs/Conquistas/Conquistas Perguntas/100-perguntas.png" title="Medalha recebida por 100 perguntas feitas" class="img-achiviment nao-conquistada" />
+                                                <img src="~/Content/imgs/Conquistas/Conquistas Perguntas/1000-perguntas.png" title="Medalha recebida por 1000 perguntas feitas" class="img-achiviment img-diferente nao-conquistada" />
+                                            </div>
+                                        }
+
+                                    }
+                                    else
+                                    {
+                                        <div class="img-achiviment-box">
+                                            <img src="~/Content/imgs/Conquistas/Conquistas Perguntas/Primeira-pergunta.png" title="Medalha recebida pela primeira pergunta" class="img-achiviment" />
+                                            <img src="~/Content/imgs/Conquistas/Conquistas Perguntas/10-perguntas.png" title="Medalha recebida por 10 perguntas feitas" class="img-achiviment nao-conquistada" />
+                                            <img src="~/Content/imgs/Conquistas/Conquistas Perguntas/100-perguntas.png" title="Medalha recebida por 100 perguntas feitas" class="img-achiviment nao-conquistada" />
+                                            <img src="~/Content/imgs/Conquistas/Conquistas Perguntas/1000-perguntas.png" title="Medalha recebida por 1000 perguntas feitas" class="img-achiviment img-diferente nao-conquistada" />
+                                        </div>
+                                    }
+
                                 }
-                                else 
-                                { 
-                                    <img class="img-medalha" src="~/Content/imgs/prata.png" />
-                                }  
-                            }
-                            else
-                            {
-                                <img class="img-medalha" src="~/Content/imgs/bronze.png" />
-                            }
-                        }
-                        else
-                        {
-                            <p class="info-text">Esse usuario não possui nenhuma conquista</p>
-                        }
+                                else
+                                {
+                                    <div class="img-achiviment-box">
+                                        <img src="~/Content/imgs/Conquistas/Conquistas Perguntas/Primeira-pergunta.png" title="Medalha recebida pela primeira pergunta" class="img-achiviment nao-conquistada" />
+                                        <img src="~/Content/imgs/Conquistas/Conquistas Perguntas/10-perguntas.png" title="Medalha recebida por 10 perguntas feitas" class="img-achiviment nao-conquistada" />
+                                        <img src="~/Content/imgs/Conquistas/Conquistas Perguntas/100-perguntas.png" title="Medalha recebida por 100 perguntas feitas" class="img-achiviment nao-conquistada" />
+                                        <img src="~/Content/imgs/Conquistas/Conquistas Perguntas/1000-perguntas.png" title="Medalha recebida por 1000 perguntas feitas" class="img-achiviment img-diferente nao-conquistada" />
+                                    </div>
+                                }
+                            </div>
+                            <div class="achiviments-container">
+                                <div class="achiviments-container">
+                                    <span class="achiviments-description">Medalhas por respostas</span>
+                                    @if (ViewBag.Respostas >= 1)
+                                    {
+                                        if (ViewBag.Respostas >= 2)
+                                        {
+                                            if (ViewBag.Respostas >= 3)
+                                            {
+
+                                                if (ViewBag.Respostas >= 4)
+                                                {
+                                                    <div class="img-achiviment-box">
+                                                        <img src="~/Content/imgs/Conquistas/Conquistas Respostas/Primeira-resposta.png" title="Medalha recebida pela primeira resposta" class="img-achiviment" />
+                                                        <img src="~/Content/imgs/Conquistas/Conquistas Respostas/10-Respostas.png" title="Medalha recebida por 10 respostas feitas" class="img-achiviment" />
+                                                        <img src="~/Content/imgs/Conquistas/Conquistas Respostas/100-Respostas.png" title="Medalha recebida por 100 respostas feitas" class="img-achiviment" />
+                                                        <img src="~/Content/imgs/Conquistas/Conquistas Respostas/1000-Respostas.png" title="Medalha recebida por 1000 respostas feitas" class="img-achiviment" />
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <div class="img-achiviment-box">
+                                                        <img src="~/Content/imgs/Conquistas/Conquistas Perguntas/Primeira-pergunta.png" title="Medalha recebida pela primeira pergunta" class="img-achiviment" />
+                                                        <img src="~/Content/imgs/Conquistas/Conquistas Perguntas/10-perguntas.png" title="Medalha recebida por 10 perguntas feitas" class="img-achiviment" />
+                                                        <img src="~/Content/imgs/Conquistas/Conquistas Perguntas/100-perguntas.png" title="Medalha recebida por 100 perguntas feitas" class="img-achiviment" />
+                                                        <img src="~/Content/imgs/Conquistas/Conquistas Respostas/1000-Respostas.png" title="Medalha recebida por 1000 respostas feitas" class="img-achiviment nao-conquistada" />
+                                                    </div>
+                                                }
+                                            }
+                                            else
+                                            {
+                                                <div class="img-achiviment-box">
+                                                    <img src="~/Content/imgs/Conquistas/Conquistas Perguntas/Primeira-pergunta.png" title="Medalha recebida pela primeira pergunta" class="img-achiviment" />
+                                                    <img src="~/Content/imgs/Conquistas/Conquistas Perguntas/10-perguntas.png" title="Medalha recebida por 10 perguntas feitas" class="img-achiviment" />
+                                                    <img src="~/Content/imgs/Conquistas/Conquistas Respostas/100-Respostas.png" title="Medalha recebida por 100 respostas feitas" class="img-achiviment nao-conquistada" />
+                                                    <img src="~/Content/imgs/Conquistas/Conquistas Respostas/1000-Respostas.png" title="Medalha recebida por 1000 respostas feitas" class="img-achiviment  nao-conquistada" />
+                                                </div>
+                                            }
+
+                                        }
+                                        else
+                                        {
+                                            <div class="img-achiviment-box">
+                                                <img src="~/Content/imgs/Conquistas/Conquistas Perguntas/Primeira-pergunta.png" title="Medalha recebida pela primeira pergunta" class="img-achiviment" />
+                                                <img src="~/Content/imgs/Conquistas/Conquistas Respostas/10-Respostas.png" title="Medalha recebida por 10 respostas feitas" class="img-achiviment nao-conquistada" />
+                                                <img src="~/Content/imgs/Conquistas/Conquistas Respostas/100-Respostas.png" title="Medalha recebida por 100 respostas feitas" class="img-achiviment nao-conquistada" />
+                                                <img src="~/Content/imgs/Conquistas/Conquistas Respostas/1000-Respostas.png" title="Medalha recebida por 1000 respostas feitas" class="img-achiviment nao-conquistada" />
+                                            </div>
+                                        }
+
+                                    }
+                                    else
+                                    {
+                                        <div class="img-achiviment-box">
+                                            <img src="~/Content/imgs/Conquistas/Conquistas Respostas/Primeira-resposta.png" title="Medalha recebida pela primeira resposta" class="img-achiviment nao-conquistada" />
+                                            <img src="~/Content/imgs/Conquistas/Conquistas Respostas/10-Respostas.png" title="Medalha recebida por 10 respostas feitas" class="img-achiviment nao-conquistada" />
+                                            <img src="~/Content/imgs/Conquistas/Conquistas Respostas/100-Respostas.png" title="Medalha recebida por 100 respostas feitas" class="img-achiviment nao-conquistada" />
+                                            <img src="~/Content/imgs/Conquistas/Conquistas Respostas/1000-Respostas.png" title="Medalha recebida por 1000 respostas feitas" class="img-achiviment  nao-conquistada" />
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                            <div class="achiviments-container">
+                                <div class="achiviments-container">
+                                    <span class="achiviments-description">Medalhas por pontos </span>
+                                    @if (UtilMethods.PegarPontos(Model.Usuario.IDUsuario) > 100)
+                                    {
+                                        if (UtilMethods.PegarPontos(Model.Usuario.IDUsuario) > 1000)
+                                        {
+                                            if (UtilMethods.PegarPontos(Model.Usuario.IDUsuario) > 10000)
+                                            {
+
+                                                if (UtilMethods.PegarPontos(Model.Usuario.IDUsuario) > 100000)
+                                                {
+                                                    <div class="img-achiviment-box">
+                                                        <img src="~/Content/imgs/Conquistas/Conquistas Pontos/100-pontos.png" title="Medalha recebida por atingir 100 pontos" class="img-achiviment" />
+                                                        <img src="~/Content/imgs/Conquistas/Conquistas Pontos/1000-pontos.png" title="Medalha recebida por atingir 1000 pontos" class="img-achiviment" />
+                                                        <img src="~/Content/imgs/Conquistas/Conquistas Pontos/10000-pontos.png" title="Medalha recebida por atingir 10000 pontos" class="img-achiviment" />
+                                                        <img src="~/Content/imgs/Conquistas/Conquistas Pontos/100000-pontos.png" title="Medalha recebida por atingir 100000 pontos" class="img-achiviment" />
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <div class="img-achiviment-box">
+                                                        <img src="~/Content/imgs/Conquistas/Conquistas Pontos/100-pontos.png" title="Medalha recebida por atingir 100 pontos" class="img-achiviment" />
+                                                        <img src="~/Content/imgs/Conquistas/Conquistas Pontos/1000-pontos.png" title="Medalha recebida por atingir 1000 pontos" class="img-achiviment" />
+                                                        <img src="~/Content/imgs/Conquistas/Conquistas Pontos/10000-pontos.png" title="Medalha recebida por atingir 10000 pontos" class="img-achiviment" />
+                                                        <img src="~/Content/imgs/Conquistas/Conquistas Pontos/100000-pontos.png" title="Medalha recebida por atingir 100000 pontos" class="img-achiviment nao-conquistada" />
+                                                    </div>
+                                                }
+                                            }
+                                            else
+                                            {
+                                                <div class="img-achiviment-box">
+                                                    <img src="~/Content/imgs/Conquistas/Conquistas Pontos/100-pontos.png" title="Medalha recebida por atingir 100 pontos" class="img-achiviment" />
+                                                    <img src="~/Content/imgs/Conquistas/Conquistas Pontos/1000-pontos.png" title="Medalha recebida por atingir 1000 pontos" class="img-achiviment" />
+                                                    <img src="~/Content/imgs/Conquistas/Conquistas Pontos/10000-pontos.png" title="Medalha recebida por atingir 10000 pontos" class="img-achiviment nao-conquistada" />
+                                                    <img src="~/Content/imgs/Conquistas/Conquistas Pontos/100000-pontos.png" title="Medalha recebida por atingir 100000 pontos" class="img-achiviment nao-conquistada" />
+                                                </div>
+                                            }
+
+                                        }
+                                        else
+                                        {
+                                            <div class="img-achiviment-box">
+                                                <img src="~/Content/imgs/Conquistas/Conquistas Pontos/100-pontos.png" title="Medalha recebida por atingir 100 pontos" class="img-achiviment" />
+                                                <img src="~/Content/imgs/Conquistas/Conquistas Pontos/1000-pontos.png" title="Medalha recebida por atingir 1000 pontos" class="img-achiviment nao-conquistada" />
+                                                <img src="~/Content/imgs/Conquistas/Conquistas Pontos/10000-pontos.png" title="Medalha recebida por atingir 10000 pontos" class="img-achiviment nao-conquistada" />
+                                                <img src="~/Content/imgs/Conquistas/Conquistas Pontos/100000-pontos.png" title="Medalha recebida por atingir 100000 pontos" class="img-achiviment nao-conquistada" />
+                                            </div>
+                                        }
+
+                                    }
+                                    else
+                                    {
+                                        <div class="img-achiviment-box">
+                                            <img src="~/Content/imgs/Conquistas/Conquistas Pontos/100-pontos.png" title="Medalha recebida por atingir 100 pontos" class="img-achiviment nao-conquistada" />
+                                            <img src="~/Content/imgs/Conquistas/Conquistas Pontos/1000-pontos.png" title="Medalha recebida por atingir 1000 pontos" class="img-achiviment nao-conquistada" />
+                                            <img src="~/Content/imgs/Conquistas/Conquistas Pontos/10000-pontos.png" title="Medalha recebida por atingir 10000 pontos" class="img-achiviment nao-conquistada" />
+                                            <img src="~/Content/imgs/Conquistas/Conquistas Pontos/100000-pontos.png" title="Medalha recebida por atingir 100000 pontos" class="img-achiviment nao-conquistada" />
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+
+
+
+                        </div>
 
                     </div>
                 </div>

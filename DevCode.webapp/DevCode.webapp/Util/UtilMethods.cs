@@ -37,5 +37,12 @@ namespace DevCode.webapp.Util
 
             return repositorioUsuario.ObterListaPorPontuação();
         }
+
+        public static int SearchAmizadeEncontrada(int idUsuarioRecebido)
+        {
+            RepositorioAmizade RepositorioAmizade = new RepositorioAmizade();
+
+            return RepositorioAmizade.SearchAmizadeEncontrada(idUsuarioRecebido).Count();
+        }
     }
 }
