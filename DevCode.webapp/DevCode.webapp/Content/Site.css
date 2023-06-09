@@ -784,10 +784,13 @@
     gap: 1rem;
 }
 
+.options-box select{
+    width: 80%;
+    display: inline-block;
+}
 /**********************    
 *** Footer *** 
 ***********************/
-
 .tag-news {
     display: inline-block;
     border-radius: 2px;

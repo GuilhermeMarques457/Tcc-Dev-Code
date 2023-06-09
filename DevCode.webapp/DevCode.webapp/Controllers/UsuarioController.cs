@@ -101,7 +101,15 @@ namespace DevCode.webapp.Controllers
                 return RedirectToAction("Index", "Perguntas");
 
             }
-            return View(usuario);
+
+            Usuario usuarioErrado = repositorio.ObterPorId(usuario.IDUsuario);
+            List<Respostas> respostas = new List<Respostas>();
+            List<Perguntas> perguntas = new List<Perguntas>();
+            respostas = repositorioResposta.ObterRespostasDoUsuario(usuarioErrado.IDUsuario);
+            perguntas = repositorioPergunta.ObterPerguntasDoUsuario(usuarioErrado.IDUsuario);
+            ViewBag.Perguntas = perguntas.Count;
+            ViewBag.Respostas = respostas.Count;
+            return View(usuarioErrado);
 
         }
 
